@@ -1679,7 +1679,6 @@
     ".NETFramework,Version=v4.5.1": [],
     "DNX,Version=v4.5.1": [],
     "DNXCore,Version=v5.0": [
-      "System.Reflection.Extensions >= 4.0.1-beta-23225",
       "System.Text.RegularExpressions >= 4.0.11-beta-23225"
     ]
   }
