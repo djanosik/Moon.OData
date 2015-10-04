@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace Moon.AspNet.OData
+namespace Moon.OData
 {
     /// <summary>
     /// The default result of an OData query. It should be used whenever the $count option is false
     /// or is not defined.
     /// </summary>
     /// <typeparam name="TResult">The type of the result.</typeparam>
-    public class Default<TResult> : IOData<TResult>
+    public class Default<TResult> : IOData<TResult>, IEnumerable<TResult>
     {
         readonly IEnumerable<TResult> results;
 

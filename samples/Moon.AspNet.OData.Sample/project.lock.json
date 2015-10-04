@@ -1350,8 +1350,7 @@
         "type": "project",
         "dependencies": {
           "Microsoft.AspNet.Mvc.Core": "6.0.0-beta7",
-          "Moon.OData": "1.0.0-ci",
-          "Newtonsoft.Json": "7.0.1"
+          "Moon.OData": "1.0.0-ci"
         }
       },
       "Moon.Contracts/1.2.2": {
@@ -2724,8 +2723,7 @@
         "type": "project",
         "dependencies": {
           "Microsoft.AspNet.Mvc.Core": "6.0.0-beta7",
-          "Moon.OData": "1.0.0-ci",
-          "Newtonsoft.Json": "7.0.1"
+          "Moon.OData": "1.0.0-ci"
         }
       },
       "Moon.Contracts/1.2.2": {
