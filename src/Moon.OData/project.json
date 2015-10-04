@@ -1,0 +1,20 @@
+﻿{
+  "version": "1.0.0-ci",
+  "authors": [ "Dusan Janosik" ],
+  "owners": [ "djanosik" ],
+  "projectUrl": "https://github.com/djanosik/Moon.OData",
+  "iconUrl": "http://moontea.net/moon.png",
+  "description": ".NET / DNX library for parsing OData query options.",
+  "tags": [ "moontea", "odata", "query", "options" ],
+
+  "dependencies": {
+    "Moon.Reflection": "1.2.2",
+    "Microsoft.OData.Core": "6.13.0"
+  },
+
+  "frameworks": {
+    "net451": { },
+    "dnx451": { },
+    "dnxcore50": { }
+  }
+}

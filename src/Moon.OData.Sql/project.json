@@ -1,0 +1,24 @@
+﻿{
+  "version": "1.0.0-ci",
+  "authors": [ "Dusan Janosik" ],
+  "owners": [ "djanosik" ],
+  "projectUrl": "https://github.com/djanosik/Moon.OData",
+  "iconUrl": "http://moontea.net/moon.png",
+  "description": "Library for translating OData query options into T-SQL commands.",
+  "tags": [ "moontea", "odata", "query", "options", "sql" ],
+
+  "dependencies": {
+    "Moon.OData": "1.0.0-ci"
+  },
+
+  "frameworks": {
+    "net451": { },
+    "dnx451": { },
+    "dnxcore50": {
+      "dependencies": {
+        "System.Reflection.Extensions": "4.0.1-beta-23225",
+        "System.Text.RegularExpressions": "4.0.11-beta-23225"
+      }
+    }
+  }
+}

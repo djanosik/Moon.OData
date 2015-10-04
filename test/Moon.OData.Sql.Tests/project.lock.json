@@ -1,0 +1,1114 @@
+{
+  "locked": false,
+  "version": 1,
+  "targets": {
+    "DNX,Version=v4.5.1": {
+      "Microsoft.CodeAnalysis.Analyzers/1.1.0-beta1-20150812-01": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System"
+        ]
+      },
+      "Microsoft.CodeAnalysis.Common/1.1.0-beta1-20150812-01": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CodeAnalysis.Analyzers": "[1.1.0-beta1-20150812-01]",
+          "System.Collections.Immutable": "1.1.36",
+          "System.Reflection.Metadata": "1.1.0-alpha-00009"
+        },
+        "compile": {
+          "lib/net45/Microsoft.CodeAnalysis.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.CodeAnalysis.dll": {}
+        }
+      },
+      "Microsoft.CodeAnalysis.CSharp/1.1.0-beta1-20150812-01": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CodeAnalysis.Common": "[1.1.0-beta1-20150812-01]"
+        },
+        "compile": {
+          "lib/net45/Microsoft.CodeAnalysis.CSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.CodeAnalysis.CSharp.dll": {}
+        }
+      },
+      "Microsoft.Dnx.Compilation.Abstractions/1.0.0-beta7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Dnx.Runtime.Abstractions": "1.0.0-beta7"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Dnx.Compilation.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Dnx.Compilation.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Dnx.Loader/1.0.0-beta7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Dnx.Runtime.Abstractions": "1.0.0-beta7"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Dnx.Loader.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Dnx.Loader.dll": {}
+        }
+      },
+      "Microsoft.Dnx.Runtime/1.0.0-beta7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CodeAnalysis.CSharp": "1.1.0-beta1-20150812-01",
+          "Microsoft.Dnx.Loader": "1.0.0-beta7",
+          "Microsoft.Dnx.Runtime.Abstractions": "1.0.0-beta7"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Collections",
+          "System.Core",
+          "System.IO",
+          "System.IO.Compression",
+          "System.IO.Compression.FileSystem",
+          "System.Runtime",
+          "System.Text.Encoding",
+          "System.Threading.Tasks",
+          "System.Xml",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Dnx.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Dnx.Runtime.dll": {}
+        }
+      },
+      "Microsoft.Dnx.Runtime.Abstractions/1.0.0-beta7": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Dnx.Runtime.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Dnx.Runtime.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Dnx.TestAdapter/1.0.0-beta7": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Dnx.TestAdapter.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Dnx.TestAdapter.dll": {}
+        }
+      },
+      "Microsoft.Dnx.TestHost/1.0.0-beta7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Dnx.Compilation.Abstractions": "1.0.0-beta7",
+          "Microsoft.Dnx.Runtime": "1.0.0-beta7",
+          "Microsoft.Dnx.TestAdapter": "1.0.0-beta7",
+          "Microsoft.Framework.Logging": "1.0.0-beta7",
+          "Newtonsoft.Json": "6.0.6"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Dnx.TestHost.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Dnx.TestHost.dll": {}
+        }
+      },
+      "Microsoft.Framework.DependencyInjection.Abstractions/1.0.0-beta7": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging/1.0.0-beta7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.DependencyInjection.Abstractions": "1.0.0-beta7",
+          "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta7"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Collections.Concurrent",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.Logging.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging.Abstractions/1.0.0-beta7": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.Logging.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.Logging.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.OData.Core/6.13.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.OData.Edm": "[6.13.0]",
+          "Microsoft.Spatial": "[6.13.0]"
+        },
+        "compile": {
+          "lib/dnx451/Microsoft.OData.Core.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.OData.Core.dll": {}
+        },
+        "resource": {
+          "lib/dnx451/de/Microsoft.OData.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/dnx451/es/Microsoft.OData.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/dnx451/fr/Microsoft.OData.Core.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/dnx451/it/Microsoft.OData.Core.resources.dll": {
+            "locale": "it"
+          },
+          "lib/dnx451/ja/Microsoft.OData.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/dnx451/ko/Microsoft.OData.Core.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/dnx451/ru/Microsoft.OData.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/dnx451/zh-Hans/Microsoft.OData.Core.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/dnx451/zh-Hant/Microsoft.OData.Core.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "Microsoft.OData.Edm/6.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/dnx451/Microsoft.OData.Edm.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.OData.Edm.dll": {}
+        },
+        "resource": {
+          "lib/dnx451/de/Microsoft.OData.Edm.resources.dll": {
+            "locale": "de"
+          },
+          "lib/dnx451/es/Microsoft.OData.Edm.resources.dll": {
+            "locale": "es"
+          },
+          "lib/dnx451/fr/Microsoft.OData.Edm.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/dnx451/it/Microsoft.OData.Edm.resources.dll": {
+            "locale": "it"
+          },
+          "lib/dnx451/ja/Microsoft.OData.Edm.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/dnx451/ko/Microsoft.OData.Edm.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/dnx451/ru/Microsoft.OData.Edm.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/dnx451/zh-Hans/Microsoft.OData.Edm.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/dnx451/zh-Hant/Microsoft.OData.Edm.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "Microsoft.Spatial/6.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/dnx451/Microsoft.Spatial.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Spatial.dll": {}
+        },
+        "resource": {
+          "lib/dnx451/de/Microsoft.Spatial.resources.dll": {
+            "locale": "de"
+          },
+          "lib/dnx451/es/Microsoft.Spatial.resources.dll": {
+            "locale": "es"
+          },
+          "lib/dnx451/fr/Microsoft.Spatial.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/dnx451/it/Microsoft.Spatial.resources.dll": {
+            "locale": "it"
+          },
+          "lib/dnx451/ja/Microsoft.Spatial.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/dnx451/ko/Microsoft.Spatial.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/dnx451/ru/Microsoft.Spatial.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/dnx451/zh-Hans/Microsoft.Spatial.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/dnx451/zh-Hant/Microsoft.Spatial.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "Moon.Contracts/1.2.2": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Moon.Contracts.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Moon.Contracts.dll": {}
+        }
+      },
+      "Moon.OData/1.0.0-ci": {
+        "type": "project",
+        "dependencies": {
+          "Microsoft.OData.Core": "6.13.0",
+          "Moon.Reflection": "1.2.2"
+        }
+      },
+      "Moon.OData.Sql/1.0.0-ci": {
+        "type": "project",
+        "dependencies": {
+          "Moon.OData": "1.0.0-ci"
+        }
+      },
+      "Moon.Reflection/1.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Moon.Runtime": "1.2.2"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Moon.Reflection.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Moon.Reflection.dll": {}
+        }
+      },
+      "Moon.Runtime/1.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Moon.Contracts": "1.2.2"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Moon.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Moon.Runtime.dll": {}
+        }
+      },
+      "Newtonsoft.Json/7.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "System.Collections.Immutable/1.1.36": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll": {}
+        }
+      },
+      "System.Reflection.Metadata/1.1.0-alpha-00009": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "1.1.37-beta-23024"
+        },
+        "compile": {
+          "lib/portable-net45+win8/System.Reflection.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8/System.Reflection.Metadata.dll": {}
+        }
+      },
+      "xunit/2.1.0-rc1-build3168": {
+        "type": "package",
+        "dependencies": {
+          "xunit.assert": "[2.1.0-rc1-build3168]",
+          "xunit.core": "[2.1.0-rc1-build3168]"
+        }
+      },
+      "xunit.abstractions/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/xunit.abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net35/xunit.abstractions.dll": {}
+        }
+      },
+      "xunit.assert/2.1.0-rc1-build3168": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/xunit.assert.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/xunit.assert.dll": {}
+        }
+      },
+      "xunit.core/2.1.0-rc1-build3168": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0-rc1-build3168]",
+          "xunit.extensibility.execution": "[2.1.0-rc1-build3168]"
+        }
+      },
+      "xunit.extensibility.core/2.1.0-rc1-build3168": {
+        "type": "package",
+        "dependencies": {
+          "xunit.abstractions": "[2.0.0]"
+        },
+        "compile": {
+          "lib/dotnet/xunit.core.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/xunit.core.dll": {},
+          "lib/dotnet/xunit.runner.tdnet.dll": {},
+          "lib/dotnet/xunit.runner.utility.desktop.dll": {}
+        }
+      },
+      "xunit.extensibility.execution/2.1.0-rc1-build3168": {
+        "type": "package",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.1.0-rc1-build3168]"
+        },
+        "compile": {
+          "lib/dnx451/xunit.execution.dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/xunit.execution.dotnet.dll": {}
+        }
+      },
+      "xunit.runner.dnx/2.1.0-beta5a-build188": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Dnx.Runtime.Abstractions": "1.0.0-beta7",
+          "Microsoft.Dnx.TestAdapter": "1.0.0-beta7",
+          "Microsoft.Dnx.TestHost": "1.0.0-beta7",
+          "xunit.runner.reporters": "2.1.0",
+          "xunit.runner.utility": "2.1.0"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "System.Threading"
+        ],
+        "compile": {
+          "lib/dnx451/xunit.runner.dnx.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/xunit.runner.dnx.dll": {}
+        }
+      },
+      "xunit.runner.reporters/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "7.0.1",
+          "xunit.runner.utility": "[2.1.0]"
+        },
+        "compile": {
+          "lib/dnx451/xunit.runner.reporters.dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/xunit.runner.reporters.dotnet.dll": {}
+        }
+      },
+      "xunit.runner.utility/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "xunit.abstractions": "[2.0.0]"
+        },
+        "compile": {
+          "lib/dnx451/xunit.runner.utility.dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/xunit.runner.utility.dotnet.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Moon.OData/1.0.0-ci": {
+      "type": "project",
+      "path": "../../src/Moon.OData/project.json"
+    },
+    "Moon.OData.Sql/1.0.0-ci": {
+      "type": "project",
+      "path": "../../src/Moon.OData.Sql/project.json"
+    },
+    "Microsoft.CodeAnalysis.Analyzers/1.1.0-beta1-20150812-01": {
+      "type": "package",
+      "sha512": "lIhWRroF8XRQZ/czkqDjiEsXb3ZKUNPhKZTCN1gybgNvMJ0K4k+SnbCbCTA5Ag7WoB9tiC13gHhX8M4kGR4ZEQ==",
+      "files": [
+        "analyzers/dotnet/cs/Microsoft.CodeAnalysis.Analyzers.dll",
+        "analyzers/dotnet/cs/Microsoft.CodeAnalysis.CSharp.Analyzers.dll",
+        "analyzers/dotnet/vb/Microsoft.CodeAnalysis.Analyzers.dll",
+        "analyzers/dotnet/vb/Microsoft.CodeAnalysis.VisualBasic.Analyzers.dll",
+        "Microsoft.CodeAnalysis.Analyzers.1.1.0-beta1-20150812-01.nupkg",
+        "Microsoft.CodeAnalysis.Analyzers.1.1.0-beta1-20150812-01.nupkg.sha512",
+        "Microsoft.CodeAnalysis.Analyzers.nuspec",
+        "ThirdPartyNotices.rtf",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "Microsoft.CodeAnalysis.Common/1.1.0-beta1-20150812-01": {
+      "type": "package",
+      "sha512": "0fKn7s4ZxdHPJvlQ0VAmtpWh8lsijHbr3AsSxTtvY0+2Yci3g8vn+Na24664978YLMbMJx+jshw/ymyqRCTePg==",
+      "files": [
+        "lib/net45/Microsoft.CodeAnalysis.dll",
+        "lib/net45/Microsoft.CodeAnalysis.xml",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.dll",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.xml",
+        "Microsoft.CodeAnalysis.Common.1.1.0-beta1-20150812-01.nupkg",
+        "Microsoft.CodeAnalysis.Common.1.1.0-beta1-20150812-01.nupkg.sha512",
+        "Microsoft.CodeAnalysis.Common.nuspec",
+        "ThirdPartyNotices.rtf"
+      ]
+    },
+    "Microsoft.CodeAnalysis.CSharp/1.1.0-beta1-20150812-01": {
+      "type": "package",
+      "sha512": "RTQAcTU65h2NBHmzVkx/PmM7skiybNM4OiLfnvWVmGh62GxuAegPD47hWzINQQhB/zqIN79jwpg7cU3Lr0nliw==",
+      "files": [
+        "lib/net45/Microsoft.CodeAnalysis.CSharp.dll",
+        "lib/net45/Microsoft.CodeAnalysis.CSharp.xml",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.CSharp.dll",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.CSharp.xml",
+        "Microsoft.CodeAnalysis.CSharp.1.1.0-beta1-20150812-01.nupkg",
+        "Microsoft.CodeAnalysis.CSharp.1.1.0-beta1-20150812-01.nupkg.sha512",
+        "Microsoft.CodeAnalysis.CSharp.nuspec",
+        "ThirdPartyNotices.rtf"
+      ]
+    },
+    "Microsoft.Dnx.Compilation.Abstractions/1.0.0-beta7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "yCmxm4XDf4Clz/SM/ImFiFJ6YURYYjzEWGIC+bH5OUSPhEXNoXh1jI+4EwNBOGIq67t2X7mfApgUR7n2U2p9Nw==",
+      "files": [
+        "lib/dnx451/Microsoft.Dnx.Compilation.Abstractions.dll",
+        "lib/dnx451/Microsoft.Dnx.Compilation.Abstractions.xml",
+        "lib/dnxcore50/Microsoft.Dnx.Compilation.Abstractions.dll",
+        "lib/dnxcore50/Microsoft.Dnx.Compilation.Abstractions.xml",
+        "Microsoft.Dnx.Compilation.Abstractions.1.0.0-beta7.nupkg",
+        "Microsoft.Dnx.Compilation.Abstractions.1.0.0-beta7.nupkg.sha512",
+        "Microsoft.Dnx.Compilation.Abstractions.nuspec"
+      ]
+    },
+    "Microsoft.Dnx.Loader/1.0.0-beta7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "3uBfq0K7nUNVqFmKfVYrmBNki8pHvFlIUX4zGcPJXlFIxHzhjvrVxdOH5YHs3p2AR2yNL2c/QK862j8WDZKCpw==",
+      "files": [
+        "lib/dnx451/Microsoft.Dnx.Loader.dll",
+        "lib/dnx451/Microsoft.Dnx.Loader.xml",
+        "lib/dnxcore50/Microsoft.Dnx.Loader.dll",
+        "lib/dnxcore50/Microsoft.Dnx.Loader.xml",
+        "Microsoft.Dnx.Loader.1.0.0-beta7.nupkg",
+        "Microsoft.Dnx.Loader.1.0.0-beta7.nupkg.sha512",
+        "Microsoft.Dnx.Loader.nuspec"
+      ]
+    },
+    "Microsoft.Dnx.Runtime/1.0.0-beta7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "LL62dfqsHQf9pw/Ssj+vxzcZVI6tQmHr5wilWOYBz2sIrG6439RAspCeUsJQFrjg9UVxQlMZdkPI40NMhxboWA==",
+      "files": [
+        "lib/dnx451/Microsoft.Dnx.Runtime.dll",
+        "lib/dnx451/Microsoft.Dnx.Runtime.xml",
+        "lib/dnxcore50/Microsoft.Dnx.Runtime.dll",
+        "lib/dnxcore50/Microsoft.Dnx.Runtime.xml",
+        "Microsoft.Dnx.Runtime.1.0.0-beta7.nupkg",
+        "Microsoft.Dnx.Runtime.1.0.0-beta7.nupkg.sha512",
+        "Microsoft.Dnx.Runtime.nuspec"
+      ]
+    },
+    "Microsoft.Dnx.Runtime.Abstractions/1.0.0-beta7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "T/aTQeWKnrC35n69MQmqizwhobfpmGJ0iT8x5R1ifEx3ZFHPIu5OB9Iwc5BRhIrY+/+zwikyQJ1fUSa26NfwxA==",
+      "files": [
+        "lib/dnx451/Microsoft.Dnx.Runtime.Abstractions.dll",
+        "lib/dnx451/Microsoft.Dnx.Runtime.Abstractions.xml",
+        "lib/dnxcore50/Microsoft.Dnx.Runtime.Abstractions.dll",
+        "lib/dnxcore50/Microsoft.Dnx.Runtime.Abstractions.xml",
+        "Microsoft.Dnx.Runtime.Abstractions.1.0.0-beta7.nupkg",
+        "Microsoft.Dnx.Runtime.Abstractions.1.0.0-beta7.nupkg.sha512",
+        "Microsoft.Dnx.Runtime.Abstractions.nuspec"
+      ]
+    },
+    "Microsoft.Dnx.TestAdapter/1.0.0-beta7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "vq3meMgpy+ZUVBk9mqFjgP64034zU7a3Axd8MqtV+oHlgc7O6Pvj5JCQBqiz2V8FnpdDHnPqQdF+TXjoWapQQQ==",
+      "files": [
+        "lib/dnx451/Microsoft.Dnx.TestAdapter.dll",
+        "lib/dnx451/Microsoft.Dnx.TestAdapter.xml",
+        "lib/dnxcore50/Microsoft.Dnx.TestAdapter.dll",
+        "lib/dnxcore50/Microsoft.Dnx.TestAdapter.xml",
+        "Microsoft.Dnx.TestAdapter.1.0.0-beta7.nupkg",
+        "Microsoft.Dnx.TestAdapter.1.0.0-beta7.nupkg.sha512",
+        "Microsoft.Dnx.TestAdapter.nuspec",
+        "repo.json"
+      ]
+    },
+    "Microsoft.Dnx.TestHost/1.0.0-beta7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "y1M3OhJzlNK9yXGZ00VFAij9Q20t2C3tnuVkjRMDO4hXaou/Yzn33yUB1kMenqoLwXCdIDzzclCIJ0+LDDbW9g==",
+      "files": [
+        "app/project.json",
+        "lib/dnx451/Microsoft.Dnx.TestHost.dll",
+        "lib/dnx451/Microsoft.Dnx.TestHost.xml",
+        "lib/dnxcore50/Microsoft.Dnx.TestHost.dll",
+        "lib/dnxcore50/Microsoft.Dnx.TestHost.xml",
+        "Microsoft.Dnx.TestHost.1.0.0-beta7.nupkg",
+        "Microsoft.Dnx.TestHost.1.0.0-beta7.nupkg.sha512",
+        "Microsoft.Dnx.TestHost.nuspec",
+        "repo.json"
+      ]
+    },
+    "Microsoft.Framework.DependencyInjection.Abstractions/1.0.0-beta7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "uz/EhU7eGLP1kQw+jRljKGKxwC4Upay4ojKDkzKTZTA3OQTBnMoSsqwL+2mKYsu1rAT3OWyNHSu5DYRh9XUYPQ==",
+      "files": [
+        "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.dll",
+        "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.xml",
+        "lib/dotnet/Microsoft.Framework.DependencyInjection.Abstractions.dll",
+        "lib/dotnet/Microsoft.Framework.DependencyInjection.Abstractions.xml",
+        "lib/net45/Microsoft.Framework.DependencyInjection.Abstractions.dll",
+        "lib/net45/Microsoft.Framework.DependencyInjection.Abstractions.xml",
+        "Microsoft.Framework.DependencyInjection.Abstractions.1.0.0-beta7.nupkg",
+        "Microsoft.Framework.DependencyInjection.Abstractions.1.0.0-beta7.nupkg.sha512",
+        "Microsoft.Framework.DependencyInjection.Abstractions.nuspec",
+        "repo.json"
+      ]
+    },
+    "Microsoft.Framework.Logging/1.0.0-beta7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "Os9opQuoB9EJ3pp4Vj5TWwaqAMG4D6WUdhg1WxVV3unc/rfhtN78SBaJXiTV59OUqt5NCI9JyeRJprtldPnNVA==",
+      "files": [
+        "lib/dnx451/Microsoft.Framework.Logging.dll",
+        "lib/dnx451/Microsoft.Framework.Logging.xml",
+        "lib/dotnet/Microsoft.Framework.Logging.dll",
+        "lib/dotnet/Microsoft.Framework.Logging.xml",
+        "lib/net45/Microsoft.Framework.Logging.dll",
+        "lib/net45/Microsoft.Framework.Logging.xml",
+        "Microsoft.Framework.Logging.1.0.0-beta7.nupkg",
+        "Microsoft.Framework.Logging.1.0.0-beta7.nupkg.sha512",
+        "Microsoft.Framework.Logging.nuspec",
+        "repo.json"
+      ]
+    },
+    "Microsoft.Framework.Logging.Abstractions/1.0.0-beta7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "Q0kQ4D25MlRbBOU1zbvhKU1L7vuEhPS9iBxVw4SnOGtCo1KhdY6TnWi0d6XNegJHErapRVJQJnFnaQT75RbQ8w==",
+      "files": [
+        "lib/dnx451/Microsoft.Framework.Logging.Abstractions.dll",
+        "lib/dnx451/Microsoft.Framework.Logging.Abstractions.xml",
+        "lib/dotnet/Microsoft.Framework.Logging.Abstractions.dll",
+        "lib/dotnet/Microsoft.Framework.Logging.Abstractions.xml",
+        "lib/net45/Microsoft.Framework.Logging.Abstractions.dll",
+        "lib/net45/Microsoft.Framework.Logging.Abstractions.xml",
+        "Microsoft.Framework.Logging.Abstractions.1.0.0-beta7.nupkg",
+        "Microsoft.Framework.Logging.Abstractions.1.0.0-beta7.nupkg.sha512",
+        "Microsoft.Framework.Logging.Abstractions.nuspec",
+        "repo.json"
+      ]
+    },
+    "Microsoft.OData.Core/6.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "6dV1/1ChQ7THn37o46QROTW25m888Vq7w8oBQuedZ4rqvi7QbQT9KX/ZiJMryZ8qy8i7gtc/fxVLy+fsOGjguQ==",
+      "files": [
+        "lib/dnx451/de/Microsoft.OData.Core.resources.dll",
+        "lib/dnx451/es/Microsoft.OData.Core.resources.dll",
+        "lib/dnx451/fr/Microsoft.OData.Core.resources.dll",
+        "lib/dnx451/it/Microsoft.OData.Core.resources.dll",
+        "lib/dnx451/ja/Microsoft.OData.Core.resources.dll",
+        "lib/dnx451/ko/Microsoft.OData.Core.resources.dll",
+        "lib/dnx451/Microsoft.OData.Core.dll",
+        "lib/dnx451/Microsoft.OData.Core.xml",
+        "lib/dnx451/ru/Microsoft.OData.Core.resources.dll",
+        "lib/dnx451/zh-Hans/Microsoft.OData.Core.resources.dll",
+        "lib/dnx451/zh-Hant/Microsoft.OData.Core.resources.dll",
+        "lib/dnxcore50/de/Microsoft.OData.Core.resources.dll",
+        "lib/dnxcore50/es/Microsoft.OData.Core.resources.dll",
+        "lib/dnxcore50/fr/Microsoft.OData.Core.resources.dll",
+        "lib/dnxcore50/it/Microsoft.OData.Core.resources.dll",
+        "lib/dnxcore50/ja/Microsoft.OData.Core.resources.dll",
+        "lib/dnxcore50/ko/Microsoft.OData.Core.resources.dll",
+        "lib/dnxcore50/Microsoft.OData.Core.dll",
+        "lib/dnxcore50/Microsoft.OData.Core.xml",
+        "lib/dnxcore50/ru/Microsoft.OData.Core.resources.dll",
+        "lib/dnxcore50/zh-Hans/Microsoft.OData.Core.resources.dll",
+        "lib/dnxcore50/zh-Hant/Microsoft.OData.Core.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/de/Microsoft.OData.Core.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/es/Microsoft.OData.Core.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/fr/Microsoft.OData.Core.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/it/Microsoft.OData.Core.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/ja/Microsoft.OData.Core.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/ko/Microsoft.OData.Core.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.OData.Core.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.OData.Core.xml",
+        "lib/portable-net40+sl5+wp8+win8+wpa/ru/Microsoft.OData.Core.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hans/Microsoft.OData.Core.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hant/Microsoft.OData.Core.resources.dll",
+        "Microsoft.OData.Core.6.13.0.nupkg",
+        "Microsoft.OData.Core.6.13.0.nupkg.sha512",
+        "Microsoft.OData.Core.nuspec"
+      ]
+    },
+    "Microsoft.OData.Edm/6.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "BMuH6sSduTmVO67X3SaaDSCIif4Jt/EsZEYB6r7E9SJz5ZJbqmdgZTCTBH3xCGUEN8i/E16pw3y2XAxg+bpZug==",
+      "files": [
+        "lib/dnx451/de/Microsoft.OData.Edm.resources.dll",
+        "lib/dnx451/es/Microsoft.OData.Edm.resources.dll",
+        "lib/dnx451/fr/Microsoft.OData.Edm.resources.dll",
+        "lib/dnx451/it/Microsoft.OData.Edm.resources.dll",
+        "lib/dnx451/ja/Microsoft.OData.Edm.resources.dll",
+        "lib/dnx451/ko/Microsoft.OData.Edm.resources.dll",
+        "lib/dnx451/Microsoft.OData.Edm.dll",
+        "lib/dnx451/Microsoft.OData.Edm.xml",
+        "lib/dnx451/ru/Microsoft.OData.Edm.resources.dll",
+        "lib/dnx451/zh-Hans/Microsoft.OData.Edm.resources.dll",
+        "lib/dnx451/zh-Hant/Microsoft.OData.Edm.resources.dll",
+        "lib/dnxcore50/de/Microsoft.OData.Edm.resources.dll",
+        "lib/dnxcore50/es/Microsoft.OData.Edm.resources.dll",
+        "lib/dnxcore50/fr/Microsoft.OData.Edm.resources.dll",
+        "lib/dnxcore50/it/Microsoft.OData.Edm.resources.dll",
+        "lib/dnxcore50/ja/Microsoft.OData.Edm.resources.dll",
+        "lib/dnxcore50/ko/Microsoft.OData.Edm.resources.dll",
+        "lib/dnxcore50/Microsoft.OData.Edm.dll",
+        "lib/dnxcore50/Microsoft.OData.Edm.xml",
+        "lib/dnxcore50/ru/Microsoft.OData.Edm.resources.dll",
+        "lib/dnxcore50/zh-Hans/Microsoft.OData.Edm.resources.dll",
+        "lib/dnxcore50/zh-Hant/Microsoft.OData.Edm.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/de/Microsoft.OData.Edm.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/es/Microsoft.OData.Edm.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/fr/Microsoft.OData.Edm.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/it/Microsoft.OData.Edm.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/ja/Microsoft.OData.Edm.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/ko/Microsoft.OData.Edm.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.OData.Edm.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.OData.Edm.xml",
+        "lib/portable-net40+sl5+wp8+win8+wpa/ru/Microsoft.OData.Edm.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hans/Microsoft.OData.Edm.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hant/Microsoft.OData.Edm.resources.dll",
+        "Microsoft.OData.Edm.6.13.0.nupkg",
+        "Microsoft.OData.Edm.6.13.0.nupkg.sha512",
+        "Microsoft.OData.Edm.nuspec"
+      ]
+    },
+    "Microsoft.Spatial/6.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "B1KZi/w1ptNPN8HzeRYg8LG4vyx5ulVnV0IJ4WWplU1vNpxDf7tKh1MV0KdZODc9mkh0Sc2WziznXd1AouW6SQ==",
+      "files": [
+        "lib/dnx451/de/Microsoft.Spatial.resources.dll",
+        "lib/dnx451/es/Microsoft.Spatial.resources.dll",
+        "lib/dnx451/fr/Microsoft.Spatial.resources.dll",
+        "lib/dnx451/it/Microsoft.Spatial.resources.dll",
+        "lib/dnx451/ja/Microsoft.Spatial.resources.dll",
+        "lib/dnx451/ko/Microsoft.Spatial.resources.dll",
+        "lib/dnx451/Microsoft.Spatial.dll",
+        "lib/dnx451/Microsoft.Spatial.xml",
+        "lib/dnx451/ru/Microsoft.Spatial.resources.dll",
+        "lib/dnx451/zh-Hans/Microsoft.Spatial.resources.dll",
+        "lib/dnx451/zh-Hant/Microsoft.Spatial.resources.dll",
+        "lib/dnxcore50/de/Microsoft.Spatial.resources.dll",
+        "lib/dnxcore50/es/Microsoft.Spatial.resources.dll",
+        "lib/dnxcore50/fr/Microsoft.Spatial.resources.dll",
+        "lib/dnxcore50/it/Microsoft.Spatial.resources.dll",
+        "lib/dnxcore50/ja/Microsoft.Spatial.resources.dll",
+        "lib/dnxcore50/ko/Microsoft.Spatial.resources.dll",
+        "lib/dnxcore50/Microsoft.Spatial.dll",
+        "lib/dnxcore50/Microsoft.Spatial.xml",
+        "lib/dnxcore50/ru/Microsoft.Spatial.resources.dll",
+        "lib/dnxcore50/zh-Hans/Microsoft.Spatial.resources.dll",
+        "lib/dnxcore50/zh-Hant/Microsoft.Spatial.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/de/Microsoft.Spatial.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/es/Microsoft.Spatial.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/fr/Microsoft.Spatial.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/it/Microsoft.Spatial.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/ja/Microsoft.Spatial.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/ko/Microsoft.Spatial.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.Spatial.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.Spatial.xml",
+        "lib/portable-net40+sl5+wp8+win8+wpa/ru/Microsoft.Spatial.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hans/Microsoft.Spatial.resources.dll",
+        "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hant/Microsoft.Spatial.resources.dll",
+        "Microsoft.Spatial.6.13.0.nupkg",
+        "Microsoft.Spatial.6.13.0.nupkg.sha512",
+        "Microsoft.Spatial.nuspec"
+      ]
+    },
+    "Moon.Contracts/1.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "lKauBMo19digINN/z1E3g/ZLd8HuCCBgINTDp41JWzhlzbYnhQIK7YEYUvF7khnTKCxT900OMUud0IXv0y0GZA==",
+      "files": [
+        "lib/dnx451/Moon.Contracts.dll",
+        "lib/dnx451/Moon.Contracts.xml",
+        "lib/dotnet/Moon.Contracts.dll",
+        "lib/dotnet/Moon.Contracts.xml",
+        "lib/net451/Moon.Contracts.dll",
+        "lib/net451/Moon.Contracts.xml",
+        "Moon.Contracts.1.2.2.nupkg",
+        "Moon.Contracts.1.2.2.nupkg.sha512",
+        "Moon.Contracts.nuspec"
+      ]
+    },
+    "Moon.Reflection/1.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "Fq6InzWJ2rX1BR7QgA8r8x1mdJUL/eQuM+Mvv5vhjEkA7ZTUHTXd0if07stit9Nxpf2Fzb8++nz2RMbti3MLtA==",
+      "files": [
+        "lib/dnx451/Moon.Reflection.dll",
+        "lib/dnx451/Moon.Reflection.xml",
+        "lib/dotnet/Moon.Reflection.dll",
+        "lib/dotnet/Moon.Reflection.xml",
+        "lib/net451/Moon.Reflection.dll",
+        "lib/net451/Moon.Reflection.xml",
+        "Moon.Reflection.1.2.2.nupkg",
+        "Moon.Reflection.1.2.2.nupkg.sha512",
+        "Moon.Reflection.nuspec"
+      ]
+    },
+    "Moon.Runtime/1.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "snglyODPaOlnhFT8F8jdSRN7yhmMIddvQoi22+LAFDgI4vrJhWxWTAoJhrpleylKbtiage1wAglOSmUcCYHyEg==",
+      "files": [
+        "lib/dnx451/Moon.Runtime.dll",
+        "lib/dnx451/Moon.Runtime.xml",
+        "lib/dotnet/Moon.Runtime.dll",
+        "lib/dotnet/Moon.Runtime.xml",
+        "lib/net451/Moon.Runtime.dll",
+        "lib/net451/Moon.Runtime.xml",
+        "Moon.Runtime.1.2.2.nupkg",
+        "Moon.Runtime.1.2.2.nupkg.sha512",
+        "Moon.Runtime.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/7.0.1": {
+      "type": "package",
+      "sha512": "q3V4KLetMLnt1gpAVWgtXnHjKs0UG/RalBc29u2ZKxd5t5Ze4JBL5WiiYIklJyK/5CRiIiNwigVQUo0FgbsuWA==",
+      "files": [
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.xml",
+        "Newtonsoft.Json.7.0.1.nupkg",
+        "Newtonsoft.Json.7.0.1.nupkg.sha512",
+        "Newtonsoft.Json.nuspec",
+        "tools/install.ps1"
+      ]
+    },
+    "System.Collections.Immutable/1.1.36": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "MOlivTIeAIQPPMUPWIIoMCvZczjFRLYUWSYwqi1szu8QPyeIbsaPeI+hpXe1DzTxNwnRnmfYaoToi6kXIfSPNg==",
+      "files": [
+        "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml",
+        "License-Stable.rtf",
+        "System.Collections.Immutable.1.1.36.nupkg",
+        "System.Collections.Immutable.1.1.36.nupkg.sha512",
+        "System.Collections.Immutable.nuspec"
+      ]
+    },
+    "System.Reflection.Metadata/1.1.0-alpha-00009": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "KiUpXjNsXH27WwbtS5szL8qagPTlIzxrwPAAatLsPqlgkZtCQuA+Ss1XqbTUJxv1KweaNh/q5jGFdUFV0HILRw==",
+      "files": [
+        "lib/portable-net45+win8/System.Reflection.Metadata.dll",
+        "lib/portable-net45+win8/System.Reflection.Metadata.pdb",
+        "lib/portable-net45+win8/System.Reflection.Metadata.xml",
+        "System.Reflection.Metadata.1.1.0-alpha-00009.nupkg",
+        "System.Reflection.Metadata.1.1.0-alpha-00009.nupkg.sha512",
+        "System.Reflection.Metadata.nuspec"
+      ]
+    },
+    "xunit/2.1.0-rc1-build3168": {
+      "type": "package",
+      "sha512": "dVnDKBCIpLE5GaxLALnbnobqtDyTTDKJSRbqhLGrx0Ptc/n3VQRUby/CDx6v+y7xNVPqtqj0XMeDO1DVT8E3tA==",
+      "files": [
+        "xunit.2.1.0-rc1-build3168.nupkg",
+        "xunit.2.1.0-rc1-build3168.nupkg.sha512",
+        "xunit.nuspec"
+      ]
+    },
+    "xunit.abstractions/2.0.0": {
+      "type": "package",
+      "sha512": "NAdxKQRzuLnCZ0g++x6i87/8rMBpQoRiRlRNLAqfODm2zJPbteHRoSER3DXfxnqrHXyBJT8rFaZ8uveBeQyaMA==",
+      "files": [
+        "lib/net35/xunit.abstractions.dll",
+        "lib/net35/xunit.abstractions.xml",
+        "lib/portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.abstractions.dll",
+        "lib/portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS/xunit.abstractions.xml",
+        "xunit.abstractions.2.0.0.nupkg",
+        "xunit.abstractions.2.0.0.nupkg.sha512",
+        "xunit.abstractions.nuspec"
+      ]
+    },
+    "xunit.assert/2.1.0-rc1-build3168": {
+      "type": "package",
+      "sha512": "lsTK4OaNGt5IOoKO3ZQ0gSFngjWSHZ5xNurNtLd0MxZv5onv66xlNmWBYCVNt4sZLknQ+RfiqYm1EZ9ZrA0SDw==",
+      "files": [
+        "lib/dotnet/xunit.assert.dll",
+        "lib/dotnet/xunit.assert.pdb",
+        "lib/dotnet/xunit.assert.xml",
+        "lib/portable-net45+win8+wp8+wpa81/xunit.assert.dll",
+        "lib/portable-net45+win8+wp8+wpa81/xunit.assert.pdb",
+        "lib/portable-net45+win8+wp8+wpa81/xunit.assert.xml",
+        "xunit.assert.2.1.0-rc1-build3168.nupkg",
+        "xunit.assert.2.1.0-rc1-build3168.nupkg.sha512",
+        "xunit.assert.nuspec"
+      ]
+    },
+    "xunit.core/2.1.0-rc1-build3168": {
+      "type": "package",
+      "sha512": "IcQo+pNEDYBC9HJfzY08k0NhLZMX8WXudrlhcrIAzkT2szhrLbGhUi1k6vU5n9crsVv+IxosvIH28kYf6/Z32w==",
+      "files": [
+        "build/_desktop/xunit.execution.desktop.dll",
+        "build/dnx451/_._",
+        "build/monoandroid/_._",
+        "build/monotouch/_._",
+        "build/net45/_._",
+        "build/portable-net45+win8+wp8+wpa81/xunit.core.props",
+        "build/win8/_._",
+        "build/win81/xunit.core.props",
+        "build/wp8/_._",
+        "build/wpa81/xunit.core.props",
+        "build/xamarinios/_._",
+        "xunit.core.2.1.0-rc1-build3168.nupkg",
+        "xunit.core.2.1.0-rc1-build3168.nupkg.sha512",
+        "xunit.core.nuspec"
+      ]
+    },
+    "xunit.extensibility.core/2.1.0-rc1-build3168": {
+      "type": "package",
+      "sha512": "8KZaq1mdeaiZxo1ScsGzhkeQRwLLS6+WIno+9gtnYccWmTjCJ/XSYz2fAAlB5mUeyw0vqqrFc+TfNZELs5QiZQ==",
+      "files": [
+        "lib/dotnet/xunit.core.dll",
+        "lib/dotnet/xunit.core.dll.tdnet",
+        "lib/dotnet/xunit.core.pdb",
+        "lib/dotnet/xunit.core.xml",
+        "lib/dotnet/xunit.runner.tdnet.dll",
+        "lib/dotnet/xunit.runner.utility.desktop.dll",
+        "lib/portable-net45+win8+wp8+wpa81/xunit.core.dll",
+        "lib/portable-net45+win8+wp8+wpa81/xunit.core.dll.tdnet",
+        "lib/portable-net45+win8+wp8+wpa81/xunit.core.pdb",
+        "lib/portable-net45+win8+wp8+wpa81/xunit.core.xml",
+        "lib/portable-net45+win8+wp8+wpa81/xunit.runner.tdnet.dll",
+        "lib/portable-net45+win8+wp8+wpa81/xunit.runner.utility.desktop.dll",
+        "xunit.extensibility.core.2.1.0-rc1-build3168.nupkg",
+        "xunit.extensibility.core.2.1.0-rc1-build3168.nupkg.sha512",
+        "xunit.extensibility.core.nuspec"
+      ]
+    },
+    "xunit.extensibility.execution/2.1.0-rc1-build3168": {
+      "type": "package",
+      "sha512": "1w0u3eB7i25hca60r/53oSVb0blMOEm2eVqvwTg9jhMSe/A9raj6UZAVzUnFtA3xLssP4K1udOGTC1qrZ9/VoA==",
+      "files": [
+        "lib/dnx451/xunit.execution.dotnet.dll",
+        "lib/dnx451/xunit.execution.dotnet.pdb",
+        "lib/dnx451/xunit.execution.dotnet.xml",
+        "lib/dotnet/xunit.execution.dotnet.dll",
+        "lib/dotnet/xunit.execution.dotnet.pdb",
+        "lib/dotnet/xunit.execution.dotnet.xml",
+        "lib/monoandroid/xunit.execution.dotnet.dll",
+        "lib/monoandroid/xunit.execution.dotnet.pdb",
+        "lib/monoandroid/xunit.execution.dotnet.xml",
+        "lib/monotouch/xunit.execution.dotnet.dll",
+        "lib/monotouch/xunit.execution.dotnet.pdb",
+        "lib/monotouch/xunit.execution.dotnet.xml",
+        "lib/net35/xunit.execution.desktop.dll",
+        "lib/net35/xunit.execution.desktop.pdb",
+        "lib/net35/xunit.execution.desktop.xml",
+        "lib/portable-net45+win8+wp8+wpa81/xunit.execution.dotnet.dll",
+        "lib/portable-net45+win8+wp8+wpa81/xunit.execution.dotnet.pdb",
+        "lib/portable-net45+win8+wp8+wpa81/xunit.execution.dotnet.xml",
+        "lib/win8/xunit.execution.dotnet.dll",
+        "lib/win8/xunit.execution.dotnet.pdb",
+        "lib/win8/xunit.execution.dotnet.xml",
+        "lib/wp8/xunit.execution.dotnet.dll",
+        "lib/wp8/xunit.execution.dotnet.pdb",
+        "lib/wp8/xunit.execution.dotnet.xml",
+        "lib/wpa81/xunit.execution.dotnet.dll",
+        "lib/wpa81/xunit.execution.dotnet.pdb",
+        "lib/wpa81/xunit.execution.dotnet.xml",
+        "lib/xamarinios/xunit.execution.dotnet.dll",
+        "lib/xamarinios/xunit.execution.dotnet.pdb",
+        "lib/xamarinios/xunit.execution.dotnet.xml",
+        "xunit.extensibility.execution.2.1.0-rc1-build3168.nupkg",
+        "xunit.extensibility.execution.2.1.0-rc1-build3168.nupkg.sha512",
+        "xunit.extensibility.execution.nuspec"
+      ]
+    },
+    "xunit.runner.dnx/2.1.0-beta5a-build188": {
+      "type": "package",
+      "sha512": "m48yZLJhQZm+o7EMbF1XhWhhcrqnVHvjoJJZivJTAjKheIFMY2DpQI7wL/HJx+bOlqlKJrJKlYwsrNH/taWRVg==",
+      "files": [
+        "lib/dnx451/xunit.runner.dnx.dll",
+        "lib/dnx451/xunit.runner.dnx.xml",
+        "lib/dnxcore50/xunit.runner.dnx.dll",
+        "lib/dnxcore50/xunit.runner.dnx.xml",
+        "repo.json",
+        "xunit.runner.dnx.2.1.0-beta5a-build188.nupkg",
+        "xunit.runner.dnx.2.1.0-beta5a-build188.nupkg.sha512",
+        "xunit.runner.dnx.nuspec"
+      ]
+    },
+    "xunit.runner.reporters/2.1.0": {
+      "type": "package",
+      "sha512": "ja0kJrvwSiho2TRFpfHfa+6tGJI5edcyD8fdekTkjn7Us17PbGqglIihRe8sR9YFAmS4ipEC8+7CXOM/b69ENQ==",
+      "files": [
+        "lib/dnx451/xunit.runner.reporters.dotnet.dll",
+        "lib/dotnet/xunit.runner.reporters.dotnet.dll",
+        "lib/net45/xunit.runner.reporters.desktop.dll",
+        "xunit.runner.reporters.2.1.0.nupkg",
+        "xunit.runner.reporters.2.1.0.nupkg.sha512",
+        "xunit.runner.reporters.nuspec"
+      ]
+    },
+    "xunit.runner.utility/2.1.0": {
+      "type": "package",
+      "sha512": "jJJHROwskIhdQuYw7exe7KaW20dOCa+lzV/lY7Zdh1ZZzdUPpScMi9ReJIutqiyjhemGF8V/GaMIPrcjyZ4ioQ==",
+      "files": [
+        "lib/dnx451/xunit.runner.utility.dotnet.dll",
+        "lib/dnx451/xunit.runner.utility.dotnet.pdb",
+        "lib/dnx451/xunit.runner.utility.dotnet.xml",
+        "lib/dotnet/xunit.runner.utility.dotnet.dll",
+        "lib/dotnet/xunit.runner.utility.dotnet.pdb",
+        "lib/dotnet/xunit.runner.utility.dotnet.xml",
+        "lib/net35/xunit.runner.utility.desktop.dll",
+        "lib/net35/xunit.runner.utility.desktop.pdb",
+        "lib/net35/xunit.runner.utility.desktop.xml",
+        "lib/portable-net45+win8+wp8+wpa81/xunit.runner.utility.dotnet.dll",
+        "lib/portable-net45+win8+wp8+wpa81/xunit.runner.utility.dotnet.pdb",
+        "lib/portable-net45+win8+wp8+wpa81/xunit.runner.utility.dotnet.xml",
+        "xunit.runner.utility.2.1.0.nupkg",
+        "xunit.runner.utility.2.1.0.nupkg.sha512",
+        "xunit.runner.utility.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "Moon.OData.Sql >= 1.0.0-ci",
+      "xunit.runner.dnx >= 2.1.0-beta5-*",
+      "xunit >= 2.1.0-rc1-*"
+    ],
+    "DNX,Version=v4.5.1": []
+  }
+}

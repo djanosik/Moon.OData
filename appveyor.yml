@@ -1,0 +1,11 @@
+version: 1.2.{build}
+init:
+  - git config --global core.autocrlf true
+build_script:
+  - fake.cmd Build
+artifacts:
+  - path: artifacts/**.nupkg
+    name: NuGet
+clone_depth: 1
+test: off
+deploy: off

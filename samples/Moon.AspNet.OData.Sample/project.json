@@ -1,0 +1,29 @@
+﻿{
+  "version": "1.0.0",
+  "webroot": "wwwroot",
+
+  "dependencies": {
+    "Microsoft.AspNet.Server.IIS": "1.0.0-beta7",
+    "Moon.AspNet.Mvc": "1.2.8",
+    "Moon.AspNet.OData": "1.0.0-ci",
+    "Moon.OData.Sql": "1.0.0-ci"
+  },
+
+  "frameworks": {
+    "dnx451": { },
+    "dnxcore50": { }
+  },
+
+  "publishExclude": [
+    "node_modules",
+    "bower_components",
+    "**.xproj",
+    "**.user",
+    "**.vspscc"
+  ],
+  "exclude": [
+    "wwwroot",
+    "node_modules",
+    "bower_components"
+  ]
+}

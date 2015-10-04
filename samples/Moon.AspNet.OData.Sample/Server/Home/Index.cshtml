@@ -1,0 +1,23 @@
+﻿@using Moon.OData.Sql
+@model ODataSqlQuery
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Moon.AspNet</title>
+</head>
+<body>
+    <ul>
+        <li>@Model.CommandText</li>
+        <li>
+            Arguments:
+            <ul>
+                @for (int i = 0; i < Model.Arguments.Length; i++)
+                {
+                    <li>@($"@p{i}"): @Model.Arguments[i]</li>
+                }
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
