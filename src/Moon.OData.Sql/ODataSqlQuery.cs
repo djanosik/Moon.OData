@@ -55,6 +55,16 @@ namespace Moon.OData.Sql
         public Func<PropertyInfo, string> ResolveColumn { get; set; }
 
         /// <summary>
+        /// Gets or sets whether the query options parser is case sensitive when matching names of
+        /// properties. The default value is true.
+        /// </summary>
+        public bool IsCaseSensitive
+        {
+            get { return options.IsCaseSensitive; }
+            set { options.IsCaseSensitive = !value; }
+        }
+
+        /// <summary>
         /// Gets the SQL command that can be used to select total number of results ($orderby, $top
         /// and $skip options are not applied). The value is null if $count option is false or is
         /// not defined.

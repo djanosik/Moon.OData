@@ -14,6 +14,11 @@ namespace Moon.OData
         Type EntityType { get; }
 
         /// <summary>
+        /// Gets or sets whether the parser is case sensitive when matching names of properties.
+        /// </summary>
+        bool IsCaseSensitive { get; set; }
+
+        /// <summary>
         /// Gets a parsed $count query option.
         /// </summary>
         bool? Count { get; }

@@ -73,7 +73,7 @@ namespace Moon.OData
 
         /// <summary>
         /// Gets or sets whether the parser is case sensitive when matching names of properties. The
-        /// default value is <c>true</c>.
+        /// default value is true.
         /// </summary>
         public bool IsCaseSensitive
         {
