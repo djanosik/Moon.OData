@@ -61,7 +61,7 @@ namespace Moon.OData.Sql
         public bool IsCaseSensitive
         {
             get { return options.IsCaseSensitive; }
-            set { options.IsCaseSensitive = !value; }
+            set { options.IsCaseSensitive = value; }
         }
 
         /// <summary>
