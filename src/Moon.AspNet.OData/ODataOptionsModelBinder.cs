@@ -5,6 +5,7 @@ using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Mvc.ModelBinding;
 using Moon.OData;
 using Moon.Reflection;
+using System.Reflection;
 
 namespace Moon.AspNet.OData
 {
@@ -33,8 +34,9 @@ namespace Moon.AspNet.OData
             ModelBindingResult result = null;
             var request = bindingContext.OperationBindingContext.HttpContext.Request;
             var modelType = bindingContext.ModelType;
+            var typeInfo = modelType.GetTypeInfo();
 
-            if (modelType.IsGenericType && modelType.GetGenericTypeDefinition() == typeof(ODataOptions<>))
+            if (typeInfo.IsGenericType && typeInfo.GetGenericTypeDefinition() == typeof(ODataOptions<>))
             {
                 var model = Class.Create(modelType, GetOptions(request), primitives);
                 result = new ModelBindingResult(model, bindingContext.ModelName, true);
