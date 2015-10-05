@@ -34,7 +34,7 @@ namespace Moon.AspNet.OData
             var request = bindingContext.OperationBindingContext.HttpContext.Request;
             var modelType = bindingContext.ModelType;
 
-            if (modelType.GetGenericTypeDefinition() == typeof(ODataOptions<>))
+            if (modelType.IsGenericType && modelType.GetGenericTypeDefinition() == typeof(ODataOptions<>))
             {
                 var model = Class.Create(modelType, GetOptions(request), primitives);
                 result = new ModelBindingResult(model, bindingContext.ModelName, true);
