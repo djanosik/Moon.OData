@@ -4,7 +4,7 @@ open Fake
 
 Target "SetupRuntime" (fun _ ->
     if (environVar "SKIP_DNX_INSTALL") <> "1" then
-        dnvm "install '1.0.0-beta7' -a default -runtime CLR -arch x86 -nonative"
+        dnvm "install '1.0.0-beta8' -a default -runtime CLR -arch x86 -nonative"
         dnvm "install default -runtime CoreCLR -arch x86 -nonative"
         
     dnvm "use default -runtime CLR -arch x86"

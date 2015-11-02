@@ -9,13 +9,17 @@ namespace Moon.AspNet.OData.Sample
     {
         public void Configure(IApplicationBuilder app)
         {
-            app.UseMvc();
+            app
+                .UseIISPlatformHandler()
+                .UseMvc();
         }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().AddOData();
-            services.AddSingleton<IRazorViewEngine, ServerViewEngine>();
+            services
+                .AddSingleton<IRazorViewEngine, ServerViewEngine>()
+                .AddMvc()
+                .AddOData();
         }
     }
 }

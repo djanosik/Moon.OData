@@ -3,27 +3,28 @@
   "webroot": "wwwroot",
 
   "dependencies": {
-    "Microsoft.AspNet.Server.IIS": "1.0.0-beta7",
-    "Moon.AspNet.Mvc": "1.2.8",
+    "Microsoft.AspNet.IISPlatformHandler": "1.0.0-beta8",
+    "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta8",
+    "Moon.AspNet.Mvc": "1.2.9",
     "Moon.AspNet.OData": "1.0.0-ci",
     "Moon.OData.Sql": "1.0.0-ci"
+  },
+
+  "commands": {
+    "web": "Microsoft.AspNet.Server.Kestrel"
   },
 
   "frameworks": {
     "dnx451": { },
     "dnxcore50": { }
   },
-
-  "publishExclude": [
-    "node_modules",
-    "bower_components",
-    "**.xproj",
-    "**.user",
-    "**.vspscc"
-  ],
+  
   "exclude": [
     "wwwroot",
-    "node_modules",
-    "bower_components"
+    "node_modules"
+  ],
+  "publishExclude": [
+    "**.user",
+    "**.vspscc"
   ]
 }

@@ -8,7 +8,7 @@
   "tags": [ "moontea", "odata", "query", "options" ],
 
   "dependencies": {
-    "Moon.Reflection": "1.2.2",
+    "Moon.Reflection": "1.2.3",
     "Microsoft.OData.Core": "6.13.0"
   },
 

@@ -2,8 +2,8 @@
   "version": "1.0.0-ci",
   "dependencies": {
     "Moon.OData.Sql": "1.0.0-ci",
-    "xunit.runner.dnx": "2.1.0-beta5-*",
-    "xunit": "2.1.0-rc1-*"
+    "xunit.runner.dnx": "2.1.0-beta6-*",
+    "xunit": "2.1.0"
   },
   "commands": {
     "test": "xunit.runner.dnx"
