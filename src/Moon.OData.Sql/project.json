@@ -13,10 +13,9 @@
 
   "frameworks": {
     "net451": { },
-    "dnx451": { },
     "dnxcore50": {
       "dependencies": {
-        "System.Text.RegularExpressions": "4.0.11-beta-23409"
+        "System.Text.RegularExpressions": "4.0.11-*"
       }
     }
   }

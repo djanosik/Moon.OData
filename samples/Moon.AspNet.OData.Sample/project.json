@@ -3,9 +3,9 @@
   "webroot": "wwwroot",
 
   "dependencies": {
-    "Microsoft.AspNet.IISPlatformHandler": "1.0.0-beta8",
-    "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta8",
-    "Moon.AspNet.Mvc": "1.2.9",
+    "Microsoft.AspNet.IISPlatformHandler": "1.0.0-*",
+    "Microsoft.AspNet.Server.Kestrel": "1.0.0-*",
+    "Moon.AspNet.Mvc": "1.2.12",
     "Moon.AspNet.OData": "1.0.0-ci",
     "Moon.OData.Sql": "1.0.0-ci"
   },
