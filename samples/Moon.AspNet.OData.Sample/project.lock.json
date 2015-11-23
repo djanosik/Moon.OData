@@ -1377,7 +1377,7 @@
           }
         }
       },
-      "Moon.AspNet/1.2.12": {
+      "Moon.AspNet/1.2.13": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Hosting": "1.0.0-rc1-final",
@@ -1392,17 +1392,17 @@
           "System.Core"
         ],
         "compile": {
-          "lib/dnx451/Moon.AspNet.dll": {}
+          "lib/net451/Moon.AspNet.dll": {}
         },
         "runtime": {
-          "lib/dnx451/Moon.AspNet.dll": {}
+          "lib/net451/Moon.AspNet.dll": {}
         }
       },
-      "Moon.AspNet.Mvc/1.2.12": {
+      "Moon.AspNet.Mvc/1.2.13": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
-          "Moon.AspNet": "1.2.12"
+          "Moon.AspNet": "1.2.13"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -1411,15 +1411,15 @@
           "System.Core"
         ],
         "compile": {
-          "lib/dnx451/Moon.AspNet.Mvc.dll": {}
+          "lib/net451/Moon.AspNet.Mvc.dll": {}
         },
         "runtime": {
-          "lib/dnx451/Moon.AspNet.Mvc.dll": {}
+          "lib/net451/Moon.AspNet.Mvc.dll": {}
         }
       },
       "Moon.AspNet.OData/1.0.0-ci": {
         "type": "project",
-        "framework": "DNX,Version=v4.5.1",
+        "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
           "Microsoft.AspNet.Mvc.Core": "6.0.0",
           "Moon.OData": "1.0.0-ci"
@@ -3002,7 +3002,7 @@
           "lib/DNXCore50/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Moon.AspNet/1.2.12": {
+      "Moon.AspNet/1.2.13": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Hosting": "1.0.0-rc1-final",
@@ -3011,23 +3011,23 @@
           "System.Net.Http": "4.0.1-beta-23516"
         },
         "compile": {
-          "lib/dnxcore50/Moon.AspNet.dll": {}
+          "lib/dotnet5.4/Moon.AspNet.dll": {}
         },
         "runtime": {
-          "lib/dnxcore50/Moon.AspNet.dll": {}
+          "lib/dotnet5.4/Moon.AspNet.dll": {}
         }
       },
-      "Moon.AspNet.Mvc/1.2.12": {
+      "Moon.AspNet.Mvc/1.2.13": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
-          "Moon.AspNet": "1.2.12"
+          "Moon.AspNet": "1.2.13"
         },
         "compile": {
-          "lib/dnxcore50/Moon.AspNet.Mvc.dll": {}
+          "lib/dotnet5.4/Moon.AspNet.Mvc.dll": {}
         },
         "runtime": {
-          "lib/dnxcore50/Moon.AspNet.Mvc.dll": {}
+          "lib/dotnet5.4/Moon.AspNet.Mvc.dll": {}
         }
       },
       "Moon.AspNet.OData/1.0.0-ci": {
@@ -3035,7 +3035,8 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Microsoft.AspNet.Mvc.Core": "6.0.0",
-          "Moon.OData": "1.0.0-ci"
+          "Moon.OData": "1.0.0-ci",
+          "System.Runtime": "4.0.21"
         }
       },
       "Moon.Contracts/1.2.4": {
@@ -5379,7 +5380,7 @@
           }
         }
       },
-      "Moon.AspNet/1.2.12": {
+      "Moon.AspNet/1.2.13": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Hosting": "1.0.0-rc1-final",
@@ -5394,17 +5395,17 @@
           "System.Core"
         ],
         "compile": {
-          "lib/dnx451/Moon.AspNet.dll": {}
+          "lib/net451/Moon.AspNet.dll": {}
         },
         "runtime": {
-          "lib/dnx451/Moon.AspNet.dll": {}
+          "lib/net451/Moon.AspNet.dll": {}
         }
       },
-      "Moon.AspNet.Mvc/1.2.12": {
+      "Moon.AspNet.Mvc/1.2.13": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
-          "Moon.AspNet": "1.2.12"
+          "Moon.AspNet": "1.2.13"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -5413,15 +5414,15 @@
           "System.Core"
         ],
         "compile": {
-          "lib/dnx451/Moon.AspNet.Mvc.dll": {}
+          "lib/net451/Moon.AspNet.Mvc.dll": {}
         },
         "runtime": {
-          "lib/dnx451/Moon.AspNet.Mvc.dll": {}
+          "lib/net451/Moon.AspNet.Mvc.dll": {}
         }
       },
       "Moon.AspNet.OData/1.0.0-ci": {
         "type": "project",
-        "framework": "DNX,Version=v4.5.1",
+        "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
           "Microsoft.AspNet.Mvc.Core": "6.0.0",
           "Moon.OData": "1.0.0-ci"
@@ -7110,7 +7111,7 @@
           }
         }
       },
-      "Moon.AspNet/1.2.12": {
+      "Moon.AspNet/1.2.13": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Hosting": "1.0.0-rc1-final",
@@ -7125,17 +7126,17 @@
           "System.Core"
         ],
         "compile": {
-          "lib/dnx451/Moon.AspNet.dll": {}
+          "lib/net451/Moon.AspNet.dll": {}
         },
         "runtime": {
-          "lib/dnx451/Moon.AspNet.dll": {}
+          "lib/net451/Moon.AspNet.dll": {}
         }
       },
-      "Moon.AspNet.Mvc/1.2.12": {
+      "Moon.AspNet.Mvc/1.2.13": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
-          "Moon.AspNet": "1.2.12"
+          "Moon.AspNet": "1.2.13"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -7144,15 +7145,15 @@
           "System.Core"
         ],
         "compile": {
-          "lib/dnx451/Moon.AspNet.Mvc.dll": {}
+          "lib/net451/Moon.AspNet.Mvc.dll": {}
         },
         "runtime": {
-          "lib/dnx451/Moon.AspNet.Mvc.dll": {}
+          "lib/net451/Moon.AspNet.Mvc.dll": {}
         }
       },
       "Moon.AspNet.OData/1.0.0-ci": {
         "type": "project",
-        "framework": "DNX,Version=v4.5.1",
+        "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
           "Microsoft.AspNet.Mvc.Core": "6.0.0",
           "Moon.OData": "1.0.0-ci"
@@ -8744,7 +8745,7 @@
           "lib/DNXCore50/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Moon.AspNet/1.2.12": {
+      "Moon.AspNet/1.2.13": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Hosting": "1.0.0-rc1-final",
@@ -8753,23 +8754,23 @@
           "System.Net.Http": "4.0.1-beta-23516"
         },
         "compile": {
-          "lib/dnxcore50/Moon.AspNet.dll": {}
+          "lib/dotnet5.4/Moon.AspNet.dll": {}
         },
         "runtime": {
-          "lib/dnxcore50/Moon.AspNet.dll": {}
+          "lib/dotnet5.4/Moon.AspNet.dll": {}
         }
       },
-      "Moon.AspNet.Mvc/1.2.12": {
+      "Moon.AspNet.Mvc/1.2.13": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
-          "Moon.AspNet": "1.2.12"
+          "Moon.AspNet": "1.2.13"
         },
         "compile": {
-          "lib/dnxcore50/Moon.AspNet.Mvc.dll": {}
+          "lib/dotnet5.4/Moon.AspNet.Mvc.dll": {}
         },
         "runtime": {
-          "lib/dnxcore50/Moon.AspNet.Mvc.dll": {}
+          "lib/dotnet5.4/Moon.AspNet.Mvc.dll": {}
         }
       },
       "Moon.AspNet.OData/1.0.0-ci": {
@@ -8777,7 +8778,8 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Microsoft.AspNet.Mvc.Core": "6.0.0",
-          "Moon.OData": "1.0.0-ci"
+          "Moon.OData": "1.0.0-ci",
+          "System.Runtime": "4.0.21"
         }
       },
       "Moon.Contracts/1.2.4": {
@@ -11477,7 +11479,7 @@
           "lib/DNXCore50/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Moon.AspNet/1.2.12": {
+      "Moon.AspNet/1.2.13": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Hosting": "1.0.0-rc1-final",
@@ -11486,23 +11488,23 @@
           "System.Net.Http": "4.0.1-beta-23516"
         },
         "compile": {
-          "lib/dnxcore50/Moon.AspNet.dll": {}
+          "lib/dotnet5.4/Moon.AspNet.dll": {}
         },
         "runtime": {
-          "lib/dnxcore50/Moon.AspNet.dll": {}
+          "lib/dotnet5.4/Moon.AspNet.dll": {}
         }
       },
-      "Moon.AspNet.Mvc/1.2.12": {
+      "Moon.AspNet.Mvc/1.2.13": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
-          "Moon.AspNet": "1.2.12"
+          "Moon.AspNet": "1.2.13"
         },
         "compile": {
-          "lib/dnxcore50/Moon.AspNet.Mvc.dll": {}
+          "lib/dotnet5.4/Moon.AspNet.Mvc.dll": {}
         },
         "runtime": {
-          "lib/dnxcore50/Moon.AspNet.Mvc.dll": {}
+          "lib/dotnet5.4/Moon.AspNet.Mvc.dll": {}
         }
       },
       "Moon.AspNet.OData/1.0.0-ci": {
@@ -11510,7 +11512,8 @@
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
           "Microsoft.AspNet.Mvc.Core": "6.0.0",
-          "Moon.OData": "1.0.0-ci"
+          "Moon.OData": "1.0.0-ci",
+          "System.Runtime": "4.0.21"
         }
       },
       "Moon.Contracts/1.2.4": {
@@ -14160,31 +14163,31 @@
         "ref/net46/Microsoft.Win32.Registry.dll"
       ]
     },
-    "Moon.AspNet/1.2.12": {
+    "Moon.AspNet/1.2.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "+MAdmu/ktz+LqRZ6+LcOFI+cgBZXeEExHjDXFppzybiztkvSrsDKnfIGCJTnc8UD/M1fw5Oa9Hq+vGgN1Em6wA==",
+      "sha512": "cYrKlXu9PBKLsMgqXARmo7AG0wRLm+c9due3qL61tK0Li1O09OelMSOR8zOwNNGvEuAbq2tJNo02ofDMcA2bog==",
       "files": [
-        "lib/dnx451/Moon.AspNet.dll",
-        "lib/dnx451/Moon.AspNet.xml",
-        "lib/dnxcore50/Moon.AspNet.dll",
-        "lib/dnxcore50/Moon.AspNet.xml",
-        "Moon.AspNet.1.2.12.nupkg",
-        "Moon.AspNet.1.2.12.nupkg.sha512",
+        "lib/dotnet5.4/Moon.AspNet.dll",
+        "lib/dotnet5.4/Moon.AspNet.xml",
+        "lib/net451/Moon.AspNet.dll",
+        "lib/net451/Moon.AspNet.xml",
+        "Moon.AspNet.1.2.13.nupkg",
+        "Moon.AspNet.1.2.13.nupkg.sha512",
         "Moon.AspNet.nuspec"
       ]
     },
-    "Moon.AspNet.Mvc/1.2.12": {
+    "Moon.AspNet.Mvc/1.2.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "cAWYRzfPOXyBgV5klJ+aidBDPlRK0eIu8GktMW+3k3FBKjjB3hhkhG4U69MTsa9dgaLEeoDbzIvmIwIJhnwRiQ==",
+      "sha512": "zHrUp4ZyuZNDOb/LzANuHBkinxyWeArI1FQe8ifCai7Divl4tKCJbKu6vf9enuiI8TS2FC0sBC/5Cjky2VbUGQ==",
       "files": [
-        "lib/dnx451/Moon.AspNet.Mvc.dll",
-        "lib/dnx451/Moon.AspNet.Mvc.xml",
-        "lib/dnxcore50/Moon.AspNet.Mvc.dll",
-        "lib/dnxcore50/Moon.AspNet.Mvc.xml",
-        "Moon.AspNet.Mvc.1.2.12.nupkg",
-        "Moon.AspNet.Mvc.1.2.12.nupkg.sha512",
+        "lib/dotnet5.4/Moon.AspNet.Mvc.dll",
+        "lib/dotnet5.4/Moon.AspNet.Mvc.xml",
+        "lib/net451/Moon.AspNet.Mvc.dll",
+        "lib/net451/Moon.AspNet.Mvc.xml",
+        "Moon.AspNet.Mvc.1.2.13.nupkg",
+        "Moon.AspNet.Mvc.1.2.13.nupkg.sha512",
         "Moon.AspNet.Mvc.nuspec"
       ]
     },
@@ -18036,7 +18039,7 @@
     "": [
       "Microsoft.AspNet.IISPlatformHandler >= 1.0.0-*",
       "Microsoft.AspNet.Server.Kestrel >= 1.0.0-*",
-      "Moon.AspNet.Mvc >= 1.2.12",
+      "Moon.AspNet.Mvc >= 1.2.13",
       "Moon.AspNet.OData >= 1.0.0-ci",
       "Moon.OData.Sql >= 1.0.0-ci"
     ],
