@@ -1,33 +1,63 @@
 ﻿using System.Collections.Generic;
+using FluentAssertions;
+using Moon.Testing;
 using Xunit;
 
 namespace Moon.OData.Sql.Tests
 {
-    public class WhereClauseTests
+    public class WhereClauseTests : TestSetup
     {
-        readonly IList<object> arguments = new List<object>();
+        ODataOptions<Model> options;
+        IList<object> arguments;
+        string result;
 
-        [Fact]
-        public void Build_WhenFilterIsNotDefined_RetrunsEmptyString()
+        public WhereClauseTests()
         {
-            var options = new ODataOptions<Model>(new Dictionary<string, string> { });
-            Assert.True(WhereClause.Build("WHERE", arguments, options).Length == 0);
+            "Given the arguments"
+                .x(() => arguments = new List<object>());
         }
 
         [Fact]
-        public void Build_WhenFilterIsDefined_RetrunsWhereClause()
+        public void BuildingClauseWhenFilterIsNotDefined()
         {
-            var options = new ODataOptions<Model>(new Dictionary<string, string>
-            {
-                ["$filter"] = "Id eq 1 and (Name eq 'text' or tolower(Name) eq 'other') and Name ne null"
-            });
+            "And the options"
+                .x(() => options = new ODataOptions<Model>(new Dictionary<string, string> { }));
 
-            var result = WhereClause.Build("WHERE", arguments, options);
+            "When I build a WHERE clause"
+                .x(() => result = WhereClause.Build("WHERE", arguments, options));
 
-            Assert.Equal("WHERE ((([Id] = @p0) AND (([Name] = @p1) OR (LOWER([Name]) = @p2))) AND ([Name] IS NOT NULL))", result);
-            Assert.Equal(1L, arguments[0]);
-            Assert.Equal("text", arguments[1]);
-            Assert.Equal("other", arguments[2]);
+            "Then it should return empty string"
+                .x(() =>
+                {
+                    result.Should().BeEmpty();
+                });
+        }
+
+        [Fact]
+        public void BuildingClauseWhenFilterIsDefined()
+        {
+            "And the options"
+                .x(() => options = new ODataOptions<Model>(new Dictionary<string, string>
+                {
+                    ["$filter"] = "Id eq 1 and (Name eq 'text' or tolower(Name) eq 'other') and Name ne null"
+                }));
+
+            "When I build a WHERE clause"
+                .x(() => result = WhereClause.Build("WHERE", arguments, options));
+
+            "Then it should return WHERE clause"
+                .x(() =>
+                {
+                    result.Should().Be("WHERE ((([Id] = @p0) AND (([Name] = @p1) OR (LOWER([Name]) = @p2))) AND ([Name] IS NOT NULL))");
+                });
+
+            "And it should populate arguments"
+                .x(() =>
+                {
+                    arguments[0].Should().Be(1L);
+                    arguments[1].Should().Be("text");
+                    arguments[2].Should().Be("other");
+                });
         }
     }
 }

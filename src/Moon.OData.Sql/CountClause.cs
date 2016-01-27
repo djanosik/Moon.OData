@@ -113,8 +113,5 @@ namespace Moon.OData.Sql
                 return builder.ToString();
             });
         }
-
-        string Either(string value, Func<string> build)
-            => string.IsNullOrEmpty(value) ? build() : value;
     }
 }

@@ -1,38 +1,68 @@
 ﻿using System.Collections.Generic;
+using FluentAssertions;
+using Moon.Testing;
 using Xunit;
 
 namespace Moon.OData.Sql.Tests
 {
-    public class TopClauseTests
+    public class TopClauseTests : TestSetup
     {
+        ODataOptions<Model> options;
+        string result;
+
         [Fact]
-        public void Build_WhenTopIsNotDefined_RetrunsEmptyString()
+        public void BuildingClauseWhenTopIsNotDefined()
         {
-            var options = new ODataOptions<Model>(new Dictionary<string, string> { });
-            Assert.True(TopClause.Build(options).Length == 0);
+            "Given the options"
+                .x(() => options = new ODataOptions<Model>(new Dictionary<string, string> { }));
+
+            "When I build a TOP clause"
+                .x(() => result = TopClause.Build(options));
+
+            "Then it should return empty string"
+                .x(() =>
+                {
+                    result.Should().BeEmpty();
+                });
         }
 
         [Fact]
-        public void Build_WhenOnlyTopIsDefined_RetrunsTopClause()
+        public void BuildClauseWhenOnlyTopIsDefined()
         {
-            var options = new ODataOptions<Model>(new Dictionary<string, string>
-            {
-                ["$top"] = "20"
-            });
+            "Given the options"
+                .x(() => options = new ODataOptions<Model>(new Dictionary<string, string>
+                {
+                    ["$top"] = "20"
+                }));
 
-            Assert.Equal("TOP(20)", TopClause.Build(options));
+            "When I build a TOP clause"
+                .x(() => result = TopClause.Build(options));
+
+            "Then it should return TOP clause"
+                .x(() =>
+                {
+                    result.Should().Be("TOP(20)");
+                });
         }
 
         [Fact]
-        public void Build_WhenTopAndSkipAreBothDefined_ReturnsEmptyString()
+        public void BuildingClauseWhenTopAndSkipAreDefined()
         {
-            var options = new ODataOptions<Model>(new Dictionary<string, string>
-            {
-                ["$top"] = "20",
-                ["$skip"] = "5"
-            });
+            "Given the options"
+                .x(() => options = new ODataOptions<Model>(new Dictionary<string, string>
+                {
+                    ["$top"] = "20",
+                    ["$skip"] = "5"
+                }));
 
-            Assert.True(TopClause.Build(options).Length == 0);
+            "When I build a TOP clause"
+                .x(() => result = TopClause.Build(options));
+
+            "Then it should return empty string"
+                .x(() =>
+                {
+                    result.Should().BeEmpty();
+                });
         }
     }
 }

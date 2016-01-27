@@ -2,12 +2,12 @@
   "locked": false,
   "version": 2,
   "targets": {
-    ".NETFramework,Version=v4.5.1": {
-      "Microsoft.OData.Core/6.13.0": {
+    ".NETFramework,Version=v4.6": {
+      "Microsoft.OData.Core/6.14.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.OData.Edm": "[6.13.0]",
-          "Microsoft.Spatial": "[6.13.0]"
+          "Microsoft.OData.Edm": "[6.14.0]",
+          "Microsoft.Spatial": "[6.14.0]"
         },
         "compile": {
           "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.OData.Core.dll": {}
@@ -45,7 +45,7 @@
           }
         }
       },
-      "Microsoft.OData.Edm/6.13.0": {
+      "Microsoft.OData.Edm/6.14.0": {
         "type": "package",
         "compile": {
           "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.OData.Edm.dll": {}
@@ -83,7 +83,7 @@
           }
         }
       },
-      "Microsoft.Spatial/6.13.0": {
+      "Microsoft.Spatial/6.14.0": {
         "type": "package",
         "compile": {
           "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.Spatial.dll": {}
@@ -121,7 +121,7 @@
           }
         }
       },
-      "Moon.Contracts/1.2.4": {
+      "Moon.Contracts/2.0.1": {
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -130,16 +130,16 @@
           "System.Core"
         ],
         "compile": {
-          "lib/net451/Moon.Contracts.dll": {}
+          "lib/net46/Moon.Contracts.dll": {}
         },
         "runtime": {
-          "lib/net451/Moon.Contracts.dll": {}
+          "lib/net46/Moon.Contracts.dll": {}
         }
       },
-      "Moon.Reflection/1.2.4": {
+      "Moon.Reflection/2.0.1": {
         "type": "package",
         "dependencies": {
-          "Moon.Runtime": "1.2.4"
+          "Moon.Runtime": "2.0.1"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -148,16 +148,16 @@
           "System.Core"
         ],
         "compile": {
-          "lib/net451/Moon.Reflection.dll": {}
+          "lib/net46/Moon.Reflection.dll": {}
         },
         "runtime": {
-          "lib/net451/Moon.Reflection.dll": {}
+          "lib/net46/Moon.Reflection.dll": {}
         }
       },
-      "Moon.Runtime/1.2.4": {
+      "Moon.Runtime/2.0.1": {
         "type": "package",
         "dependencies": {
-          "Moon.Contracts": "1.2.4"
+          "Moon.Contracts": "2.0.1"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -166,19 +166,19 @@
           "System.Core"
         ],
         "compile": {
-          "lib/net451/Moon.Runtime.dll": {}
+          "lib/net46/Moon.Runtime.dll": {}
         },
         "runtime": {
-          "lib/net451/Moon.Runtime.dll": {}
+          "lib/net46/Moon.Runtime.dll": {}
         }
       }
     },
     "DNXCore,Version=v5.0": {
-      "Microsoft.OData.Core/6.13.0": {
+      "Microsoft.OData.Core/6.14.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.OData.Edm": "[6.13.0]",
-          "Microsoft.Spatial": "[6.13.0]"
+          "Microsoft.OData.Edm": "[6.14.0]",
+          "Microsoft.Spatial": "[6.14.0]"
         },
         "compile": {
           "lib/dnxcore50/Microsoft.OData.Core.dll": {}
@@ -216,7 +216,7 @@
           }
         }
       },
-      "Microsoft.OData.Edm/6.13.0": {
+      "Microsoft.OData.Edm/6.14.0": {
         "type": "package",
         "compile": {
           "lib/dnxcore50/Microsoft.OData.Edm.dll": {}
@@ -254,7 +254,7 @@
           }
         }
       },
-      "Microsoft.Spatial/6.13.0": {
+      "Microsoft.Spatial/6.14.0": {
         "type": "package",
         "compile": {
           "lib/dnxcore50/Microsoft.Spatial.dll": {}
@@ -292,7 +292,7 @@
           }
         }
       },
-      "Moon.Contracts/1.2.4": {
+      "Moon.Contracts/2.0.1": {
         "type": "package",
         "dependencies": {
           "System.Diagnostics.Tools": "4.0.1-beta-23516",
@@ -306,10 +306,10 @@
           "lib/dotnet5.4/Moon.Contracts.dll": {}
         }
       },
-      "Moon.Reflection/1.2.4": {
+      "Moon.Reflection/2.0.1": {
         "type": "package",
         "dependencies": {
-          "Moon.Runtime": "1.2.4",
+          "Moon.Runtime": "2.0.1",
           "System.Linq.Expressions": "4.0.11-beta-23516",
           "System.Reflection.Extensions": "4.0.1-beta-23516"
         },
@@ -320,10 +320,10 @@
           "lib/dotnet5.4/Moon.Reflection.dll": {}
         }
       },
-      "Moon.Runtime/1.2.4": {
+      "Moon.Runtime/2.0.1": {
         "type": "package",
         "dependencies": {
-          "Moon.Contracts": "1.2.4",
+          "Moon.Contracts": "2.0.1",
           "System.Runtime.Extensions": "4.0.11-beta-23516"
         },
         "compile": {
@@ -530,12 +530,12 @@
         }
       }
     },
-    ".NETFramework,Version=v4.5.1/win7-x86": {
-      "Microsoft.OData.Core/6.13.0": {
+    ".NETFramework,Version=v4.6/win7-x86": {
+      "Microsoft.OData.Core/6.14.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.OData.Edm": "[6.13.0]",
-          "Microsoft.Spatial": "[6.13.0]"
+          "Microsoft.OData.Edm": "[6.14.0]",
+          "Microsoft.Spatial": "[6.14.0]"
         },
         "compile": {
           "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.OData.Core.dll": {}
@@ -573,7 +573,7 @@
           }
         }
       },
-      "Microsoft.OData.Edm/6.13.0": {
+      "Microsoft.OData.Edm/6.14.0": {
         "type": "package",
         "compile": {
           "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.OData.Edm.dll": {}
@@ -611,7 +611,7 @@
           }
         }
       },
-      "Microsoft.Spatial/6.13.0": {
+      "Microsoft.Spatial/6.14.0": {
         "type": "package",
         "compile": {
           "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.Spatial.dll": {}
@@ -649,7 +649,7 @@
           }
         }
       },
-      "Moon.Contracts/1.2.4": {
+      "Moon.Contracts/2.0.1": {
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -658,16 +658,16 @@
           "System.Core"
         ],
         "compile": {
-          "lib/net451/Moon.Contracts.dll": {}
+          "lib/net46/Moon.Contracts.dll": {}
         },
         "runtime": {
-          "lib/net451/Moon.Contracts.dll": {}
+          "lib/net46/Moon.Contracts.dll": {}
         }
       },
-      "Moon.Reflection/1.2.4": {
+      "Moon.Reflection/2.0.1": {
         "type": "package",
         "dependencies": {
-          "Moon.Runtime": "1.2.4"
+          "Moon.Runtime": "2.0.1"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -676,16 +676,16 @@
           "System.Core"
         ],
         "compile": {
-          "lib/net451/Moon.Reflection.dll": {}
+          "lib/net46/Moon.Reflection.dll": {}
         },
         "runtime": {
-          "lib/net451/Moon.Reflection.dll": {}
+          "lib/net46/Moon.Reflection.dll": {}
         }
       },
-      "Moon.Runtime/1.2.4": {
+      "Moon.Runtime/2.0.1": {
         "type": "package",
         "dependencies": {
-          "Moon.Contracts": "1.2.4"
+          "Moon.Contracts": "2.0.1"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -694,19 +694,19 @@
           "System.Core"
         ],
         "compile": {
-          "lib/net451/Moon.Runtime.dll": {}
+          "lib/net46/Moon.Runtime.dll": {}
         },
         "runtime": {
-          "lib/net451/Moon.Runtime.dll": {}
+          "lib/net46/Moon.Runtime.dll": {}
         }
       }
     },
-    ".NETFramework,Version=v4.5.1/win7-x64": {
-      "Microsoft.OData.Core/6.13.0": {
+    ".NETFramework,Version=v4.6/win7-x64": {
+      "Microsoft.OData.Core/6.14.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.OData.Edm": "[6.13.0]",
-          "Microsoft.Spatial": "[6.13.0]"
+          "Microsoft.OData.Edm": "[6.14.0]",
+          "Microsoft.Spatial": "[6.14.0]"
         },
         "compile": {
           "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.OData.Core.dll": {}
@@ -744,7 +744,7 @@
           }
         }
       },
-      "Microsoft.OData.Edm/6.13.0": {
+      "Microsoft.OData.Edm/6.14.0": {
         "type": "package",
         "compile": {
           "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.OData.Edm.dll": {}
@@ -782,7 +782,7 @@
           }
         }
       },
-      "Microsoft.Spatial/6.13.0": {
+      "Microsoft.Spatial/6.14.0": {
         "type": "package",
         "compile": {
           "lib/portable-net40+sl5+wp8+win8+wpa/Microsoft.Spatial.dll": {}
@@ -820,7 +820,7 @@
           }
         }
       },
-      "Moon.Contracts/1.2.4": {
+      "Moon.Contracts/2.0.1": {
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -829,16 +829,16 @@
           "System.Core"
         ],
         "compile": {
-          "lib/net451/Moon.Contracts.dll": {}
+          "lib/net46/Moon.Contracts.dll": {}
         },
         "runtime": {
-          "lib/net451/Moon.Contracts.dll": {}
+          "lib/net46/Moon.Contracts.dll": {}
         }
       },
-      "Moon.Reflection/1.2.4": {
+      "Moon.Reflection/2.0.1": {
         "type": "package",
         "dependencies": {
-          "Moon.Runtime": "1.2.4"
+          "Moon.Runtime": "2.0.1"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -847,16 +847,16 @@
           "System.Core"
         ],
         "compile": {
-          "lib/net451/Moon.Reflection.dll": {}
+          "lib/net46/Moon.Reflection.dll": {}
         },
         "runtime": {
-          "lib/net451/Moon.Reflection.dll": {}
+          "lib/net46/Moon.Reflection.dll": {}
         }
       },
-      "Moon.Runtime/1.2.4": {
+      "Moon.Runtime/2.0.1": {
         "type": "package",
         "dependencies": {
-          "Moon.Contracts": "1.2.4"
+          "Moon.Contracts": "2.0.1"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -865,19 +865,19 @@
           "System.Core"
         ],
         "compile": {
-          "lib/net451/Moon.Runtime.dll": {}
+          "lib/net46/Moon.Runtime.dll": {}
         },
         "runtime": {
-          "lib/net451/Moon.Runtime.dll": {}
+          "lib/net46/Moon.Runtime.dll": {}
         }
       }
     },
     "DNXCore,Version=v5.0/win7-x86": {
-      "Microsoft.OData.Core/6.13.0": {
+      "Microsoft.OData.Core/6.14.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.OData.Edm": "[6.13.0]",
-          "Microsoft.Spatial": "[6.13.0]"
+          "Microsoft.OData.Edm": "[6.14.0]",
+          "Microsoft.Spatial": "[6.14.0]"
         },
         "compile": {
           "lib/dnxcore50/Microsoft.OData.Core.dll": {}
@@ -915,7 +915,7 @@
           }
         }
       },
-      "Microsoft.OData.Edm/6.13.0": {
+      "Microsoft.OData.Edm/6.14.0": {
         "type": "package",
         "compile": {
           "lib/dnxcore50/Microsoft.OData.Edm.dll": {}
@@ -953,7 +953,7 @@
           }
         }
       },
-      "Microsoft.Spatial/6.13.0": {
+      "Microsoft.Spatial/6.14.0": {
         "type": "package",
         "compile": {
           "lib/dnxcore50/Microsoft.Spatial.dll": {}
@@ -991,7 +991,7 @@
           }
         }
       },
-      "Moon.Contracts/1.2.4": {
+      "Moon.Contracts/2.0.1": {
         "type": "package",
         "dependencies": {
           "System.Diagnostics.Tools": "4.0.1-beta-23516",
@@ -1005,10 +1005,10 @@
           "lib/dotnet5.4/Moon.Contracts.dll": {}
         }
       },
-      "Moon.Reflection/1.2.4": {
+      "Moon.Reflection/2.0.1": {
         "type": "package",
         "dependencies": {
-          "Moon.Runtime": "1.2.4",
+          "Moon.Runtime": "2.0.1",
           "System.Linq.Expressions": "4.0.11-beta-23516",
           "System.Reflection.Extensions": "4.0.1-beta-23516"
         },
@@ -1019,10 +1019,10 @@
           "lib/dotnet5.4/Moon.Reflection.dll": {}
         }
       },
-      "Moon.Runtime/1.2.4": {
+      "Moon.Runtime/2.0.1": {
         "type": "package",
         "dependencies": {
-          "Moon.Contracts": "1.2.4",
+          "Moon.Contracts": "2.0.1",
           "System.Runtime.Extensions": "4.0.11-beta-23516"
         },
         "compile": {
@@ -1347,11 +1347,11 @@
       }
     },
     "DNXCore,Version=v5.0/win7-x64": {
-      "Microsoft.OData.Core/6.13.0": {
+      "Microsoft.OData.Core/6.14.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.OData.Edm": "[6.13.0]",
-          "Microsoft.Spatial": "[6.13.0]"
+          "Microsoft.OData.Edm": "[6.14.0]",
+          "Microsoft.Spatial": "[6.14.0]"
         },
         "compile": {
           "lib/dnxcore50/Microsoft.OData.Core.dll": {}
@@ -1389,7 +1389,7 @@
           }
         }
       },
-      "Microsoft.OData.Edm/6.13.0": {
+      "Microsoft.OData.Edm/6.14.0": {
         "type": "package",
         "compile": {
           "lib/dnxcore50/Microsoft.OData.Edm.dll": {}
@@ -1427,7 +1427,7 @@
           }
         }
       },
-      "Microsoft.Spatial/6.13.0": {
+      "Microsoft.Spatial/6.14.0": {
         "type": "package",
         "compile": {
           "lib/dnxcore50/Microsoft.Spatial.dll": {}
@@ -1465,7 +1465,7 @@
           }
         }
       },
-      "Moon.Contracts/1.2.4": {
+      "Moon.Contracts/2.0.1": {
         "type": "package",
         "dependencies": {
           "System.Diagnostics.Tools": "4.0.1-beta-23516",
@@ -1479,10 +1479,10 @@
           "lib/dotnet5.4/Moon.Contracts.dll": {}
         }
       },
-      "Moon.Reflection/1.2.4": {
+      "Moon.Reflection/2.0.1": {
         "type": "package",
         "dependencies": {
-          "Moon.Runtime": "1.2.4",
+          "Moon.Runtime": "2.0.1",
           "System.Linq.Expressions": "4.0.11-beta-23516",
           "System.Reflection.Extensions": "4.0.1-beta-23516"
         },
@@ -1493,10 +1493,10 @@
           "lib/dotnet5.4/Moon.Reflection.dll": {}
         }
       },
-      "Moon.Runtime/1.2.4": {
+      "Moon.Runtime/2.0.1": {
         "type": "package",
         "dependencies": {
-          "Moon.Contracts": "1.2.4",
+          "Moon.Contracts": "2.0.1",
           "System.Runtime.Extensions": "4.0.11-beta-23516"
         },
         "compile": {
@@ -1822,10 +1822,10 @@
     }
   },
   "libraries": {
-    "Microsoft.OData.Core/6.13.0": {
+    "Microsoft.OData.Core/6.14.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "6dV1/1ChQ7THn37o46QROTW25m888Vq7w8oBQuedZ4rqvi7QbQT9KX/ZiJMryZ8qy8i7gtc/fxVLy+fsOGjguQ==",
+      "sha512": "o7DXUyCEuU41kE39fu1yxi+v/omB5m8/6jQcSB/EsbS/ADvX2fG3Tf5pl/VlQ1eoWoWU+s7CR2fssQu0X56EaA==",
       "files": [
         "lib/dnx451/de/Microsoft.OData.Core.resources.dll",
         "lib/dnx451/es/Microsoft.OData.Core.resources.dll",
@@ -1860,15 +1860,15 @@
         "lib/portable-net40+sl5+wp8+win8+wpa/ru/Microsoft.OData.Core.resources.dll",
         "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hans/Microsoft.OData.Core.resources.dll",
         "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hant/Microsoft.OData.Core.resources.dll",
-        "Microsoft.OData.Core.6.13.0.nupkg",
-        "Microsoft.OData.Core.6.13.0.nupkg.sha512",
+        "Microsoft.OData.Core.6.14.0.nupkg",
+        "Microsoft.OData.Core.6.14.0.nupkg.sha512",
         "Microsoft.OData.Core.nuspec"
       ]
     },
-    "Microsoft.OData.Edm/6.13.0": {
+    "Microsoft.OData.Edm/6.14.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "BMuH6sSduTmVO67X3SaaDSCIif4Jt/EsZEYB6r7E9SJz5ZJbqmdgZTCTBH3xCGUEN8i/E16pw3y2XAxg+bpZug==",
+      "sha512": "QF986A+aInZCOH5NTrSH2W5UHg8Bma+eooTBoo76BrxqCWuFhRf94OZkuHJayo5/EMYkXpjNt1nBqV30wkHWSQ==",
       "files": [
         "lib/dnx451/de/Microsoft.OData.Edm.resources.dll",
         "lib/dnx451/es/Microsoft.OData.Edm.resources.dll",
@@ -1903,15 +1903,15 @@
         "lib/portable-net40+sl5+wp8+win8+wpa/ru/Microsoft.OData.Edm.resources.dll",
         "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hans/Microsoft.OData.Edm.resources.dll",
         "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hant/Microsoft.OData.Edm.resources.dll",
-        "Microsoft.OData.Edm.6.13.0.nupkg",
-        "Microsoft.OData.Edm.6.13.0.nupkg.sha512",
+        "Microsoft.OData.Edm.6.14.0.nupkg",
+        "Microsoft.OData.Edm.6.14.0.nupkg.sha512",
         "Microsoft.OData.Edm.nuspec"
       ]
     },
-    "Microsoft.Spatial/6.13.0": {
+    "Microsoft.Spatial/6.14.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "B1KZi/w1ptNPN8HzeRYg8LG4vyx5ulVnV0IJ4WWplU1vNpxDf7tKh1MV0KdZODc9mkh0Sc2WziznXd1AouW6SQ==",
+      "sha512": "RXeeWCo5nYzZjF9axSezbCXrJ97l/52kQq0yrnNb8nnwLR5WVtyfGkJTISVY1rf93TKTTE/IlX6hAhPHoCwDLQ==",
       "files": [
         "lib/dnx451/de/Microsoft.Spatial.resources.dll",
         "lib/dnx451/es/Microsoft.Spatial.resources.dll",
@@ -1946,50 +1946,50 @@
         "lib/portable-net40+sl5+wp8+win8+wpa/ru/Microsoft.Spatial.resources.dll",
         "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hans/Microsoft.Spatial.resources.dll",
         "lib/portable-net40+sl5+wp8+win8+wpa/zh-Hant/Microsoft.Spatial.resources.dll",
-        "Microsoft.Spatial.6.13.0.nupkg",
-        "Microsoft.Spatial.6.13.0.nupkg.sha512",
+        "Microsoft.Spatial.6.14.0.nupkg",
+        "Microsoft.Spatial.6.14.0.nupkg.sha512",
         "Microsoft.Spatial.nuspec"
       ]
     },
-    "Moon.Contracts/1.2.4": {
+    "Moon.Contracts/2.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "/aP+fsevfU4jCujpZ3oUioTUeNj6vetGz4VZu0NXrtiKgttoVpQSIh3JKqnEXcob2bZ3PRIgc9n7jGUcARn70A==",
+      "sha512": "APql5vcnsGysEiINt3AgTcQD/7zpvCWUM5jlXl6usv3IlLfLQHr8YYPTY+1y5N7f26/7H3tkrtFO6/aXbMk+BQ==",
       "files": [
         "lib/dotnet5.4/Moon.Contracts.dll",
         "lib/dotnet5.4/Moon.Contracts.xml",
-        "lib/net451/Moon.Contracts.dll",
-        "lib/net451/Moon.Contracts.xml",
-        "Moon.Contracts.1.2.4.nupkg",
-        "Moon.Contracts.1.2.4.nupkg.sha512",
+        "lib/net46/Moon.Contracts.dll",
+        "lib/net46/Moon.Contracts.xml",
+        "Moon.Contracts.2.0.1.nupkg",
+        "Moon.Contracts.2.0.1.nupkg.sha512",
         "Moon.Contracts.nuspec"
       ]
     },
-    "Moon.Reflection/1.2.4": {
+    "Moon.Reflection/2.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "K6wdC/7b/e0BEVdmnmII7+xF91Ak8Mx3LeSFJS0kOK4jIiGZb68f4Y1uPKhaAMf0MKMiFf6zhT5UGdcfu8hjxA==",
+      "sha512": "rkAc7vNeBy6zurnKIaHOLFcftDMUC5fA/VBMExYU6C1dYpvT4bHe48B/Jo5CPVhzz4Z6AxHkPcuwFaJ15+JrYw==",
       "files": [
         "lib/dotnet5.4/Moon.Reflection.dll",
         "lib/dotnet5.4/Moon.Reflection.xml",
-        "lib/net451/Moon.Reflection.dll",
-        "lib/net451/Moon.Reflection.xml",
-        "Moon.Reflection.1.2.4.nupkg",
-        "Moon.Reflection.1.2.4.nupkg.sha512",
+        "lib/net46/Moon.Reflection.dll",
+        "lib/net46/Moon.Reflection.xml",
+        "Moon.Reflection.2.0.1.nupkg",
+        "Moon.Reflection.2.0.1.nupkg.sha512",
         "Moon.Reflection.nuspec"
       ]
     },
-    "Moon.Runtime/1.2.4": {
+    "Moon.Runtime/2.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "uZzUqAJwpzwQPLoQAb585oyG+iZWtJdv1y8NUETWynqlSJV3jg8Y6WbI/QjWg/4JXrK0ZSZVPZXM4EknKKx7OA==",
+      "sha512": "gsXtKc4g7b65vtUdAJDAsY1MnzHY/VSg4j/eeoEDYWqcvNm26HH2nMLeVRfdlFOeSg6O2wzlBEshX2/qHzfCrA==",
       "files": [
         "lib/dotnet5.4/Moon.Runtime.dll",
         "lib/dotnet5.4/Moon.Runtime.xml",
-        "lib/net451/Moon.Runtime.dll",
-        "lib/net451/Moon.Runtime.xml",
-        "Moon.Runtime.1.2.4.nupkg",
-        "Moon.Runtime.1.2.4.nupkg.sha512",
+        "lib/net46/Moon.Runtime.dll",
+        "lib/net46/Moon.Runtime.xml",
+        "Moon.Runtime.2.0.1.nupkg",
+        "Moon.Runtime.2.0.1.nupkg.sha512",
         "Moon.Runtime.nuspec"
       ]
     },
@@ -2348,7 +2348,7 @@
     "System.Linq.Expressions/4.0.11-beta-23516": {
       "type": "package",
       "serviceable": true,
-      "sha512": "YEl5oyF5fifLbHHP099cvb/6f2r2h1QVHzoaoINPHOZtpNec+RfqvzETXcYDIdHT7l+bBAYsBuVUkBgfQEoYfQ==",
+      "sha512": "FtKytB13HabzrSvrAgBgOOnG2uxJO4s7zvP5Sk0NS3bwbJUyb5AP1p4897UWnLiB6C95jI4nIkZps51sa9In8g==",
       "files": [
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
@@ -2968,10 +2968,10 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Moon.Reflection >= 1.2.4",
-      "Microsoft.OData.Core >= 6.13.0"
+      "Moon.Reflection >= 2.0.1",
+      "Microsoft.OData.Core >= 6.14.0"
     ],
-    ".NETFramework,Version=v4.5.1": [],
+    ".NETFramework,Version=v4.6": [],
     "DNXCore,Version=v5.0": [
       "System.Reflection.TypeExtensions >= 4.1.0-*"
     ]

@@ -78,7 +78,7 @@ namespace Moon.OData.Sql
 
             if (options.Filter != null)
             {
-                builder.Append($"{oprator.ToUpper()} ");
+                builder.Append($"{oprator.ToUpperInvariant()} ");
                 AppendQueryNode(builder, options.Filter.Expression);
             }
 

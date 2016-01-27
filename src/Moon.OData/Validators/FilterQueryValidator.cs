@@ -153,14 +153,6 @@ namespace Moon.OData.Validators
             }
         }
 
-        void ValidateNavigationPropertyNode(QueryNode node, ValidationSettings settings)
-        {
-            if (node != null)
-            {
-                ValidateQueryNode(node, settings);
-            }
-        }
-
         void ValidateAnyNode(AnyNode node, ValidationSettings settings)
         {
             ValidateFunction("any", settings);

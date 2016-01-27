@@ -1,26 +1,49 @@
 ﻿using System.Collections.Generic;
+using FluentAssertions;
+using Moon.Testing;
 using Xunit;
 
 namespace Moon.OData.Sql.Tests
 {
-    public class OrderByClauseTests
+    public class OrderByClauseTests : TestSetup
     {
+        ODataOptions<Model> options;
+        string result;
+
         [Fact]
-        public void Build_WhenOrderByIsNotDefined_RetrunsEmptyString()
+        public void BuildClauseWhenOrderByIsNotDefined()
         {
-            var options = new ODataOptions<Model>(new Dictionary<string, string> { });
-            Assert.True(OrderByClause.Build(options).Length == 0);
+            "Given the options"
+                .x(() => options = new ODataOptions<Model>(new Dictionary<string, string> { }));
+
+            "When I build an ORDER BY clause"
+                .x(() => result = OrderByClause.Build(options));
+
+            "Then it should return empty string"
+                .x(() =>
+                {
+                    result.Should().BeEmpty();
+                });
         }
 
         [Fact]
-        public void Build_WhenOrderByIsDefined_RetrunsOrderByClause()
+        public void BuildingClauseWhenOrderByIsDefined()
         {
-            var options = new ODataOptions<Model>(new Dictionary<string, string>
-            {
-                ["$orderby"] = "Id, Name desc"
-            });
+            "Given the options"
+                .x(() => options = new ODataOptions<Model>(new Dictionary<string, string>
+                {
+                    ["$orderby"] = "Id, Name desc",
+                    ["$skip"] = "20"
+                }));
 
-            Assert.Equal("ORDER BY [Id], [Name] DESC", OrderByClause.Build(options));
+            "When I build an ORDER BY clause"
+                .x(() => result = OrderByClause.Build(options));
+
+            "Then it should return ORDER BY clause"
+                .x(() =>
+                {
+                    result.Should().Be("ORDER BY [Id], [Name] DESC");
+                });
         }
     }
 }

@@ -5,26 +5,26 @@
   "dependencies": {
     "Microsoft.AspNet.IISPlatformHandler": "1.0.0-*",
     "Microsoft.AspNet.Server.Kestrel": "1.0.0-*",
-    "Moon.AspNet.Mvc": "1.2.13",
+    "Moon.AspNet.Mvc": "2.0.2",
     "Moon.AspNet.OData": "1.0.0-ci",
     "Moon.OData.Sql": "1.0.0-ci"
+  },
+
+  "frameworks": {
+    "dnx46": { },
+    "dnxcore50": { }
   },
 
   "commands": {
     "web": "Microsoft.AspNet.Server.Kestrel"
   },
 
-  "frameworks": {
-    "dnx451": { },
-    "dnxcore50": { }
-  },
-  
-  "exclude": [
-    "wwwroot",
-    "node_modules"
-  ],
   "publishExclude": [
     "**.user",
     "**.vspscc"
+  ],
+  "exclude": [
+    "wwwroot",
+    "node_modules"
   ]
 }

@@ -8,12 +8,12 @@
   "tags": [ "moontea", "odata", "query", "options" ],
 
   "dependencies": {
-    "Moon.Reflection": "1.2.4",
-    "Microsoft.OData.Core": "6.13.0"
+    "Moon.Reflection": "2.0.1",
+    "Microsoft.OData.Core": "6.14.0"
   },
 
   "frameworks": {
-    "net451": { },
+    "net46": { },
     "dnxcore50": {
       "dependencies": {
         "System.Reflection.TypeExtensions": "4.1.0-*"
