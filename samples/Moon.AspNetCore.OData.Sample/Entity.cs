@@ -1,4 +1,4 @@
-﻿namespace Moon.AspNet.OData.Sample
+﻿namespace Moon.AspNetCore.OData.Sample
 {
     public class Entity
     {

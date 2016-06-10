@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNet.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Moon.OData;
 using Moon.OData.Sql;
 
-namespace Moon.AspNet.OData.Sample.Server.Home
+namespace Moon.AspNetCore.OData.Sample.Server.Home
 {
     public class HomeController : Controller
     {

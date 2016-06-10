@@ -1,25 +1,25 @@
 ﻿{
   "version": "1.0.0-ci",
   "authors": [ "Dusan Janosik" ],
-  "description": ".NET library for parsing OData query options.",
+  "description": "ASP.NET Core library for parsing OData query options.",
 
   "packOptions": {
     "owners": [ "djanosik" ],
     "projectUrl": "https://github.com/djanosik/Moon.OData",
     "iconUrl": "https://djanosik.github.io/moon.png",
-    "tags": [ "moon", "odata", "query" ]
+    "tags": [ "moon", "aspnet", "odata", "query" ]
   },
 
   "dependencies": {
-    "Moon.Reflection": "2.1.1",
-    "Microsoft.OData.Core": "6.15.0"
+    "Moon.OData": "1.0.0-ci",
+    "Microsoft.AspNetCore.Mvc.Core": "1.0.0-*"
   },
 
   "frameworks": {
     "net46": { },
     "netstandard1.5": {
       "dependencies": {
-        "System.Reflection.TypeExtensions": "4.1.0-*"
+        "System.Runtime": "4.1.0-*"
       },
       "imports": [
         "dnxcore50"

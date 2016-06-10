@@ -1,16 +1,15 @@
 ﻿using System.Collections.Generic;
 using FluentAssertions;
-using Moon.Testing;
-using Xunit;
+using Xbehave;
 
 namespace Moon.OData.Sql.Tests
 {
-    public class OffsetClauseTests : TestSetup
+    public class OffsetClauseTests
     {
         ODataOptions<Model> options;
         string result;
 
-        [Fact]
+        [Scenario]
         public void BuildingClauseWhenOrderByIsNotDefined()
         {
             "Given the options"
@@ -26,7 +25,7 @@ namespace Moon.OData.Sql.Tests
                 });
         }
 
-        [Fact]
+        [Scenario]
         public void BuildingClauseWhenSkipIsNotDefined()
         {
             "Given the options"
@@ -42,7 +41,7 @@ namespace Moon.OData.Sql.Tests
                 });
         }
 
-        [Fact]
+        [Scenario]
         public void BuildingClauseWhenOnlySkipIsDefined()
         {
             "Given the options"
@@ -62,7 +61,7 @@ namespace Moon.OData.Sql.Tests
                 });
         }
 
-        [Fact]
+        [Scenario]
         public void BuildingClauseWhenSkipAndTopAreDefined()
         {
             "Given the options"

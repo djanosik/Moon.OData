@@ -2,22 +2,18 @@
 cd %~dp0
 
 SETLOCAL
-SET NUGET_FOLDER=%LocalAppData%\NuGet
-SET CACHED_NUGET=%LocalAppData%\NuGet\NuGet.exe
-
-IF EXIST %CACHED_NUGET% goto getnuget
-echo Downloading latest version of NuGet.exe...
-IF NOT EXIST %NUGET_FOLDER% md %NUGET_FOLDER%
-@powershell -Command "$ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest 'https://www.nuget.org/nuget.exe' -OutFile '%CACHED_NUGET%'"
+SET BUILD_FOLDER=build
+SET NUGET=%BUILD_FOLDER%\NuGet.exe
 
 :getnuget
-IF EXIST build\NuGet.exe goto getfake
-IF NOT EXIST build md build
-copy %CACHED_NUGET% build\NuGet.exe > nul
+IF EXIST %NUGET% GOTO getfakex
+echo Downloading latest version of NuGet.exe...
+IF NOT EXIST %BUILD_FOLDER% md %BUILD_FOLDER%
+@powershell -Command "$ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest 'http://dist.nuget.org/win-x86-commandline/latest/nuget.exe' -OutFile '%NUGET%'"
 
-:getfake
-IF EXIST build\FAKEX goto run
-build\NuGet.exe install FAKEX -ExcludeVersion -o build
+:getfakex
+IF EXIST %BUILD_FOLDER%\FAKEX goto run
+%NUGET% install FAKEX -Source "https://api.nuget.org/v3/index.json" -ExcludeVersion -o build
 
 :run
-build\FAKE\tools\Fake.exe fake.fsx %*
+%BUILD_FOLDER%\FAKE\tools\Fake.exe fake.fsx %*

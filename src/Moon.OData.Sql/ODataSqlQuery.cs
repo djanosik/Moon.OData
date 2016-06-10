@@ -81,13 +81,7 @@ namespace Moon.OData.Sql
         /// Gets the argument values of the SQL command.
         /// </summary>
         public object[] Arguments
-        {
-            get
-            {
-                Debug.WriteLine(CommandText);
-                return arguments.ToArray();
-            }
-        }
+            => CommandText != null ? arguments.ToArray() : new object[0];
 
         string Build()
         {

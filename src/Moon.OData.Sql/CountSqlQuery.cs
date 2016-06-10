@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text;
 
 namespace Moon.OData.Sql
 {
     /// <summary>
-    /// Represents SQL query with OData $filter option applied. It can be used to select total
-    /// number of results before $top and $skip options are applied.
+    /// Represents SQL query with OData $filter option applied. It can be used to select total number
+    /// of results before $top and $skip options are applied.
     /// </summary>
     public class CountSqlQuery
     {
@@ -53,13 +52,7 @@ namespace Moon.OData.Sql
         /// Gets the argument values of the SQL command.
         /// </summary>
         public object[] Arguments
-        {
-            get
-            {
-                Debug.WriteLine(CommandText);
-                return arguments.ToArray();
-            }
-        }
+            => CommandText != null ? arguments.ToArray() : new object[0];
 
         string Build()
         {

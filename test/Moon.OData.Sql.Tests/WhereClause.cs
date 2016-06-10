@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using FluentAssertions;
-using Moon.Testing;
-using Xunit;
+using Xbehave;
 
 namespace Moon.OData.Sql.Tests
 {
-    public class WhereClauseTests : TestSetup
+    public class WhereClauseTests
     {
         ODataOptions<Model> options;
         IList<object> arguments;
@@ -17,7 +16,7 @@ namespace Moon.OData.Sql.Tests
                 .x(() => arguments = new List<object>());
         }
 
-        [Fact]
+        [Scenario]
         public void BuildingClauseWhenFilterIsNotDefined()
         {
             "And the options"
@@ -33,7 +32,7 @@ namespace Moon.OData.Sql.Tests
                 });
         }
 
-        [Fact]
+        [Scenario]
         public void BuildingClauseWhenFilterIsDefined()
         {
             "And the options"

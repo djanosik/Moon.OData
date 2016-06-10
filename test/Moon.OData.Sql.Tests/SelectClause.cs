@@ -1,16 +1,15 @@
 ﻿using System.Collections.Generic;
 using FluentAssertions;
-using Moon.Testing;
-using Xunit;
+using Xbehave;
 
 namespace Moon.OData.Sql.Tests
 {
-    public class SelectClauseTests : TestSetup
+    public class SelectClauseTests
     {
         ODataOptions<Model> options;
         string command, result;
 
-        [Fact]
+        [Scenario]
         public void BuildingClauseWhenSelectIsNotDefined()
         {
             "Given the options"
@@ -26,7 +25,7 @@ namespace Moon.OData.Sql.Tests
                 });
         }
 
-        [Fact]
+        [Scenario]
         public void BuildingClauseWhenSelectContainsWildcard()
         {
             "Given the options"
@@ -45,7 +44,7 @@ namespace Moon.OData.Sql.Tests
                 });
         }
 
-        [Fact]
+        [Scenario]
         public void BuildingClauseWhenTopIsDefined()
         {
             "Given the options"
@@ -64,7 +63,7 @@ namespace Moon.OData.Sql.Tests
                 });
         }
 
-        [Fact]
+        [Scenario]
         public void BuildingClauseWhenSelectIsDefined()
         {
             "Given the options"
@@ -83,7 +82,7 @@ namespace Moon.OData.Sql.Tests
                 });
         }
 
-        [Fact]
+        [Scenario]
         public void BuildingClauseWhenCommandDoesNotSpecifyColumns()
         {
             "Given the options"
@@ -105,7 +104,7 @@ namespace Moon.OData.Sql.Tests
                 });
         }
 
-        [Fact]
+        [Scenario]
         public void BuildingClauseWhenCommandSpecifiesTop()
         {
             "Given the options"
@@ -127,7 +126,7 @@ namespace Moon.OData.Sql.Tests
                 });
         }
 
-        [Fact]
+        [Scenario]
         public void BuildingClauseWhenCommandSpecifiesColumns()
         {
             "Given the options"

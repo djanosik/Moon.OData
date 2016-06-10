@@ -1,13 +1,11 @@
 ﻿{
   "version": "1.0.0-ci",
+  "testRunner": "xunit",
   "dependencies": {
     "Moon.OData.Sql": "1.0.0-ci",
-    "Moon.Testing": "2.0.1"
-  },
-  "commands": {
-    "test": "xunit.runner.dnx"
+    "Moon.Testing": "2.1.1"
   },
   "frameworks": {
-    "dnx46": { }
+    "net46": { }
   }
 }

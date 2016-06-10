@@ -3,7 +3,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/ul2bt39ien2qeetk?svg=true)](https://ci.appveyor.com/project/djanosik/moon-odata)
 [![NuGet](https://img.shields.io/nuget/v/Moon.OData.svg)](https://www.nuget.org/packages/Moon.OData)
 
-Simple and easy to use library for parsing OData query options in .NET / DNX applications. There is no documentation and will never be. 
+Simple and easy to use library for parsing OData query options in .NET applications. There is no documentation and will never be. 
 If you still want to use this library, take a look at sample projects and / or source code.
 
 ```c#

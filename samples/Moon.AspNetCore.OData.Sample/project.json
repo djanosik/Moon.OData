@@ -1,0 +1,43 @@
+﻿{
+  "dependencies": {
+    "Microsoft.AspNetCore.Mvc": "1.0.0-*",
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0-*",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-*",
+    "Microsoft.NETCore.App": {
+      "version": "1.0.0-*",
+      "type": "platform"
+    },
+    "Moon.AspNetCore.Mvc": "2.2.1",
+    "Moon.AspNetCore.OData": "1.0.0-ci",
+    "Moon.OData.Sql": "1.0.0-ci"
+  },
+
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": [
+        "dnxcore50"
+      ]
+    }
+  },
+
+  "scripts": {
+    "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
+  },
+
+  "buildOptions": {
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true
+  },
+
+  "runtimeOptions": {
+    "gcServer": true
+  },
+
+  "publishOptions": {
+    "include": [
+      "wwwroot",
+      "Server",
+      "web.config"
+    ]
+  }
+}

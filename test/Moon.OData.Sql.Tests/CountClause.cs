@@ -1,16 +1,15 @@
 ﻿using System.Collections.Generic;
 using FluentAssertions;
-using Moon.Testing;
-using Xunit;
+using Xbehave;
 
 namespace Moon.OData.Sql.Tests
 {
-    public class CountClauseTests : TestSetup
+    public class CountClauseTests
     {
         ODataOptions<Model> options;
         string result;
 
-        [Fact]
+        [Scenario]
         public void BuldingClause()
         {
             "Given the options"

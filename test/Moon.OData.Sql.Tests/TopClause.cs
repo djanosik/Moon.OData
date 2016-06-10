@@ -1,16 +1,15 @@
 ﻿using System.Collections.Generic;
 using FluentAssertions;
-using Moon.Testing;
-using Xunit;
+using Xbehave;
 
 namespace Moon.OData.Sql.Tests
 {
-    public class TopClauseTests : TestSetup
+    public class TopClauseTests
     {
         ODataOptions<Model> options;
         string result;
 
-        [Fact]
+        [Scenario]
         public void BuildingClauseWhenTopIsNotDefined()
         {
             "Given the options"
@@ -26,7 +25,7 @@ namespace Moon.OData.Sql.Tests
                 });
         }
 
-        [Fact]
+        [Scenario]
         public void BuildClauseWhenOnlyTopIsDefined()
         {
             "Given the options"
@@ -45,7 +44,7 @@ namespace Moon.OData.Sql.Tests
                 });
         }
 
-        [Fact]
+        [Scenario]
         public void BuildingClauseWhenTopAndSkipAreDefined()
         {
             "Given the options"
