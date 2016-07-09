@@ -14,8 +14,8 @@ namespace Moon.OData.Sql
     /// </summary>
     public class WhereClause
     {
-        readonly string oprator;
         readonly IList<object> arguments;
+        readonly string oprator;
         readonly IODataOptions options;
 
         /// <summary>
@@ -270,7 +270,7 @@ namespace Moon.OData.Sql
                 case "ceiling":
                     builder.Append($"{ToSqlFunction(node.Name)}(");
 
-                    for (int i = 0; i < parameters.Count; i++)
+                    for (var i = 0; i < parameters.Count; i++)
                     {
                         AppendQueryNode(builder, parameters[i]);
 
@@ -295,8 +295,8 @@ namespace Moon.OData.Sql
             if (callNode != null)
             {
                 return callNode.Name == "contains"
-                    || callNode.Name == "endswith"
-                    || callNode.Name == "startswith";
+                       || callNode.Name == "endswith"
+                       || callNode.Name == "startswith";
             }
 
             return false;

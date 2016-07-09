@@ -1,28 +1,18 @@
 ﻿using System.Collections.Generic;
 using FluentAssertions;
-using Xbehave;
+using Xunit;
 
 namespace Moon.OData.Sql.Tests
 {
     public class CountClauseTests
     {
-        ODataOptions<Model> options;
-        string result;
-
-        [Scenario]
-        public void BuldingClause()
+        [Fact]
+        public void BuildingClause()
         {
-            "Given the options"
-                .x(() => options = new ODataOptions<Model>(new Dictionary<string, string> { }));
+            var data = new Dictionary<string, string>();
+            var result = CountClause.Build(new ODataOptions<Model>(data));
 
-            "When I build a COUNT clause"
-                .x(() => result = CountClause.Build(options));
-
-            "Then it should return COUNT query"
-                .x(() =>
-                {
-                    result.Should().Be("SELECT COUNT([Id]) FROM");
-                });
+            result.Should().Be("SELECT COUNT([Id]) FROM");
         }
     }
 }

@@ -1,13 +1,13 @@
 ﻿{
   "version": "1.0.0-ci",
-  "authors": [ "Dusan Janosik" ],
+  "authors": ["Dusan Janosik"],
   "description": "Library for translating OData query options into T-SQL commands.",
 
   "packOptions": {
-    "owners": [ "djanosik" ],
+    "owners": ["djanosik"],
     "projectUrl": "https://github.com/djanosik/Moon.OData",
     "iconUrl": "https://djanosik.github.io/moon.png",
-    "tags": [ "moon", "odata", "query", "sql" ]
+    "tags": ["moon", "odata", "query", "sql"]
   },
 
   "dependencies": {
@@ -15,10 +15,10 @@
   },
 
   "frameworks": {
-    "net46": { },
+    "net46": {},
     "netstandard1.5": {
       "dependencies": {
-        "System.Text.RegularExpressions": "4.0.12-*"
+        "System.Text.RegularExpressions": "4.1.0"
       },
       "imports": [
         "dnxcore50"

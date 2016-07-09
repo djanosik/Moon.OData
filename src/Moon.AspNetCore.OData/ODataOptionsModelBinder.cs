@@ -31,9 +31,9 @@ namespace Moon.AspNetCore.OData
         public Task BindModelAsync(ModelBindingContext bindingContext)
         {
             var modelType = bindingContext.ModelType;
-            var request = bindingContext.OperationBindingContext.HttpContext.Request;
+            var request = bindingContext.HttpContext.Request;
             var model = Class.Create(modelType, GetOptions(request), primitives);
-            bindingContext.Result = ModelBindingResult.Success(bindingContext.ModelName, model);
+            bindingContext.Result = ModelBindingResult.Success(model);
             return Task.CompletedTask;
         }
 

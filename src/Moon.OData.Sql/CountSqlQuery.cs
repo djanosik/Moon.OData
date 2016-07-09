@@ -10,10 +10,10 @@ namespace Moon.OData.Sql
     /// </summary>
     public class CountSqlQuery
     {
-        readonly ODataSqlQuery query;
-        readonly string commandText;
         readonly List<object> arguments;
+        readonly string commandText;
         readonly IODataOptions options;
+        readonly ODataSqlQuery query;
         readonly Lazy<string> result;
 
         /// <summary>

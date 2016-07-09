@@ -1,151 +1,84 @@
 ﻿using System.Collections.Generic;
 using FluentAssertions;
-using Xbehave;
+using Xunit;
 
 namespace Moon.OData.Sql.Tests
 {
     public class SelectClauseTests
     {
-        ODataOptions<Model> options;
-        string command, result;
-
-        [Scenario]
-        public void BuildingClauseWhenSelectIsNotDefined()
-        {
-            "Given the options"
-                .x(() => options = new ODataOptions<Model>(new Dictionary<string, string> { }));
-
-            "When I build a SELECT clause"
-                .x(() => result = SelectClause.Build(options));
-
-            "Then it should return SELECT query"
-                .x(() =>
-                {
-                    result.Should().Be("SELECT * FROM");
-                });
-        }
-
-        [Scenario]
-        public void BuildingClauseWhenSelectContainsWildcard()
-        {
-            "Given the options"
-                .x(() => options = new ODataOptions<Model>(new Dictionary<string, string>
-                {
-                    ["$select"] = "*,Name"
-                }));
-
-            "When I build a SELECT clause"
-                .x(() => result = SelectClause.Build(options));
-
-            "Then it should return SELECT query"
-                .x(() =>
-                {
-                    result.Should().Be("SELECT * FROM");
-                });
-        }
-
-        [Scenario]
-        public void BuildingClauseWhenTopIsDefined()
-        {
-            "Given the options"
-                .x(() => options = new ODataOptions<Model>(new Dictionary<string, string>
-                {
-                    ["$top"] = "20"
-                }));
-
-            "When I build a SELECT clause"
-                .x(() => result = SelectClause.Build(options));
-
-            "Then it should return SELECT query"
-                .x(() =>
-                {
-                    result.Should().Be("SELECT TOP(20) * FROM");
-                });
-        }
-
-        [Scenario]
-        public void BuildingClauseWhenSelectIsDefined()
-        {
-            "Given the options"
-                .x(() => options = new ODataOptions<Model>(new Dictionary<string, string>
-                {
-                    ["$select"] = "Id,Name"
-                }));
-
-            "When I build a SELECT clause"
-                .x(() => result = SelectClause.Build(options));
-
-            "Then it should return SELECT query"
-                .x(() =>
-                {
-                    result.Should().Be("SELECT [Id], [Name] FROM");
-                });
-        }
-
-        [Scenario]
+        [Fact]
         public void BuildingClauseWhenCommandDoesNotSpecifyColumns()
         {
-            "Given the options"
-                .x(() => options = new ODataOptions<Model>(new Dictionary<string, string>
-                {
-                    ["$select"] = "Id,Name"
-                }));
+            var data = new Dictionary<string, string> {
+                ["$select"] = "Id,Name"
+            };
 
-            "And the SQL command without columns specified"
-                .x(() => command = "SELECT FROM Table");
-
-            "When I build a SELECT clause"
-                .x(() => result = SelectClause.Build(command, options));
-
-            "Then it should return SELECT query"
-                .x(() =>
-                {
-                    result.Should().Be("SELECT [Id], [Name] FROM Table");
-                });
+            var result = SelectClause.Build("SELECT FROM Table", new ODataOptions<Model>(data));
+            result.Should().Be("SELECT [Id], [Name] FROM Table");
         }
 
-        [Scenario]
-        public void BuildingClauseWhenCommandSpecifiesTop()
-        {
-            "Given the options"
-                .x(() => options = new ODataOptions<Model>(new Dictionary<string, string>
-                {
-                    ["$top"] = "20"
-                }));
-
-            "And the SQL command specifying TOP clause"
-                .x(() => command = "SELECT TOP(40) FROM");
-
-            "When I build a SELECT clause"
-                .x(() => result = SelectClause.Build(command, options));
-
-            "Then it should ignore the $top option"
-                .x(() =>
-                {
-                    result.Should().Be("SELECT TOP(40) * FROM");
-                });
-        }
-
-        [Scenario]
+        [Fact]
         public void BuildingClauseWhenCommandSpecifiesColumns()
         {
-            "Given the options"
-                .x(() => options = new ODataOptions<Model>(new Dictionary<string, string>
-                {
-                    ["$select"] = "Id"
-                }));
+            var data = new Dictionary<string, string> {
+                ["$select"] = "Id"
+            };
 
-            "And the SQL command with columns specified"
-                .x(() => command = "SELECT Name FROM Table");
+            var result = SelectClause.Build("SELECT Name FROM Table", new ODataOptions<Model>(data));
+            result.Should().Be("SELECT Name FROM Table");
+        }
 
-            "When I build a SELECT clause"
-                .x(() => result = SelectClause.Build(command, options));
+        [Fact]
+        public void BuildingClauseWhenCommandSpecifiesTop()
+        {
+            var data = new Dictionary<string, string> {
+                ["$top"] = "20"
+            };
 
-            "Then it should ignore the $select option"
-                .x(() =>
-                {
-                    result.Should().Be("SELECT Name FROM Table");
-                });
+            var result = SelectClause.Build("SELECT TOP(40) FROM", new ODataOptions<Model>(data));
+            result.Should().Be("SELECT TOP(40) * FROM");
+        }
+
+        [Fact]
+        public void BuildingClauseWhenSelectContainsWildcard()
+        {
+            var data = new Dictionary<string, string> {
+                ["$select"] = "*,Name"
+            };
+
+            var result = SelectClause.Build(new ODataOptions<Model>(data));
+            result.Should().Be("SELECT * FROM");
+        }
+
+        [Fact]
+        public void BuildingClauseWhenSelectIsDefined()
+        {
+            var data = new Dictionary<string, string> {
+                ["$select"] = "Id,Name"
+            };
+
+            var result = SelectClause.Build(new ODataOptions<Model>(data));
+            result.Should().Be("SELECT [Id], [Name] FROM");
+        }
+
+        [Fact]
+        public void BuildingClauseWhenSelectIsNotDefined()
+        {
+            var data = new Dictionary<string, string>();
+            var result = SelectClause.Build(new ODataOptions<Model>(data));
+
+            result.Should().Be("SELECT * FROM");
+        }
+
+        [Fact]
+        public void BuildingClauseWhenTopIsDefined()
+        {
+            var data = new Dictionary<string, string> {
+                ["$top"] = "20"
+            };
+
+            var result = SelectClause.Build(new ODataOptions<Model>(data));
+            result.Should().Be("SELECT TOP(20) * FROM");
         }
     }
 }

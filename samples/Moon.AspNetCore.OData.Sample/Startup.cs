@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.DependencyInjection;
-using Moon.AspNetCore.Mvc;
 
 namespace Moon.AspNetCore.OData.Sample
 {
@@ -10,7 +9,12 @@ namespace Moon.AspNetCore.OData.Sample
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddSingleton<IRazorViewEngine, ServerViewEngine>()
+                .Configure<RazorViewEngineOptions>(o =>
+                {
+                    o.ViewLocationFormats.Clear();
+                    o.ViewLocationFormats.Add("/Server/{1}/{0}.cshtml");
+                    o.ViewLocationFormats.Add("/Server/Shared/{0}.cshtml");
+                })
                 .AddMvc()
                 .AddOData();
         }

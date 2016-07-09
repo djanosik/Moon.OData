@@ -101,8 +101,7 @@ namespace Moon.OData
 
         static HashSet<string> GetSupportedOptions()
         {
-            return new HashSet<string>
-            {
+            return new HashSet<string> {
                 "$count",
                 "$format",
                 "$deltatoken",

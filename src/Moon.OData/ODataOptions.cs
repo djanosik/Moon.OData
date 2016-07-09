@@ -21,17 +21,17 @@ namespace Moon.OData
         readonly Lazy<string> deltaToken;
         readonly Lazy<FilterClause> filter;
         readonly Lazy<OrderByClause> orderBy;
+
+        readonly ODataQueryOptionParser parser;
         readonly Lazy<SearchClause> search;
         readonly Lazy<SelectExpandClause> selectAndExpand;
         readonly Lazy<long?> skip;
         readonly Lazy<string> skipToken;
         readonly Lazy<long?> top;
-
-        readonly ODataQueryOptionParser parser;
         readonly ODataQueryValidator validator = new ODataQueryValidator();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ODataQuery{TEntity}" /> class.
+        /// Initializes a new instance of the <see cref="ODataOptions{TEntity}" /> class.
         /// </summary>
         /// <param name="options">The dictionary storing query option key-value pairs.</param>
         public ODataOptions(IDictionary<string, string> options)
@@ -40,7 +40,7 @@ namespace Moon.OData
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ODataQuery{TEntity}" /> class.
+        /// Initializes a new instance of the <see cref="ODataOptions{TEntity}" /> class.
         /// </summary>
         /// <param name="options">The dictionary storing query option key-value pairs.</param>
         /// <param name="primitives">An enumeration of additional primitive types.</param>

@@ -11,7 +11,7 @@
   },
 
   "dependencies": {
-    "Moon.Reflection": "2.1.1",
+    "Moon.Reflection": "2.2.2",
     "Microsoft.OData.Core": "6.15.0"
   },
 
@@ -19,7 +19,7 @@
     "net46": { },
     "netstandard1.5": {
       "dependencies": {
-        "System.Reflection.TypeExtensions": "4.1.0-*"
+        "System.Reflection.TypeExtensions": "4.1.0"
       },
       "imports": [
         "dnxcore50"

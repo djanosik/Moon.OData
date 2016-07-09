@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Reflection;
 using System.Text;
 
@@ -11,8 +10,8 @@ namespace Moon.OData.Sql
     /// </summary>
     public class ODataSqlQuery
     {
+        readonly List<object> arguments;
         readonly string commandText;
-        readonly List<object> arguments = new List<object>();
         readonly IODataOptions options;
         readonly Lazy<string> result;
 

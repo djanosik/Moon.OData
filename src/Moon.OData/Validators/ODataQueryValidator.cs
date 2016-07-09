@@ -5,12 +5,12 @@
     /// </summary>
     public class ODataQueryValidator
     {
-        readonly SkipQueryValidator skipValidator = new SkipQueryValidator();
         readonly FilterQueryValidator filterValidator = new FilterQueryValidator();
+        readonly SkipQueryValidator skipValidator = new SkipQueryValidator();
         readonly TopQueryValidator topValidator = new TopQueryValidator();
 
         /// <summary>
-        /// Validates the given OData query using the specified validation settings..
+        /// Validates the given OData query using the specified validation settings.
         /// </summary>
         /// <typeparam name="TEntity">The type of entity.</typeparam>
         /// <param name="options">The OData query to validate.</param>

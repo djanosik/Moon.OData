@@ -24,10 +24,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="primitives">An enumeration of additional primitive types.</param>
         public static IMvcBuilder AddOData(this IMvcBuilder builder, IEnumerable<IPrimitiveType> primitives)
         {
-            return builder.AddMvcOptions(o =>
-            {
-                o.ModelBinderProviders.Insert(0, new ODataOptionsModelBinderProvider(primitives));
-            });
+            return builder.AddMvcOptions(o => { o.ModelBinderProviders.Insert(0, new ODataOptionsModelBinderProvider(primitives)); });
         }
     }
 }
