@@ -457,7 +457,7 @@
           }
         }
       },
-      "Moon.Contracts/2.2.2": {
+      "Moon.Contracts/2.2.3": {
         "type": "package",
         "compile": {
           "lib/net46/Moon.Contracts.dll": {}
@@ -466,10 +466,10 @@
           "lib/net46/Moon.Contracts.dll": {}
         }
       },
-      "Moon.Reflection/2.2.2": {
+      "Moon.Reflection/2.2.3": {
         "type": "package",
         "dependencies": {
-          "Moon.Runtime": "2.2.2"
+          "Moon.Runtime": "2.2.3"
         },
         "compile": {
           "lib/net46/Moon.Reflection.dll": {}
@@ -478,10 +478,10 @@
           "lib/net46/Moon.Reflection.dll": {}
         }
       },
-      "Moon.Runtime/2.2.2": {
+      "Moon.Runtime/2.2.3": {
         "type": "package",
         "dependencies": {
-          "Moon.Contracts": "2.2.2"
+          "Moon.Contracts": "2.2.3"
         },
         "compile": {
           "lib/net46/Moon.Runtime.dll": {}
@@ -713,7 +713,7 @@
         "framework": ".NETFramework,Version=v4.6",
         "dependencies": {
           "Microsoft.OData.Core": "6.15.0",
-          "Moon.Reflection": "2.2.2"
+          "Moon.Reflection": "2.2.3"
         },
         "compile": {
           "net46/Moon.OData.dll": {}
@@ -1290,7 +1290,7 @@
           "ref/netstandard1.3/_._": {}
         }
       },
-      "Moon.Contracts/2.2.2": {
+      "Moon.Contracts/2.2.3": {
         "type": "package",
         "dependencies": {
           "System.Diagnostics.Tools": "4.0.1",
@@ -1304,10 +1304,10 @@
           "lib/netstandard1.5/Moon.Contracts.dll": {}
         }
       },
-      "Moon.Reflection/2.2.2": {
+      "Moon.Reflection/2.2.3": {
         "type": "package",
         "dependencies": {
-          "Moon.Runtime": "2.2.2",
+          "Moon.Runtime": "2.2.3",
           "System.Linq.Expressions": "4.1.0",
           "System.Reflection.Extensions": "4.0.1"
         },
@@ -1318,10 +1318,10 @@
           "lib/netstandard1.5/Moon.Reflection.dll": {}
         }
       },
-      "Moon.Runtime/2.2.2": {
+      "Moon.Runtime/2.2.3": {
         "type": "package",
         "dependencies": {
-          "Moon.Contracts": "2.2.2",
+          "Moon.Contracts": "2.2.3",
           "System.Runtime.Extensions": "4.1.0"
         },
         "compile": {
@@ -2410,7 +2410,7 @@
         "framework": ".NETStandard,Version=v1.5",
         "dependencies": {
           "Microsoft.OData.Core": "6.15.0",
-          "Moon.Reflection": "2.2.2",
+          "Moon.Reflection": "2.2.3",
           "System.Reflection.TypeExtensions": "4.1.0"
         },
         "compile": {
@@ -2979,34 +2979,34 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "Moon.Contracts/2.2.2": {
-      "sha512": "aRNEasSrmvZx6DSF1FUfyAWCmbkYQSGOiI0GcY3gYpYIZjgdti3/GCJ8WF38elDfEDTy8n9UFdr2WYaQ+Oyu3w==",
+    "Moon.Contracts/2.2.3": {
+      "sha512": "QJZZyrZLXR3WbZNRiT0/jXGj3N8gOpnOV8QoIV0aaKh0Il/8ocz5nTCnGJ6JNz6uPQADqXBQ6HoaOmdLZKwRNA==",
       "type": "package",
-      "path": "Moon.Contracts/2.2.2",
+      "path": "Moon.Contracts/2.2.3",
       "files": [
-        "Moon.Contracts.2.2.2.nupkg.sha512",
+        "Moon.Contracts.2.2.3.nupkg.sha512",
         "Moon.Contracts.nuspec",
         "lib/net46/Moon.Contracts.dll",
         "lib/netstandard1.5/Moon.Contracts.dll"
       ]
     },
-    "Moon.Reflection/2.2.2": {
-      "sha512": "sW/VaFIlxkqREWp2xToZ0fhGPtA9yLBO1pUMWsgDY/MaKW+XMI+BgmM7nvcOMHIgB0pzlZwtji27QaLEJj2aVA==",
+    "Moon.Reflection/2.2.3": {
+      "sha512": "GfleLlX3CGjBnorhW/MiOTv1OoXkEPuiFJyUYrAEj3sw6wqHNSBIXWtDVwdikQPjThF3u5AwDLw0dGGPpajkYw==",
       "type": "package",
-      "path": "Moon.Reflection/2.2.2",
+      "path": "Moon.Reflection/2.2.3",
       "files": [
-        "Moon.Reflection.2.2.2.nupkg.sha512",
+        "Moon.Reflection.2.2.3.nupkg.sha512",
         "Moon.Reflection.nuspec",
         "lib/net46/Moon.Reflection.dll",
         "lib/netstandard1.5/Moon.Reflection.dll"
       ]
     },
-    "Moon.Runtime/2.2.2": {
-      "sha512": "iXRYbyABGH03+tOtfh/qvjuM8/nr1zsfexoqYbSRiGwhwVTB6JRt1UueXS7rw26UrIu4Y5blTpT82ihtt0gQ4g==",
+    "Moon.Runtime/2.2.3": {
+      "sha512": "oF98h5f6Dc54rPdcXgX/04+1QetNVt5cU5QH9tG6SecAuOo5M5TLCvFievX77Og+T3j3vcxqxt0EKrpXNGFd3Q==",
       "type": "package",
-      "path": "Moon.Runtime/2.2.2",
+      "path": "Moon.Runtime/2.2.3",
       "files": [
-        "Moon.Runtime.2.2.2.nupkg.sha512",
+        "Moon.Runtime.2.2.3.nupkg.sha512",
         "Moon.Runtime.nuspec",
         "lib/net46/Moon.Runtime.dll",
         "lib/netstandard1.5/Moon.Runtime.dll"

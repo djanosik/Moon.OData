@@ -7,7 +7,7 @@
       "version": "1.0.0",
       "type": "platform"
     },
-    "Moon.AspNetCore.Mvc": "2.3.1",
+    "Moon.AspNetCore.Mvc": "2.3.2",
     "Moon.AspNetCore.OData": "1.0.0-ci",
     "Moon.OData.Sql": "1.0.0-ci"
   },

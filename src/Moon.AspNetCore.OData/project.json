@@ -5,8 +5,8 @@
 
   "packOptions": {
     "owners": ["djanosik"],
-    "projectUrl": "https://github.com/djanosik/Moon.OData",
-    "iconUrl": "https://djanosik.github.io/moon.png",
+    "projectUrl": "https://gitlab.com/djanosik/moon-odata",
+    "iconUrl": "https://djanosik.gitlab.io/moon.png",
     "tags": ["moon", "aspnet", "odata", "query"]
   },
 

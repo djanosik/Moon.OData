@@ -34,7 +34,7 @@
           }
         }
       },
-      "FluentAssertions/4.8.0": {
+      "FluentAssertions/4.13.0": {
         "type": "package",
         "frameworkAssemblies": [
           "System.Xml",
@@ -293,7 +293,7 @@
           }
         }
       },
-      "Moon.Contracts/2.2.2": {
+      "Moon.Contracts/2.2.3": {
         "type": "package",
         "compile": {
           "lib/net46/Moon.Contracts.dll": {}
@@ -302,10 +302,10 @@
           "lib/net46/Moon.Contracts.dll": {}
         }
       },
-      "Moon.Reflection/2.2.2": {
+      "Moon.Reflection/2.2.3": {
         "type": "package",
         "dependencies": {
-          "Moon.Runtime": "2.2.2"
+          "Moon.Runtime": "2.2.3"
         },
         "compile": {
           "lib/net46/Moon.Reflection.dll": {}
@@ -314,10 +314,10 @@
           "lib/net46/Moon.Reflection.dll": {}
         }
       },
-      "Moon.Runtime/2.2.2": {
+      "Moon.Runtime/2.2.3": {
         "type": "package",
         "dependencies": {
-          "Moon.Contracts": "2.2.2"
+          "Moon.Contracts": "2.2.3"
         },
         "compile": {
           "lib/net46/Moon.Runtime.dll": {}
@@ -326,11 +326,11 @@
           "lib/net46/Moon.Runtime.dll": {}
         }
       },
-      "Moon.Security/2.2.2": {
+      "Moon.Security/2.2.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "1.0.0",
-          "Moon.Contracts": "2.2.2"
+          "Moon.Contracts": "2.2.3"
         },
         "compile": {
           "lib/net46/Moon.Security.dll": {}
@@ -339,11 +339,11 @@
           "lib/net46/Moon.Security.dll": {}
         }
       },
-      "Moon.Testing/2.2.2": {
+      "Moon.Testing/2.2.3": {
         "type": "package",
         "dependencies": {
-          "FluentAssertions": "4.8.0",
-          "Moon.Security": "2.2.2",
+          "FluentAssertions": "4.13.0",
+          "Moon.Security": "2.2.3",
           "dotnet-test-xunit": "2.2.0-preview2-build1029",
           "xunit": "2.2.0-beta2-build3300"
         },
@@ -604,7 +604,7 @@
         "framework": ".NETFramework,Version=v4.6",
         "dependencies": {
           "Microsoft.OData.Core": "6.15.0",
-          "Moon.Reflection": "2.2.2"
+          "Moon.Reflection": "2.2.3"
         },
         "compile": {
           "net46/Moon.OData.dll": {}
@@ -644,23 +644,13 @@
         "runtimes/win7-x86/lib/net451/dotnet-test-xunit.exe"
       ]
     },
-    "FluentAssertions/4.8.0": {
-      "sha512": "At9wlzzvdRRKvR40Bffd3RygdtqdiPYozDgTM76rNEW+IQznmVsdHa3/SScei7JQbZ0Oa9gubb+uocnYDrOEBA==",
+    "FluentAssertions/4.13.0": {
+      "sha512": "pwUxkKNClLDtcseAhXcsJ1zTn6f8lqSP4oxw1Fzspofp+7do2bL9XtXKkuHEoyAdiMh8qVnJEKpNHWxinwuyvw==",
       "type": "package",
+      "path": "FluentAssertions/4.13.0",
       "files": [
-        "FluentAssertions.4.8.0.nupkg.sha512",
+        "FluentAssertions.4.13.0.nupkg.sha512",
         "FluentAssertions.nuspec",
-        "lib/dotnet/FluentAssertions.Core.dll",
-        "lib/dotnet/FluentAssertions.Core.pdb",
-        "lib/dotnet/FluentAssertions.dll",
-        "lib/dotnet/FluentAssertions.pdb",
-        "lib/dotnet/FluentAssertions.xml",
-        "lib/monoandroid/FluentAssertions.Core.dll",
-        "lib/monoandroid/FluentAssertions.Core.pdb",
-        "lib/monoandroid/FluentAssertions.Core.xml",
-        "lib/monotouch/FluentAssertions.Core.dll",
-        "lib/monotouch/FluentAssertions.Core.pdb",
-        "lib/monotouch/FluentAssertions.Core.xml",
         "lib/net40/FluentAssertions.Core.dll",
         "lib/net40/FluentAssertions.Core.pdb",
         "lib/net40/FluentAssertions.Core.xml",
@@ -673,9 +663,12 @@
         "lib/net45/FluentAssertions.dll",
         "lib/net45/FluentAssertions.pdb",
         "lib/net45/FluentAssertions.xml",
-        "lib/portable-monotouch+monoandroid+xamarin.ios/FluentAssertions.Core.dll",
-        "lib/portable-monotouch+monoandroid+xamarin.ios/FluentAssertions.Core.pdb",
-        "lib/portable-monotouch+monoandroid+xamarin.ios/FluentAssertions.Core.xml",
+        "lib/netstandard1.3/FluentAssertions.Core.XML",
+        "lib/netstandard1.3/FluentAssertions.Core.dll",
+        "lib/netstandard1.3/FluentAssertions.Core.pdb",
+        "lib/netstandard1.3/FluentAssertions.dll",
+        "lib/netstandard1.3/FluentAssertions.pdb",
+        "lib/netstandard1.3/FluentAssertions.xml",
         "lib/portable-net40+sl5+win8+wp8+wpa81/FluentAssertions.Core.dll",
         "lib/portable-net40+sl5+win8+wp8+wpa81/FluentAssertions.Core.pdb",
         "lib/portable-net40+sl5+win8+wp8+wpa81/FluentAssertions.Core.xml",
@@ -719,6 +712,12 @@
         "lib/sl5/zh-Hans/System.Xml.Linq.resources.dll",
         "lib/sl5/zh-Hant/Microsoft.CSharp.resources.dll",
         "lib/sl5/zh-Hant/System.Xml.Linq.resources.dll",
+        "lib/uap10.0/FluentAssertions.Core.XML",
+        "lib/uap10.0/FluentAssertions.Core.dll",
+        "lib/uap10.0/FluentAssertions.Core.pdb",
+        "lib/uap10.0/FluentAssertions.dll",
+        "lib/uap10.0/FluentAssertions.pdb",
+        "lib/uap10.0/FluentAssertions.xml",
         "lib/win81/FluentAssertions.Core.dll",
         "lib/win81/FluentAssertions.Core.pdb",
         "lib/win81/FluentAssertions.Core.xml",
@@ -738,10 +737,7 @@
         "lib/wpa81/FluentAssertions.dll",
         "lib/wpa81/FluentAssertions.pdb",
         "lib/wpa81/FluentAssertions.pri",
-        "lib/wpa81/FluentAssertions.xml",
-        "lib/xamarin.ios/FluentAssertions.Core.dll",
-        "lib/xamarin.ios/FluentAssertions.Core.pdb",
-        "lib/xamarin.ios/FluentAssertions.Core.xml"
+        "lib/wpa81/FluentAssertions.xml"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/1.0.0": {
@@ -1014,56 +1010,56 @@
         "lib/portable-net45+win+wpa81/zh-Hant/Microsoft.Spatial.resources.dll"
       ]
     },
-    "Moon.Contracts/2.2.2": {
-      "sha512": "aRNEasSrmvZx6DSF1FUfyAWCmbkYQSGOiI0GcY3gYpYIZjgdti3/GCJ8WF38elDfEDTy8n9UFdr2WYaQ+Oyu3w==",
+    "Moon.Contracts/2.2.3": {
+      "sha512": "QJZZyrZLXR3WbZNRiT0/jXGj3N8gOpnOV8QoIV0aaKh0Il/8ocz5nTCnGJ6JNz6uPQADqXBQ6HoaOmdLZKwRNA==",
       "type": "package",
-      "path": "Moon.Contracts/2.2.2",
+      "path": "Moon.Contracts/2.2.3",
       "files": [
-        "Moon.Contracts.2.2.2.nupkg.sha512",
+        "Moon.Contracts.2.2.3.nupkg.sha512",
         "Moon.Contracts.nuspec",
         "lib/net46/Moon.Contracts.dll",
         "lib/netstandard1.5/Moon.Contracts.dll"
       ]
     },
-    "Moon.Reflection/2.2.2": {
-      "sha512": "sW/VaFIlxkqREWp2xToZ0fhGPtA9yLBO1pUMWsgDY/MaKW+XMI+BgmM7nvcOMHIgB0pzlZwtji27QaLEJj2aVA==",
+    "Moon.Reflection/2.2.3": {
+      "sha512": "GfleLlX3CGjBnorhW/MiOTv1OoXkEPuiFJyUYrAEj3sw6wqHNSBIXWtDVwdikQPjThF3u5AwDLw0dGGPpajkYw==",
       "type": "package",
-      "path": "Moon.Reflection/2.2.2",
+      "path": "Moon.Reflection/2.2.3",
       "files": [
-        "Moon.Reflection.2.2.2.nupkg.sha512",
+        "Moon.Reflection.2.2.3.nupkg.sha512",
         "Moon.Reflection.nuspec",
         "lib/net46/Moon.Reflection.dll",
         "lib/netstandard1.5/Moon.Reflection.dll"
       ]
     },
-    "Moon.Runtime/2.2.2": {
-      "sha512": "iXRYbyABGH03+tOtfh/qvjuM8/nr1zsfexoqYbSRiGwhwVTB6JRt1UueXS7rw26UrIu4Y5blTpT82ihtt0gQ4g==",
+    "Moon.Runtime/2.2.3": {
+      "sha512": "oF98h5f6Dc54rPdcXgX/04+1QetNVt5cU5QH9tG6SecAuOo5M5TLCvFievX77Og+T3j3vcxqxt0EKrpXNGFd3Q==",
       "type": "package",
-      "path": "Moon.Runtime/2.2.2",
+      "path": "Moon.Runtime/2.2.3",
       "files": [
-        "Moon.Runtime.2.2.2.nupkg.sha512",
+        "Moon.Runtime.2.2.3.nupkg.sha512",
         "Moon.Runtime.nuspec",
         "lib/net46/Moon.Runtime.dll",
         "lib/netstandard1.5/Moon.Runtime.dll"
       ]
     },
-    "Moon.Security/2.2.2": {
-      "sha512": "2Pns9l6qPQ2Wju8Dbke2M+tG7PLDOGUvNfsUttGm5uHu0JdPUojEu1hl6AzuVwVzLfD+fVPCIuHJxxkXRmvlqA==",
+    "Moon.Security/2.2.3": {
+      "sha512": "eV/NXpNkgK52mxoetx1l7u4RGS3dJBx4/QjHs15hwy2NuhVla6cL0Uwyp4ytADwLDaHVHX01Iq0BNGB3NoOZHw==",
       "type": "package",
-      "path": "Moon.Security/2.2.2",
+      "path": "Moon.Security/2.2.3",
       "files": [
-        "Moon.Security.2.2.2.nupkg.sha512",
+        "Moon.Security.2.2.3.nupkg.sha512",
         "Moon.Security.nuspec",
         "lib/net46/Moon.Security.dll",
         "lib/netstandard1.5/Moon.Security.dll"
       ]
     },
-    "Moon.Testing/2.2.2": {
-      "sha512": "QbjlnzVlYakFKfHvbv0eQkslu7alDTCnLBqrY3sJ4d1/kZE8IjEtkGwgIvYdBxCQQG8PqHlLj8fT7PsDbMHuag==",
+    "Moon.Testing/2.2.3": {
+      "sha512": "BGRbYMPXCBBHiRgw/s/3yInY5cyhEpLAxPIcwkarjpq+kJThIMKTXfvk4c01SahSaWC8XgAK0aU8g2CbusADiw==",
       "type": "package",
-      "path": "Moon.Testing/2.2.2",
+      "path": "Moon.Testing/2.2.3",
       "files": [
-        "Moon.Testing.2.2.2.nupkg.sha512",
+        "Moon.Testing.2.2.3.nupkg.sha512",
         "Moon.Testing.nuspec",
         "lib/net46/Moon.Testing.dll"
       ]
@@ -1583,7 +1579,7 @@
   "projectFileDependencyGroups": {
     "": [
       "Moon.OData.Sql >= 1.0.0-ci",
-      "Moon.Testing >= 2.2.2"
+      "Moon.Testing >= 2.2.3"
     ],
     ".NETFramework,Version=v4.6": []
   },
