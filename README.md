@@ -1,4 +1,4 @@
-## Moon.OData
+# Moon.OData
 
 [![Build status](https://ci.appveyor.com/api/projects/status/ps5d4mf7tw7mn23n?svg=true)](https://ci.appveyor.com/project/djanosik/moon-odata)
 [![NuGet](https://img.shields.io/nuget/v/Moon.OData.svg)](https://www.nuget.org/packages/Moon.OData)
