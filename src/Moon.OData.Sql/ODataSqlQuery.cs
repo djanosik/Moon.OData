@@ -10,10 +10,10 @@ namespace Moon.OData.Sql
     /// </summary>
     public class ODataSqlQuery
     {
-        readonly List<object> arguments;
-        readonly string commandText;
-        readonly IODataOptions options;
-        readonly Lazy<string> result;
+        private readonly List<object> arguments;
+        private readonly string commandText;
+        private readonly IODataOptions options;
+        private readonly Lazy<string> result;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ODataSqlQuery" /> class.
@@ -35,7 +35,7 @@ namespace Moon.OData.Sql
             this.arguments = new List<object>(arguments);
             this.arguments.Remove(options);
 
-            if (options.Count != null && options.Count.Value)
+            if ((options.Count != null) && options.Count.Value)
             {
                 Count = new CountSqlQuery(this, commandText, arguments);
             }
@@ -82,7 +82,7 @@ namespace Moon.OData.Sql
         public object[] Arguments
             => CommandText != null ? arguments.ToArray() : new object[0];
 
-        string Build()
+        private string Build()
         {
             var builder = new StringBuilder();
             builder.Append(SelectClause.Build(commandText, options, ResolveColumn));
@@ -92,7 +92,7 @@ namespace Moon.OData.Sql
             return builder.ToString();
         }
 
-        string GetOperator()
+        private string GetOperator()
             => commandText.Contains("WHERE", StringComparison.OrdinalIgnoreCase) ? "AND" : "WHERE";
     }
 }

@@ -17,18 +17,18 @@ namespace Moon.OData
     /// <typeparam name="TEntity">The type of the entity you are building the query for.</typeparam>
     public class ODataOptions<TEntity> : IODataOptions
     {
-        readonly Lazy<bool?> count;
-        readonly Lazy<string> deltaToken;
-        readonly Lazy<FilterClause> filter;
-        readonly Lazy<OrderByClause> orderBy;
+        private readonly Lazy<bool?> count;
+        private readonly Lazy<string> deltaToken;
+        private readonly Lazy<FilterClause> filter;
+        private readonly Lazy<OrderByClause> orderBy;
 
-        readonly ODataQueryOptionParser parser;
-        readonly Lazy<SearchClause> search;
-        readonly Lazy<SelectExpandClause> selectAndExpand;
-        readonly Lazy<long?> skip;
-        readonly Lazy<string> skipToken;
-        readonly Lazy<long?> top;
-        readonly ODataQueryValidator validator = new ODataQueryValidator();
+        private readonly ODataQueryOptionParser parser;
+        private readonly Lazy<SearchClause> search;
+        private readonly Lazy<SelectExpandClause> selectAndExpand;
+        private readonly Lazy<long?> skip;
+        private readonly Lazy<string> skipToken;
+        private readonly Lazy<long?> top;
+        private readonly ODataQueryValidator validator = new ODataQueryValidator();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ODataOptions{TEntity}" /> class.
@@ -151,7 +151,7 @@ namespace Moon.OData
             validator.Validate(this, settings);
         }
 
-        static IEnumerable<IPrimitiveType> GetPrimitives(IEnumerable<IPrimitiveType> primitives)
+        private static IEnumerable<IPrimitiveType> GetPrimitives(IEnumerable<IPrimitiveType> primitives)
         {
             yield return new PrimitiveType<byte[]>(EdmPrimitiveTypeKind.Binary);
             yield return new PrimitiveType<bool>(EdmPrimitiveTypeKind.Boolean);
@@ -179,7 +179,7 @@ namespace Moon.OData
             }
         }
 
-        ODataQueryOptionParser CreateParser(IEnumerable<IPrimitiveType> primitives)
+        private ODataQueryOptionParser CreateParser(IEnumerable<IPrimitiveType> primitives)
         {
             var model = GetEdmModel(GetPrimitives(primitives).ToDictionary(p => p.Type));
             var entities = model.FindDeclaredNavigationSource("Entities");
@@ -188,7 +188,7 @@ namespace Moon.OData
                 entities, RawValues.Values);
         }
 
-        EdmModel GetEdmModel(IDictionary<Type, IPrimitiveType> primitives)
+        private EdmModel GetEdmModel(IDictionary<Type, IPrimitiveType> primitives)
         {
             var result = new EdmModel();
 
@@ -199,7 +199,7 @@ namespace Moon.OData
             return result;
         }
 
-        EdmClrType GetEdmType(Type type, IDictionary<Type, IPrimitiveType> primitives)
+        private EdmClrType GetEdmType(Type type, IDictionary<Type, IPrimitiveType> primitives)
         {
             var result = new EdmClrType(type);
 

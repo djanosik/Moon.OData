@@ -6,6 +6,6 @@
     "Moon.Testing": "2.2.3"
   },
   "frameworks": {
-    "net46": { }
+    "net46": {}
   }
 }

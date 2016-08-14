@@ -10,7 +10,7 @@ namespace Moon.OData
     /// <typeparam name="TResult">The type of the result.</typeparam>
     public class Default<TResult> : IOData<TResult>, IEnumerable<TResult>
     {
-        readonly IEnumerable<TResult> results;
+        private readonly IEnumerable<TResult> results;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Default{TResult}" /> class.

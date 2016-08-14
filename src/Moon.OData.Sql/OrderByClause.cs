@@ -13,7 +13,7 @@ namespace Moon.OData.Sql
     /// </summary>
     public class OrderByClause
     {
-        readonly IODataOptions options;
+        private readonly IODataOptions options;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderByClause" /> class.
@@ -72,7 +72,7 @@ namespace Moon.OData.Sql
             return builder.ToString();
         }
 
-        void AppendColumn(StringBuilder builder, OBClause clause, bool isFirst)
+        private void AppendColumn(StringBuilder builder, OBClause clause, bool isFirst)
         {
             var node = clause.Expression as SingleValuePropertyAccessNode;
 

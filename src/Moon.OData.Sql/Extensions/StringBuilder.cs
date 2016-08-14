@@ -2,7 +2,7 @@
 
 namespace Moon.OData.Sql
 {
-    static class StringBuilderExtensions
+    internal static class StringBuilderExtensions
     {
         public static StringBuilder AppendWithSpace(this StringBuilder builder, string value)
         {

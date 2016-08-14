@@ -12,8 +12,8 @@ namespace Moon.OData.Sql
     /// </summary>
     public class SelectClause
     {
-        readonly string commandText;
-        readonly IODataOptions options;
+        private readonly string commandText;
+        private readonly IODataOptions options;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SelectClause" /> class.
@@ -125,15 +125,15 @@ namespace Moon.OData.Sql
             });
         }
 
-        string Either(string value, Func<string> build)
+        private string Either(string value, Func<string> build)
             => string.IsNullOrEmpty(value) ? build() : value;
 
-        string BuildColumns()
+        private string BuildColumns()
         {
             var isFirst = true;
             var select = options.SelectAndExpand;
 
-            if (select == null || select.AllSelected)
+            if ((select == null) || select.AllSelected)
             {
                 return "*";
             }
@@ -145,7 +145,7 @@ namespace Moon.OData.Sql
                 var path = item as PathSelectItem;
                 var wildcard = item as WildcardSelectItem;
 
-                if (isFirst && wildcard != null)
+                if (isFirst && (wildcard != null))
                 {
                     builder.Append("*");
                     break;

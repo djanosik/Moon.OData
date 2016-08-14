@@ -5,9 +5,9 @@
     /// </summary>
     public class ODataQueryValidator
     {
-        readonly FilterQueryValidator filterValidator = new FilterQueryValidator();
-        readonly SkipQueryValidator skipValidator = new SkipQueryValidator();
-        readonly TopQueryValidator topValidator = new TopQueryValidator();
+        private readonly FilterQueryValidator filterValidator = new FilterQueryValidator();
+        private readonly SkipQueryValidator skipValidator = new SkipQueryValidator();
+        private readonly TopQueryValidator topValidator = new TopQueryValidator();
 
         /// <summary>
         /// Validates the given OData query using the specified validation settings.
@@ -79,7 +79,7 @@
             }
         }
 
-        void ValidateAllowed(AllowedOptions option, ValidationSettings settings)
+        private void ValidateAllowed(AllowedOptions option, ValidationSettings settings)
         {
             if (!settings.AllowedOptions.HasFlag(option))
             {

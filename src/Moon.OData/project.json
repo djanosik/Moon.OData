@@ -1,13 +1,13 @@
 ﻿{
   "version": "1.0.0-ci",
-  "authors": [ "Dusan Janosik" ],
+  "authors": ["Dusan Janosik"],
   "description": ".NET library for parsing OData query options.",
 
   "packOptions": {
-    "owners": [ "djanosik" ],
+    "owners": ["djanosik"],
     "projectUrl": "https://gitlab.com/djanosik/moon-odata",
     "iconUrl": "https://djanosik.gitlab.io/moon.png",
-    "tags": [ "moon", "odata", "query" ]
+    "tags": ["moon", "odata", "query"]
   },
 
   "dependencies": {
@@ -16,7 +16,7 @@
   },
 
   "frameworks": {
-    "net46": { },
+    "net46": {},
     "netstandard1.5": {
       "dependencies": {
         "System.Reflection.TypeExtensions": "4.1.0"

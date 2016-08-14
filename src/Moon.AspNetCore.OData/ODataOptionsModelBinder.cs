@@ -13,7 +13,7 @@ namespace Moon.AspNetCore.OData
     /// </summary>
     public class ODataOptionsModelBinder : IModelBinder
     {
-        readonly IEnumerable<IPrimitiveType> primitives;
+        private readonly IEnumerable<IPrimitiveType> primitives;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ODataOptionsModelBinder" /> class.
@@ -37,7 +37,7 @@ namespace Moon.AspNetCore.OData
             return Task.CompletedTask;
         }
 
-        IDictionary<string, string> GetOptions(HttpRequest request)
+        private IDictionary<string, string> GetOptions(HttpRequest request)
         {
             Requires.NotNull(request, nameof(request));
 

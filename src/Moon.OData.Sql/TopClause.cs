@@ -5,7 +5,7 @@
     /// </summary>
     public class TopClause
     {
-        readonly IODataOptions options;
+        private readonly IODataOptions options;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TopClause" /> class.
@@ -31,7 +31,7 @@
         /// </summary>
         public string Build()
         {
-            if (options.Top != null && options.Skip == null)
+            if ((options.Top != null) && (options.Skip == null))
             {
                 return $"TOP({options.Top})";
             }

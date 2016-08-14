@@ -6,7 +6,7 @@ namespace Moon.OData.Sql.Tests
 {
     public class WhereClauseTests
     {
-        readonly IList<object> arguments = new List<object>();
+        private readonly IList<object> arguments = new List<object>();
 
         [Fact]
         public void BuildingClauseWhenFilterIsDefined()

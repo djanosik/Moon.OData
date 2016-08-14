@@ -8,8 +8,8 @@ namespace Moon.OData.Sql
     /// </summary>
     public class CountClause
     {
-        readonly string commandText;
-        readonly IODataOptions options;
+        private readonly string commandText;
+        private readonly IODataOptions options;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CountClause" /> class.

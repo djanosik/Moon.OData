@@ -14,9 +14,9 @@ namespace Moon.OData.Sql
     /// </summary>
     public class WhereClause
     {
-        readonly IList<object> arguments;
-        readonly string oprator;
-        readonly IODataOptions options;
+        private readonly IList<object> arguments;
+        private readonly string oprator;
+        private readonly IODataOptions options;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WhereClause" /> class.
@@ -85,7 +85,7 @@ namespace Moon.OData.Sql
             return builder.ToString();
         }
 
-        void AppendQueryNode(StringBuilder builder, QueryNode node)
+        private void AppendQueryNode(StringBuilder builder, QueryNode node)
         {
             switch (node.Kind)
             {
@@ -118,7 +118,7 @@ namespace Moon.OData.Sql
             }
         }
 
-        void AppendConstantNode(StringBuilder builder, ConstantNode node)
+        private void AppendConstantNode(StringBuilder builder, ConstantNode node)
         {
             if (node.Value == null)
             {
@@ -131,7 +131,7 @@ namespace Moon.OData.Sql
             }
         }
 
-        void AppendBinaryOperatorNode(StringBuilder builder, BinaryOperatorNode node)
+        private void AppendBinaryOperatorNode(StringBuilder builder, BinaryOperatorNode node)
         {
             builder.Append("(");
 
@@ -141,7 +141,7 @@ namespace Moon.OData.Sql
             {
                 var constantNode = GetConstantNode(node.Right);
 
-                if (constantNode != null && constantNode.Value == null)
+                if ((constantNode != null) && (constantNode.Value == null))
                 {
                     if (node.OperatorKind == BinaryOperatorKind.Equal)
                     {
@@ -163,13 +163,13 @@ namespace Moon.OData.Sql
             builder.Append(")");
         }
 
-        void AppendUnaryOperatorNode(StringBuilder builder, UnaryOperatorNode node)
+        private void AppendUnaryOperatorNode(StringBuilder builder, UnaryOperatorNode node)
         {
             builder.Append($"{ToSqlOperator(node.OperatorKind)} ");
             AppendQueryNode(builder, node.Operand);
         }
 
-        void AppendSingleValuePropertyAccessNode(StringBuilder builder, SingleValuePropertyAccessNode node)
+        private void AppendSingleValuePropertyAccessNode(StringBuilder builder, SingleValuePropertyAccessNode node)
         {
             var property = node.Property as EdmClrProperty;
 
@@ -188,7 +188,7 @@ namespace Moon.OData.Sql
             builder.Append(column);
         }
 
-        void AppendSingleValueFunctionCallNode(StringBuilder builder, SingleValueFunctionCallNode node)
+        private void AppendSingleValueFunctionCallNode(StringBuilder builder, SingleValueFunctionCallNode node)
         {
             var parameters = node.Parameters.ToList();
 
@@ -288,21 +288,21 @@ namespace Moon.OData.Sql
             }
         }
 
-        bool IsMethodCall(SingleValueNode node)
+        private bool IsMethodCall(SingleValueNode node)
         {
             var callNode = node as SingleValueFunctionCallNode;
 
             if (callNode != null)
             {
-                return callNode.Name == "contains"
-                       || callNode.Name == "endswith"
-                       || callNode.Name == "startswith";
+                return (callNode.Name == "contains")
+                       || (callNode.Name == "endswith")
+                       || (callNode.Name == "startswith");
             }
 
             return false;
         }
 
-        ConstantNode GetConstantNode(SingleValueNode node)
+        private ConstantNode GetConstantNode(SingleValueNode node)
         {
             if (node is ConvertNode)
             {
@@ -312,7 +312,7 @@ namespace Moon.OData.Sql
             return node as ConstantNode;
         }
 
-        string ToSqlOperator(BinaryOperatorKind operatorKind)
+        private string ToSqlOperator(BinaryOperatorKind operatorKind)
         {
             switch (operatorKind)
             {
@@ -360,7 +360,7 @@ namespace Moon.OData.Sql
             }
         }
 
-        string ToSqlOperator(UnaryOperatorKind operatorKind)
+        private string ToSqlOperator(UnaryOperatorKind operatorKind)
         {
             if (operatorKind != UnaryOperatorKind.Not)
             {
@@ -370,7 +370,7 @@ namespace Moon.OData.Sql
             return "NOT";
         }
 
-        string ToSqlFunction(string functionName)
+        private string ToSqlFunction(string functionName)
         {
             switch (functionName)
             {

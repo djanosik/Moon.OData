@@ -22,7 +22,7 @@ namespace Moon.OData.Validators
             ValidateQueryNode(filter.Expression, settings);
         }
 
-        void ValidateQueryNode(QueryNode node, ValidationSettings settings)
+        private void ValidateQueryNode(QueryNode node, ValidationSettings settings)
         {
             RuntimeHelpers.EnsureSufficientExecutionStack();
 
@@ -39,7 +39,7 @@ namespace Moon.OData.Validators
             }
         }
 
-        void ValidateSingleValueNode(SingleValueNode node, ValidationSettings settings)
+        private void ValidateSingleValueNode(SingleValueNode node, ValidationSettings settings)
         {
             switch (node.Kind)
             {
@@ -81,7 +81,7 @@ namespace Moon.OData.Validators
             }
         }
 
-        void ValidateCollectionNode(CollectionNode node, ValidationSettings settings)
+        private void ValidateCollectionNode(CollectionNode node, ValidationSettings settings)
         {
             switch (node.Kind)
             {
@@ -95,7 +95,7 @@ namespace Moon.OData.Validators
             }
         }
 
-        void ValidateBinaryOperatorNode(BinaryOperatorNode node, ValidationSettings settings)
+        private void ValidateBinaryOperatorNode(BinaryOperatorNode node, ValidationSettings settings)
         {
             switch (node.OperatorKind)
             {
@@ -117,7 +117,7 @@ namespace Moon.OData.Validators
             }
         }
 
-        void ValidateUnaryOperatorNode(UnaryOperatorNode node, ValidationSettings settings)
+        private void ValidateUnaryOperatorNode(UnaryOperatorNode node, ValidationSettings settings)
         {
             ValidateQueryNode(node.Operand, settings);
 
@@ -133,7 +133,7 @@ namespace Moon.OData.Validators
             }
         }
 
-        void ValidateSingleValueFunctionCallNode(SingleValueFunctionCallNode node, ValidationSettings settings)
+        private void ValidateSingleValueFunctionCallNode(SingleValueFunctionCallNode node, ValidationSettings settings)
         {
             ValidateFunction(node.Name, settings);
 
@@ -143,7 +143,7 @@ namespace Moon.OData.Validators
             }
         }
 
-        void ValidateSingleEntityFunctionCallNode(SingleEntityFunctionCallNode node, ValidationSettings settings)
+        private void ValidateSingleEntityFunctionCallNode(SingleEntityFunctionCallNode node, ValidationSettings settings)
         {
             ValidateFunction(node.Name, settings);
 
@@ -153,25 +153,25 @@ namespace Moon.OData.Validators
             }
         }
 
-        void ValidateAnyNode(AnyNode node, ValidationSettings settings)
+        private void ValidateAnyNode(AnyNode node, ValidationSettings settings)
         {
             ValidateFunction("any", settings);
             ValidateQueryNode(node.Source, settings);
 
-            if (node.Body != null && node.Body.Kind != QueryNodeKind.Constant)
+            if ((node.Body != null) && (node.Body.Kind != QueryNodeKind.Constant))
             {
                 ValidateQueryNode(node.Body, settings);
             }
         }
 
-        void ValidateAllNode(AllNode node, ValidationSettings settings)
+        private void ValidateAllNode(AllNode node, ValidationSettings settings)
         {
             ValidateFunction("all", settings);
             ValidateQueryNode(node.Source, settings);
             ValidateQueryNode(node.Body, settings);
         }
 
-        void ValidateLogicalOperator(BinaryOperatorNode node, ValidationSettings settings)
+        private void ValidateLogicalOperator(BinaryOperatorNode node, ValidationSettings settings)
         {
             var op = ToLogicalOperator(node);
 
@@ -184,7 +184,7 @@ namespace Moon.OData.Validators
             ValidateQueryNode(node.Right, settings);
         }
 
-        void ValidateArithmeticOperator(BinaryOperatorNode node, ValidationSettings settings)
+        private void ValidateArithmeticOperator(BinaryOperatorNode node, ValidationSettings settings)
         {
             var op = ToArithmeticOperator(node);
 
@@ -197,7 +197,7 @@ namespace Moon.OData.Validators
             ValidateQueryNode(node.Right, settings);
         }
 
-        void ValidateFunction(string functionName, ValidationSettings settings)
+        private void ValidateFunction(string functionName, ValidationSettings settings)
         {
             var function = ToFunction(functionName);
 
@@ -207,7 +207,7 @@ namespace Moon.OData.Validators
             }
         }
 
-        AllowedOperators ToLogicalOperator(BinaryOperatorNode binaryNode)
+        private AllowedOperators ToLogicalOperator(BinaryOperatorNode binaryNode)
         {
             var result = AllowedOperators.None;
 
@@ -253,7 +253,7 @@ namespace Moon.OData.Validators
             return result;
         }
 
-        AllowedOperators ToArithmeticOperator(BinaryOperatorNode binaryNode)
+        private AllowedOperators ToArithmeticOperator(BinaryOperatorNode binaryNode)
         {
             var result = AllowedOperators.None;
 
@@ -283,7 +283,7 @@ namespace Moon.OData.Validators
             return result;
         }
 
-        AllowedFunctions ToFunction(string functionName)
+        private AllowedFunctions ToFunction(string functionName)
         {
             var result = AllowedFunctions.None;
 

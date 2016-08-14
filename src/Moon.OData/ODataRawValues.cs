@@ -7,7 +7,7 @@ namespace Moon.OData
     /// </summary>
     public sealed class ODataRawValues
     {
-        readonly HashSet<string> supportedOptions = GetSupportedOptions();
+        private readonly HashSet<string> supportedOptions = GetSupportedOptions();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ODataRawValues" /> class.
@@ -99,7 +99,7 @@ namespace Moon.OData
         public string Top
             => TryGetValue("$top");
 
-        static HashSet<string> GetSupportedOptions()
+        private static HashSet<string> GetSupportedOptions()
         {
             return new HashSet<string> {
                 "$count",
@@ -116,7 +116,7 @@ namespace Moon.OData
             };
         }
 
-        string TryGetValue(string key)
+        private string TryGetValue(string key)
             => Values.ContainsKey(key) ? Values[key] : null;
     }
 }

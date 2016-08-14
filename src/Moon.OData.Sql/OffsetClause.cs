@@ -7,7 +7,7 @@ namespace Moon.OData.Sql
     /// </summary>
     public class OffsetClause
     {
-        readonly IODataOptions options;
+        private readonly IODataOptions options;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OffsetClause" /> class.
@@ -35,7 +35,7 @@ namespace Moon.OData.Sql
         {
             var builder = new StringBuilder();
 
-            if (options.Skip != null && options.OrderBy != null)
+            if ((options.Skip != null) && (options.OrderBy != null))
             {
                 builder.Append($"OFFSET {options.Skip} ROWS");
 

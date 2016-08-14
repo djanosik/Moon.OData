@@ -10,7 +10,7 @@ namespace Moon.AspNetCore.OData
     /// </summary>
     public class ODataOptionsModelBinderProvider : IModelBinderProvider
     {
-        readonly IEnumerable<IPrimitiveType> primitives;
+        private readonly IEnumerable<IPrimitiveType> primitives;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ODataOptionsModelBinderProvider" /> class.
@@ -30,7 +30,7 @@ namespace Moon.AspNetCore.OData
             var modelType = context.Metadata.ModelType;
             var typeInfo = modelType.GetTypeInfo();
 
-            if (typeInfo.IsGenericType && typeInfo.GetGenericTypeDefinition() == typeof(ODataOptions<>))
+            if (typeInfo.IsGenericType && (typeInfo.GetGenericTypeDefinition() == typeof(ODataOptions<>)))
             {
                 return new ODataOptionsModelBinder(primitives);
             }
