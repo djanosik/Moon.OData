@@ -3,7 +3,7 @@
   "testRunner": "xunit",
   "dependencies": {
     "Moon.OData.Sql": "1.0.0-ci",
-    "Moon.Testing": "2.2.3"
+    "Moon.Testing": "2.2.7"
   },
   "frameworks": {
     "net46": {}

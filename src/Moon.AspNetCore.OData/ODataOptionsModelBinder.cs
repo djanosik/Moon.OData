@@ -32,7 +32,7 @@ namespace Moon.AspNetCore.OData
         {
             var modelType = bindingContext.ModelType;
             var request = bindingContext.HttpContext.Request;
-            var model = Class.Create(modelType, GetOptions(request), primitives);
+            var model = Class.Activate(modelType, GetOptions(request), primitives);
             bindingContext.Result = ModelBindingResult.Success(model);
             return Task.CompletedTask;
         }

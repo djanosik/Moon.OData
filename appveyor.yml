@@ -1,8 +1,12 @@
 version: 2.2.{build}
 init:
   - git config --global core.autocrlf true
+install:
+  - ps: Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+  - ps: Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+  - ps: Install-Module InvokeBuild
 build_script:
-  - fake.cmd Build
+  - ps: Invoke-Build
 artifacts:
   - path: artifacts/**.nupkg
     name: NuGet

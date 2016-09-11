@@ -16,13 +16,8 @@
 
   "frameworks": {
     "net46": {},
-    "netstandard1.5": {
-      "dependencies": {
-        "System.Text.RegularExpressions": "4.1.0"
-      },
-      "imports": [
-        "dnxcore50"
-      ]
+    "netstandard1.3": {
+      "imports": [ "dnxcore50" ]
     }
   }
 }

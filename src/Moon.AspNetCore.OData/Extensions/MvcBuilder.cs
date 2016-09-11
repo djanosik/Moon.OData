@@ -5,9 +5,6 @@ using Moon.OData;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
-    /// <summary>
-    /// <see cref="IMvcBuilder" /> extension methods.
-    /// </summary>
     public static class MvcBuilderExtensions
     {
         /// <summary>

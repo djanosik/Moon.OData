@@ -11,19 +11,15 @@
   },
 
   "dependencies": {
-    "Moon.OData": "1.0.0-ci",
-    "Microsoft.AspNetCore.Mvc.Core": "1.0.0"
+    "Microsoft.AspNetCore.Mvc.Core": "1.0.0",
+    "Moon.AspNetCore": "2.3.6",
+    "Moon.OData": "1.0.0-ci"
   },
 
   "frameworks": {
     "net46": {},
     "netstandard1.6": {
-      "dependencies": {
-        "System.Runtime": "4.1.0"
-      },
-      "imports": [
-        "dnxcore50"
-      ]
+      "imports": ["dnxcore50"]
     }
   }
 }
