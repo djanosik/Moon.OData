@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.25920.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{33290BAC-2B47-482E-8903-130966AE2B02}"
 	ProjectSection(SolutionItems) = preProject
@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{33290B
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
+		Common.props = Common.props
 		global.json = global.json
 		LICENSE = LICENSE
 		README.md = README.md
@@ -18,17 +19,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D806EDE3-069
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{7ACA82C9-9073-4F44-BB15-2B85F7A2E878}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Moon.OData", "src\Moon.OData\Moon.OData.xproj", "{76CC36BF-5345-4B41-B7B5-4269DBC468E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moon.OData", "src\Moon.OData\Moon.OData.csproj", "{76CC36BF-5345-4B41-B7B5-4269DBC468E4}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Moon.OData.Sql", "src\Moon.OData.Sql\Moon.OData.Sql.xproj", "{22332947-19D5-4C54-AB4E-54020D78FD71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moon.OData.Sql", "src\Moon.OData.Sql\Moon.OData.Sql.csproj", "{22332947-19D5-4C54-AB4E-54020D78FD71}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{DFCCDAF4-CA7D-46CF-AE70-E37918BB87F5}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Moon.OData.Sql.Tests", "test\Moon.OData.Sql.Tests\Moon.OData.Sql.Tests.xproj", "{45D621BA-298D-4BBD-9073-1BDA226F8DC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moon.OData.Sql.Tests", "test\Moon.OData.Sql.Tests\Moon.OData.Sql.Tests.csproj", "{45D621BA-298D-4BBD-9073-1BDA226F8DC9}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Moon.AspNetCore.OData.Sample", "samples\Moon.AspNetCore.OData.Sample\Moon.AspNetCore.OData.Sample.xproj", "{49460327-4DD4-4E20-952C-6A115967C79B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moon.AspNetCore.OData.Sample", "samples\Moon.AspNetCore.OData.Sample\Moon.AspNetCore.OData.Sample.csproj", "{49460327-4DD4-4E20-952C-6A115967C79B}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Moon.AspNetCore.OData", "src\Moon.AspNetCore.OData\Moon.AspNetCore.OData.xproj", "{FE88F681-6056-44A1-AD73-8AC0E267F3FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moon.AspNetCore.OData", "src\Moon.AspNetCore.OData\Moon.AspNetCore.OData.csproj", "{FE88F681-6056-44A1-AD73-8AC0E267F3FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,24 +37,24 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{76CC36BF-5345-4B41-B7B5-4269DBC468E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76CC36BF-5345-4B41-B7B5-4269DBC468E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76CC36BF-5345-4B41-B7B5-4269DBC468E4}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{76CC36BF-5345-4B41-B7B5-4269DBC468E4}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{76CC36BF-5345-4B41-B7B5-4269DBC468E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76CC36BF-5345-4B41-B7B5-4269DBC468E4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{22332947-19D5-4C54-AB4E-54020D78FD71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{22332947-19D5-4C54-AB4E-54020D78FD71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22332947-19D5-4C54-AB4E-54020D78FD71}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{22332947-19D5-4C54-AB4E-54020D78FD71}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{22332947-19D5-4C54-AB4E-54020D78FD71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22332947-19D5-4C54-AB4E-54020D78FD71}.Release|Any CPU.Build.0 = Release|Any CPU
 		{45D621BA-298D-4BBD-9073-1BDA226F8DC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{45D621BA-298D-4BBD-9073-1BDA226F8DC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45D621BA-298D-4BBD-9073-1BDA226F8DC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45D621BA-298D-4BBD-9073-1BDA226F8DC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45D621BA-298D-4BBD-9073-1BDA226F8DC9}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{45D621BA-298D-4BBD-9073-1BDA226F8DC9}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{49460327-4DD4-4E20-952C-6A115967C79B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{49460327-4DD4-4E20-952C-6A115967C79B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{49460327-4DD4-4E20-952C-6A115967C79B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{49460327-4DD4-4E20-952C-6A115967C79B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FE88F681-6056-44A1-AD73-8AC0E267F3FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FE88F681-6056-44A1-AD73-8AC0E267F3FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49460327-4DD4-4E20-952C-6A115967C79B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{49460327-4DD4-4E20-952C-6A115967C79B}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{FE88F681-6056-44A1-AD73-8AC0E267F3FE}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{FE88F681-6056-44A1-AD73-8AC0E267F3FE}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{FE88F681-6056-44A1-AD73-8AC0E267F3FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE88F681-6056-44A1-AD73-8AC0E267F3FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

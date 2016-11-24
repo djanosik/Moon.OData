@@ -11,7 +11,7 @@ namespace Moon.AspNetCore.OData.Sample.Server.Home
         {
             return View(new ODataSqlQuery(
                 "SELECT FROM Entities WHERE OwnerId = @p0",
-                10456, options
+                10456
             ));
         }
     }
