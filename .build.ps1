@@ -12,8 +12,8 @@ task RestoreDependencies Clean, {
 
 task BuildSolution RestoreDependencies, {
     dir *.sln | %{
-		exec { dotnet build $_.FullName -c Release /p:Version=$version }
-	}
+        exec { dotnet build $_.FullName -c Release /p:Version=$version }
+    }
 }
 
 task PackProjects BuildSolution, {
