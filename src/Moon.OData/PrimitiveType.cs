@@ -21,8 +21,7 @@ namespace Moon.OData
         /// <summary>
         /// Gets the <see cref="System.Type" /> of the primitive type.
         /// </summary>
-        public Type Type
-            => typeof(TPrimitive);
+        public Type Type => typeof(TPrimitive);
 
         /// <summary>
         /// Gets the kind of the EDM primitive type.

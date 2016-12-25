@@ -16,7 +16,7 @@
 
             if (skip > settings.MaxSkip)
             {
-                throw new ODataException($"The $skip query option exceeded the ValidationSettiongs.MaxSkip value.");
+                throw new ODataException("The $skip query option exceeded the ValidationSettiongs.MaxSkip value.");
             }
         }
     }

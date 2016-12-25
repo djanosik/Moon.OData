@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
+// ReSharper disable once CheckNamespace
+
 namespace Moon.OData
 {
     /// <summary>

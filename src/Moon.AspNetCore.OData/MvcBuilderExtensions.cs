@@ -3,6 +3,8 @@ using System.Linq;
 using Moon.AspNetCore.OData;
 using Moon.OData;
 
+// ReSharper disable once CheckNamespace
+
 namespace Microsoft.Extensions.DependencyInjection
 {
     public static class MvcBuilderExtensions
@@ -20,8 +22,6 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="builder">The ASP.NET MVC builder.</param>
         /// <param name="primitives">An enumeration of additional primitive types.</param>
         public static IMvcBuilder AddOData(this IMvcBuilder builder, IEnumerable<IPrimitiveType> primitives)
-        {
-            return builder.AddMvcOptions(o => { o.ModelBinderProviders.Insert(0, new ODataOptionsModelBinderProvider(primitives)); });
-        }
+            => builder.AddMvcOptions(o => { o.ModelBinderProviders.Insert(0, new ODataOptionsModelBinderProvider(primitives)); });
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Moon.OData
+﻿// ReSharper disable once CheckNamespace
+
+namespace Moon.OData
 {
     /// <summary>
     /// Defines the result of an OData query.
