@@ -29,7 +29,15 @@ namespace Moon.OData.Sql
             Requires.NotNull(arguments, nameof(arguments));
 
             var last = arguments.Length - 1;
-            options = (IODataOptions)arguments[last];
+
+            if (last >= 0 && arguments[last] is IODataOptions options)
+            {
+                this.options = options;
+            }
+            else
+            {
+                throw new InvalidOperationException("You've forgot to include ODataOptions as the last argument.");
+            }
 
             this.commandText = commandText;
             this.arguments = new List<object>(arguments);

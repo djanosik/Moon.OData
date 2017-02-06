@@ -34,8 +34,8 @@ namespace Moon.OData
         /// Initializes a new instance of the <see cref="ODataOptions{TEntity}" /> class.
         /// </summary>
         /// <param name="options">The dictionary storing query option key-value pairs.</param>
-        public ODataOptions(IDictionary<string, string> options)
-            : this(options, Enumerable.Empty<IPrimitiveType>())
+        public ODataOptions(Dictionary<string, string> options)
+            : this(options, new IPrimitiveType[0])
         {
         }
 
@@ -43,8 +43,8 @@ namespace Moon.OData
         /// Initializes a new instance of the <see cref="ODataOptions{TEntity}" /> class.
         /// </summary>
         /// <param name="options">The dictionary storing query option key-value pairs.</param>
-        /// <param name="primitives">An enumeration of additional primitive types.</param>
-        public ODataOptions(IDictionary<string, string> options, IEnumerable<IPrimitiveType> primitives)
+        /// <param name="primitives">An array of additional primitive types.</param>
+        public ODataOptions(Dictionary<string, string> options, IPrimitiveType[] primitives)
         {
             Requires.NotNull(options, nameof(options));
             Requires.NotNull(primitives, nameof(primitives));

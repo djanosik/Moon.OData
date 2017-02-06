@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\Common.props" />
   <PropertyGroup>
     <TargetFrameworks>net46;netstandard1.6</TargetFrameworks>
@@ -6,10 +6,6 @@
     <Description>ASP.NET Core library for parsing OData query options.</Description>
     <PackageTags>moon;aspnet;odata;query</PackageTags>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="**\*.cs" />
-    <EmbeddedResource Include="**\*.resx" />
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Moon.OData\Moon.OData.csproj" />
   </ItemGroup>

@@ -32,12 +32,12 @@ namespace Moon.AspNetCore.OData
         {
             var modelType = bindingContext.ModelType;
             var request = bindingContext.HttpContext.Request;
-            var model = Class.Activate(modelType, GetOptions(request), primitives);
+            var model = Class.Activate(modelType, GetOptions(request), primitives.ToArray());
             bindingContext.Result = ModelBindingResult.Success(model);
             return Task.CompletedTask;
         }
 
-        private IDictionary<string, string> GetOptions(HttpRequest request)
+        private Dictionary<string, string> GetOptions(HttpRequest request)
         {
             Requires.NotNull(request, nameof(request));
 
