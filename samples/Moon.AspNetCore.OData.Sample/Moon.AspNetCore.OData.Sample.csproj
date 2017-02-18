@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.0</TargetFramework>
-    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">$(PackageTargetFallback);aspnetcore50</PackageTargetFallback>
+    <PackageTargetFallback>aspnetcore50</PackageTargetFallback>
     <PreserveCompilationContext>true</PreserveCompilationContext>
   </PropertyGroup>
   <ItemGroup>
@@ -10,8 +10,6 @@
     <ProjectReference Include="..\..\src\Moon.OData.Sql\Moon.OData.Sql.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NETCore.App" Version="1.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore" Version="1.0.3" />
+    <PackageReference Include="Moon.AspNetCore.Mvc" Version="3.0.1" />
   </ItemGroup>
 </Project>

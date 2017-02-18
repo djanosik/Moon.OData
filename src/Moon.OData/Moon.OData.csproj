@@ -1,16 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\Common.props" />
   <PropertyGroup>
-    <TargetFrameworks>net46;netstandard1.3</TargetFrameworks>
-    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netstandard1.3' ">$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <PackageTargetFallback>dnxcore50</PackageTargetFallback>
     <Description>.NET library for parsing OData query options.</Description>
     <PackageTags>moon;odata;query</PackageTags>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Moon.Runtime" Version="2.2.8" />
-    <PackageReference Include="Microsoft.OData.Core" Version="6.15.0" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <PackageReference Include="Moon.Runtime" Version="3.0.2" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.1.0" />
+    <PackageReference Include="Microsoft.OData.Core" Version="6.15.0" />
   </ItemGroup>
 </Project>

@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\Common.props" />
   <PropertyGroup>
-    <TargetFrameworks>net46;netstandard1.6</TargetFrameworks>
-    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netstandard1.6' ">$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <PackageTargetFallback>dnxcore50</PackageTargetFallback>
     <Description>ASP.NET Core library for parsing OData query options.</Description>
     <PackageTags>moon;aspnet;odata;query</PackageTags>
   </PropertyGroup>
@@ -10,7 +10,7 @@
     <ProjectReference Include="..\Moon.OData\Moon.OData.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Moon.Reflection" Version="2.2.8" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="1.0.0" />
+    <PackageReference Include="Moon.Reflection" Version="3.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="1.0.0" />
   </ItemGroup>
 </Project>
