@@ -10,6 +10,6 @@
     <ProjectReference Include="..\..\src\Moon.OData.Sql\Moon.OData.Sql.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Moon.AspNetCore.Mvc" Version="3.0.1" />
+    <PackageReference Include="Moon.AspNetCore.Mvc" Version="3.0.2" />
   </ItemGroup>
 </Project>
