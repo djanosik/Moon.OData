@@ -1,5 +1,9 @@
 # Moon.OData changelog
 
+3.0.3
+
+. `$apply` clause is now available on ODataOptions.
+
 3.0.1
 
 - All libraries are targeting .NET Standard.
