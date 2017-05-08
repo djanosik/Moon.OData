@@ -2,7 +2,7 @@
 
 3.0.3
 
-. `$apply` clause is now available on ODataOptions.
+- `$apply` clause is now available on ODataOptions.
 
 3.0.1
 
