@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Microsoft.OData.Core.UriParser;
+using Microsoft.OData.Core.UriParser.Aggregation;
 using Microsoft.OData.Core.UriParser.Semantic;
 using Microsoft.OData.Edm;
 using Microsoft.OData.Edm.Library;
@@ -28,6 +29,7 @@ namespace Moon.OData
         private readonly Lazy<long?> skip;
         private readonly Lazy<string> skipToken;
         private readonly Lazy<long?> top;
+        private readonly Lazy<ApplyClause> apply;
         private readonly ODataQueryValidator validator = new ODataQueryValidator();
 
         /// <summary>
@@ -61,6 +63,7 @@ namespace Moon.OData
             skip = Lazy.From(parser.ParseSkip);
             skipToken = Lazy.From(parser.ParseSkipToken);
             top = Lazy.From(parser.ParseTop);
+            apply = Lazy.From(parser.ParseApply);
 
             IsCaseSensitive = true;
         }
@@ -134,6 +137,12 @@ namespace Moon.OData
         /// </summary>
         public long? Top
             => top.Value;
+
+        /// <summary>
+        /// Gets a parsed $apply query option.
+        /// </summary>
+        public ApplyClause Apply
+            => apply.Value;
 
         /// <summary>
         /// Gets raw OData query option values.

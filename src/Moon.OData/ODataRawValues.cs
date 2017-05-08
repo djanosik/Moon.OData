@@ -99,6 +99,12 @@ namespace Moon.OData
         public string Top
             => TryGetValue("$top");
 
+        /// <summary>
+        /// Gets the raw $apply option value.
+        /// </summary>
+        public string Apply
+            => TryGetValue("$apply");
+
         private static HashSet<string> GetSupportedOptions()
         {
             return new HashSet<string> {
@@ -112,7 +118,8 @@ namespace Moon.OData
                 "$expand",
                 "$skip",
                 "$skiptoken",
-                "$top"
+                "$top",
+                "$apply"
             };
         }
 
