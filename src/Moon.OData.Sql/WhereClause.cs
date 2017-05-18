@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using Microsoft.OData.Core.UriParser.Semantic;
-using Microsoft.OData.Core.UriParser.TreeNodeKinds;
+using Microsoft.OData.UriParser;
 using Moon.OData.Edm;
 
 namespace Moon.OData.Sql
@@ -141,7 +140,7 @@ namespace Moon.OData.Sql
             {
                 var constantNode = GetConstantNode(node.Right);
 
-                if ((constantNode != null) && (constantNode.Value == null))
+                if (constantNode != null && constantNode.Value == null)
                 {
                     if (node.OperatorKind == BinaryOperatorKind.Equal)
                     {
@@ -294,9 +293,9 @@ namespace Moon.OData.Sql
 
             if (callNode != null)
             {
-                return (callNode.Name == "contains")
-                       || (callNode.Name == "endswith")
-                       || (callNode.Name == "startswith");
+                return callNode.Name == "contains"
+                    || callNode.Name == "endswith"
+                    || callNode.Name == "startswith";
             }
 
             return false;

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Reflection;
 using System.Text;
-using Microsoft.OData.Core.UriParser;
-using Microsoft.OData.Core.UriParser.Semantic;
+using Microsoft.OData.UriParser;
 using Moon.OData.Edm;
-using OBClause = Microsoft.OData.Core.UriParser.Semantic.OrderByClause;
+using OBClause = Microsoft.OData.UriParser.OrderByClause;
 
 namespace Moon.OData.Sql
 {

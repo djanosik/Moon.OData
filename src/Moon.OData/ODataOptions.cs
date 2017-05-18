@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Microsoft.OData.Core.UriParser;
-using Microsoft.OData.Core.UriParser.Aggregation;
-using Microsoft.OData.Core.UriParser.Semantic;
 using Microsoft.OData.Edm;
-using Microsoft.OData.Edm.Library;
+using Microsoft.OData.UriParser;
+using Microsoft.OData.UriParser.Aggregation;
 using Moon.OData.Edm;
 using Moon.OData.Validators;
 
@@ -18,18 +16,17 @@ namespace Moon.OData
     /// <typeparam name="TEntity">The type of the entity you are building the query for.</typeparam>
     public class ODataOptions<TEntity> : IODataOptions
     {
+        private readonly Lazy<ApplyClause> apply;
         private readonly Lazy<bool?> count;
         private readonly Lazy<string> deltaToken;
         private readonly Lazy<FilterClause> filter;
         private readonly Lazy<OrderByClause> orderBy;
-
         private readonly ODataQueryOptionParser parser;
         private readonly Lazy<SearchClause> search;
         private readonly Lazy<SelectExpandClause> selectAndExpand;
         private readonly Lazy<long?> skip;
         private readonly Lazy<string> skipToken;
         private readonly Lazy<long?> top;
-        private readonly Lazy<ApplyClause> apply;
         private readonly ODataQueryValidator validator = new ODataQueryValidator();
 
         /// <summary>
@@ -75,8 +72,8 @@ namespace Moon.OData
             => typeof(TEntity);
 
         /// <summary>
-        /// Gets or sets whether the parser is case sensitive when matching names of properties. The
-        /// default value is true.
+        /// Gets or sets whether the parser is case sensitive when matching names of properties.
+        /// The default value is true.
         /// </summary>
         public bool IsCaseSensitive
         {

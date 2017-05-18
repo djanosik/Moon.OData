@@ -1,5 +1,5 @@
 ﻿using System;
-using Microsoft.OData.Edm.Library;
+using Microsoft.OData.Edm;
 
 namespace Moon.OData.Edm
 {

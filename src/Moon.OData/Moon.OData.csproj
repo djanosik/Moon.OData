@@ -2,13 +2,13 @@
   <Import Project="..\..\Common.props" />
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
-    <PackageTargetFallback>dnxcore50</PackageTargetFallback>
     <Description>.NET library for parsing OData query options.</Description>
     <PackageTags>moon;odata;query</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Moon.Runtime" Version="3.0.2" />
+    <PackageReference Include="Microsoft.OData.Core" Version="7.2.0" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.1.0" />
-    <PackageReference Include="Microsoft.OData.Core" Version="6.15.0" />
+    <PackageReference Include="System.ComponentModel" Version="4.3.0" />
   </ItemGroup>
 </Project>

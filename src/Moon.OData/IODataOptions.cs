@@ -1,5 +1,5 @@
 ﻿using System;
-using Microsoft.OData.Core.UriParser.Semantic;
+using Microsoft.OData.UriParser;
 
 namespace Moon.OData
 {

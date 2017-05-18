@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Reflection;
 using Microsoft.OData.Edm;
-using Microsoft.OData.Edm.Library;
 
 namespace Moon.OData.Edm
 {
@@ -59,6 +58,6 @@ namespace Moon.OData.Edm
             => base.Type as EdmClrType;
 
         private static bool IsNullable(Type type)
-            => !type.GetTypeInfo().IsValueType || (Nullable.GetUnderlyingType(type) != null);
+            => !type.GetTypeInfo().IsValueType || Nullable.GetUnderlyingType(type) != null;
     }
 }

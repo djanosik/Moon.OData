@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
-using Microsoft.OData.Core.UriParser.Semantic;
+using Microsoft.OData.UriParser;
 using Moon.OData.Edm;
 
 namespace Moon.OData.Sql
@@ -133,7 +133,7 @@ namespace Moon.OData.Sql
             var isFirst = true;
             var select = options.SelectAndExpand;
 
-            if ((select == null) || select.AllSelected)
+            if (select == null || select.AllSelected)
             {
                 return "*";
             }
@@ -145,7 +145,7 @@ namespace Moon.OData.Sql
                 var path = item as PathSelectItem;
                 var wildcard = item as WildcardSelectItem;
 
-                if (isFirst && (wildcard != null))
+                if (isFirst && wildcard != null)
                 {
                     builder.Append("*");
                     break;

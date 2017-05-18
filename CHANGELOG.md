@@ -1,8 +1,12 @@
 # Moon.OData changelog
 
+3.1.1
+
+- Uses ODataLib 7.2 compatible with `netstandard1.x`
+
 3.0.3
 
-- `$apply` clause is now available on ODataOptions.
+- `$apply` clause is now available on `ODataOptions`.
 
 3.0.1
 

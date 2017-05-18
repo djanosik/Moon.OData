@@ -2,7 +2,6 @@
   <Import Project="..\..\Common.props" />
   <PropertyGroup>
     <TargetFrameworks>net46;netstandard1.6</TargetFrameworks>
-    <PackageTargetFallback>dnxcore50</PackageTargetFallback>
     <Description>ASP.NET Core library for parsing OData query options.</Description>
     <PackageTags>moon;aspnet;odata;query</PackageTags>
   </PropertyGroup>

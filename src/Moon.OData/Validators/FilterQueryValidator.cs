@@ -1,6 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
-using Microsoft.OData.Core.UriParser.Semantic;
-using Microsoft.OData.Core.UriParser.TreeNodeKinds;
+using Microsoft.OData.UriParser;
 
 namespace Moon.OData.Validators
 {
@@ -67,16 +66,16 @@ namespace Moon.OData.Validators
                     ValidateAnyNode(node as AnyNode, settings);
                     break;
 
-                case QueryNodeKind.SingleEntityCast:
-                    ValidateQueryNode((node as SingleEntityCastNode).Source, settings);
+                case QueryNodeKind.SingleResourceCast:
+                    ValidateQueryNode((node as SingleResourceCastNode).Source, settings);
                     break;
 
                 case QueryNodeKind.All:
                     ValidateAllNode(node as AllNode, settings);
                     break;
 
-                case QueryNodeKind.SingleEntityFunctionCall:
-                    ValidateSingleEntityFunctionCallNode(node as SingleEntityFunctionCallNode, settings);
+                case QueryNodeKind.SingleResourceFunctionCall:
+                    ValidateSingleResourceFunctionCallNode(node as SingleResourceFunctionCallNode, settings);
                     break;
             }
         }
@@ -89,8 +88,8 @@ namespace Moon.OData.Validators
                     ValidateQueryNode((node as CollectionPropertyAccessNode).Source, settings);
                     break;
 
-                case QueryNodeKind.EntityCollectionCast:
-                    ValidateQueryNode((node as EntityCollectionCastNode).Source, settings);
+                case QueryNodeKind.CollectionResourceCast:
+                    ValidateQueryNode((node as CollectionResourceCastNode).Source, settings);
                     break;
             }
         }
@@ -143,7 +142,7 @@ namespace Moon.OData.Validators
             }
         }
 
-        private void ValidateSingleEntityFunctionCallNode(SingleEntityFunctionCallNode node, ValidationSettings settings)
+        private void ValidateSingleResourceFunctionCallNode(SingleResourceFunctionCallNode node, ValidationSettings settings)
         {
             ValidateFunction(node.Name, settings);
 
@@ -158,7 +157,7 @@ namespace Moon.OData.Validators
             ValidateFunction("any", settings);
             ValidateQueryNode(node.Source, settings);
 
-            if ((node.Body != null) && (node.Body.Kind != QueryNodeKind.Constant))
+            if (node.Body != null && node.Body.Kind != QueryNodeKind.Constant)
             {
                 ValidateQueryNode(node.Body, settings);
             }
