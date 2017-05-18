@@ -2,7 +2,7 @@
 
 3.1.1
 
-- Uses ODataLib 7.2 compatible with `netstandard1.x`
+- Uses ODataLib 7.2 compatible with `netstandard1.x`.
 
 3.0.3
 
