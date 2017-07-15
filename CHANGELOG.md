@@ -1,5 +1,9 @@
 # Moon.OData changelog
 
+3.1.2
+
+- Ensures compatibility with latest Moon.* libraries.
+
 3.1.1
 
 - Uses ODataLib 7.2 compatible with `netstandard1.x`.
