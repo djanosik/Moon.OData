@@ -1,5 +1,9 @@
 # Moon.OData changelog
 
+3.1.3
+
+- Adds support for navigation properties in EDM model.
+
 3.1.2
 
 - Ensures compatibility with latest Moon.* libraries.

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -77,8 +78,8 @@ namespace Moon.OData
         /// </summary>
         public bool IsCaseSensitive
         {
-            get { return !parser.Resolver.EnableCaseInsensitive; }
-            set { parser.Resolver.EnableCaseInsensitive = !value; }
+            get => !parser.Resolver.EnableCaseInsensitive;
+            set => parser.Resolver.EnableCaseInsensitive = !value;
         }
 
         /// <summary>
@@ -218,12 +219,30 @@ namespace Moon.OData
                 }
                 else
                 {
-                    var propertyType = GetEdmType(property.PropertyType, primitives);
-                    result.AddProperty(new EdmClrProperty(result, property, propertyType));
+                    result.AddProperty(CreateNavigationProperty(result, property, primitives));
                 }
             }
 
             return result;
+        }
+
+        private EdmNavigationProperty CreateNavigationProperty(EdmClrType declaringType, PropertyInfo property, IDictionary<Type, IPrimitiveType> primitives)
+        {
+            var propertyType = GetEdmType(property.PropertyType, primitives);
+
+            return EdmNavigationProperty.CreateNavigationProperty(declaringType, new EdmNavigationPropertyInfo {
+                Name = property.Name,
+                ContainsTarget = true,
+                TargetMultiplicity = GetTargetMultiplicity(property),
+                Target = propertyType
+            });
+        }
+
+        private EdmMultiplicity GetTargetMultiplicity(PropertyInfo property)
+        {
+            return typeof(IEnumerable).IsAssignableFrom(property.PropertyType)
+                ? EdmMultiplicity.Many
+                : EdmMultiplicity.ZeroOrOne;
         }
     }
 }
