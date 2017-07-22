@@ -51,13 +51,9 @@ namespace Moon.OData.Edm
         /// </summary>
         public PropertyInfo Property { get; }
 
-        /// <summary>
-        /// Gets the type of this property.
-        /// </summary>
-        public new EdmClrType Type
-            => base.Type as EdmClrType;
-
         private static bool IsNullable(Type type)
-            => !type.GetTypeInfo().IsValueType || Nullable.GetUnderlyingType(type) != null;
+        {
+            return !type.GetTypeInfo().IsValueType || Nullable.GetUnderlyingType(type) != null;
+        }
     }
 }

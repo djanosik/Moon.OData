@@ -5,19 +5,15 @@ namespace Moon.OData.Sql
     /// <summary>
     /// The <c>OFFSET</c> SQL clause builder.
     /// </summary>
-    public class OffsetClause
+    public class OffsetClause : SqlClauseBase
     {
-        private readonly IODataOptions options;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="OffsetClause" /> class.
         /// </summary>
         /// <param name="options">The OData query options.</param>
         public OffsetClause(IODataOptions options)
+            : base(options)
         {
-            Requires.NotNull(options, nameof(options));
-
-            this.options = options;
         }
 
         /// <summary>
@@ -31,17 +27,17 @@ namespace Moon.OData.Sql
         /// Builds an <c>OFFSET</c> SQL clause. The method returns an empty string when either the
         /// $skip or the $orderby option is not defined.
         /// </summary>
-        public string Build()
+        public override string Build()
         {
             var builder = new StringBuilder();
 
-            if ((options.Skip != null) && (options.OrderBy != null))
+            if ((Options.Skip != null) && (Options.OrderBy != null))
             {
-                builder.Append($"OFFSET {options.Skip} ROWS");
+                builder.Append($"OFFSET {Options.Skip} ROWS");
 
-                if (options.Top != null)
+                if (Options.Top != null)
                 {
-                    builder.Append($" FETCH NEXT {options.Top} ROWS ONLY");
+                    builder.Append($" FETCH NEXT {Options.Top} ROWS ONLY");
                 }
             }
 

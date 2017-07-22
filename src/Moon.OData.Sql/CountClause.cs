@@ -6,10 +6,9 @@ namespace Moon.OData.Sql
     /// <summary>
     /// The <c>SELECT COUNT(Key)</c> SQL clause builder.
     /// </summary>
-    public class CountClause
+    public class CountClause : SqlClauseBase
     {
         private readonly string commandText;
-        private readonly IODataOptions options;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CountClause" /> class.
@@ -28,12 +27,11 @@ namespace Moon.OData.Sql
         /// </param>
         /// <param name="options">The OData query options.</param>
         public CountClause(string commandText, IODataOptions options)
+            : base(options)
         {
             Requires.NotNull(commandText, nameof(commandText));
-            Requires.NotNull(options, nameof(options));
 
             this.commandText = commandText.Trim();
-            this.options = options;
 
             if (!SelectClause.Regex.IsMatch(commandText))
             {
@@ -42,16 +40,13 @@ namespace Moon.OData.Sql
         }
 
         /// <summary>
-        /// Gets or sets a function used to resolve primary key column name.
-        /// </summary>
-        public Func<Type, string> ResolveKey { get; set; } = t => "[Id]";
-
-        /// <summary>
         /// Builds a <c>SELECT COUNT(Key)</c> SQL clause using the given OData query options.
         /// </summary>
         /// <param name="options">The OData query options.</param>
         public static string Build(IODataOptions options)
-            => Build(options, null);
+        {
+            return Build(options, null);
+        }
 
         /// <summary>
         /// Builds a <c>SELECT COUNT(Key)</c> SQL clause using the given OData query options.
@@ -61,7 +56,9 @@ namespace Moon.OData.Sql
         /// </param>
         /// <param name="options">The OData query options.</param>
         public static string Build(string commandText, IODataOptions options)
-            => Build(commandText, options, null);
+        {
+            return Build(commandText, options, null);
+        }
 
         /// <summary>
         /// Builds a <c>SELECT COUNT(Key)</c> SQL clause using the given OData query options.
@@ -103,12 +100,12 @@ namespace Moon.OData.Sql
         /// <summary>
         /// Builds a <c>SELECT</c> SQL clause.
         /// </summary>
-        public string Build()
+        public override string Build()
         {
             return SelectClause.Regex.Replace(commandText, m =>
             {
                 var builder = new StringBuilder("SELECT");
-                builder.AppendWithSpace($"COUNT({ResolveKey(options.EntityType)})");
+                builder.AppendWithSpace($"COUNT({ResolveKey(Options.EntityType)})");
                 builder.AppendWithSpace(m.Groups[4].Value);
                 return builder.ToString();
             });

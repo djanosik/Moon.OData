@@ -11,11 +11,10 @@ namespace Moon.OData.Sql
     /// <summary>
     /// The <c>WHERE</c> SQL clause builder.
     /// </summary>
-    public class WhereClause
+    public class WhereClause : SqlClauseBase
     {
         private readonly IList<object> arguments;
         private readonly string oprator;
-        private readonly IODataOptions options;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WhereClause" /> class.
@@ -24,20 +23,14 @@ namespace Moon.OData.Sql
         /// <param name="arguments">The list where to store values of SQL arguments.</param>
         /// <param name="options">The OData query options.</param>
         public WhereClause(string oprator, IList<object> arguments, IODataOptions options)
+            : base(options)
         {
             Requires.NotNull(oprator, nameof(oprator));
             Requires.NotNull(arguments, nameof(arguments));
-            Requires.NotNull(options, nameof(options));
 
             this.oprator = oprator;
             this.arguments = arguments;
-            this.options = options;
         }
-
-        /// <summary>
-        /// Gets or sets a function used to resolve column names.
-        /// </summary>
-        public Func<PropertyInfo, string> ResolveColumn { get; set; } = p => $"[{p.Name}]";
 
         /// <summary>
         /// Builds a <c>WHERE</c> SQL clause using the given OData query options.
@@ -71,14 +64,14 @@ namespace Moon.OData.Sql
         /// Builds a <c>WHERE</c> SQL clause. The method returns an empty string when $filter option
         /// is not defined.
         /// </summary>
-        public string Build()
+        public override string Build()
         {
             var builder = new StringBuilder();
 
-            if (options.Filter != null)
+            if (Options.Filter != null)
             {
                 builder.Append($"{oprator.ToUpperInvariant()} ");
-                AppendQueryNode(builder, options.Filter.Expression);
+                AppendQueryNode(builder, Options.Filter.Expression);
             }
 
             return builder.ToString();
@@ -113,7 +106,7 @@ namespace Moon.OData.Sql
                     break;
 
                 default:
-                    throw new ODataException($"The '{node.GetType().Name}' query node is not supported.");
+                    throw new ODataException($"The '{node.GetType().Name}' node is not supported.");
             }
         }
 
@@ -170,18 +163,12 @@ namespace Moon.OData.Sql
 
         private void AppendSingleValuePropertyAccessNode(StringBuilder builder, SingleValuePropertyAccessNode node)
         {
-            var property = node.Property as EdmClrProperty;
-
-            if (property == null)
-            {
-                throw new ODataException($"The '{property.GetType().Name}' property is not supported.");
-            }
-
+            var property = GetProperty(node);
             var column = ResolveColumn(property.Property);
 
             if (column == null)
             {
-                throw new ODataException("The column name is invalid.");
+                throw new ODataException("The column name couldn't be resolved.");
             }
 
             builder.Append(column);

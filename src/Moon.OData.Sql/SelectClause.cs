@@ -3,17 +3,15 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.OData.UriParser;
-using Moon.OData.Edm;
 
 namespace Moon.OData.Sql
 {
     /// <summary>
     /// The <c>SELECT</c> SQL clause builder.
     /// </summary>
-    public class SelectClause
+    public class SelectClause : SqlClauseBase
     {
         private readonly string commandText;
-        private readonly IODataOptions options;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SelectClause" /> class.
@@ -32,12 +30,11 @@ namespace Moon.OData.Sql
         /// </param>
         /// <param name="options">The OData query options.</param>
         public SelectClause(string commandText, IODataOptions options)
+            : base(options)
         {
             Requires.NotNull(commandText, nameof(commandText));
-            Requires.NotNull(options, nameof(options));
 
             this.commandText = commandText.Trim();
-            this.options = options;
 
             if (!Regex.IsMatch(commandText))
             {
@@ -49,11 +46,6 @@ namespace Moon.OData.Sql
         /// Gets a regular expression matching the <c>SELECT</c> SQL clause.
         /// </summary>
         public static Regex Regex { get; } = new Regex(@"^(SELECT)\s+(TOP\(\d+\))?\s*(.*?)\s*(FROM.*)$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-
-        /// <summary>
-        /// Gets or sets a function used to resolve column names.
-        /// </summary>
-        public Func<PropertyInfo, string> ResolveColumn { get; set; } = p => $"[{p.Name}]";
 
         /// <summary>
         /// Builds a <c>SELECT</c> SQL clause using the given OData query options.
@@ -78,7 +70,6 @@ namespace Moon.OData.Sql
         /// <param name="options">The OData query options.</param>
         /// <param name="resolveColumn">A function used to resolve column names.</param>
         public static string Build(IODataOptions options, Func<PropertyInfo, string> resolveColumn)
-
         {
             var clause = new SelectClause(options);
 
@@ -113,12 +104,12 @@ namespace Moon.OData.Sql
         /// <summary>
         /// Builds a <c>SELECT</c> SQL clause.
         /// </summary>
-        public string Build()
+        public override string Build()
         {
             return Regex.Replace(commandText, m =>
             {
                 var builder = new StringBuilder("SELECT");
-                builder.AppendWithSpace(Either(m.Groups[2].Value, () => TopClause.Build(options)));
+                builder.AppendWithSpace(Either(m.Groups[2].Value, () => TopClause.Build(Options)));
                 builder.AppendWithSpace(Either(m.Groups[3].Value, BuildColumns));
                 builder.AppendWithSpace(m.Groups[4].Value);
                 return builder.ToString();
@@ -131,7 +122,7 @@ namespace Moon.OData.Sql
         private string BuildColumns()
         {
             var isFirst = true;
-            var select = options.SelectAndExpand;
+            var select = Options.SelectAndExpand;
 
             if (select == null || select.AllSelected)
             {
@@ -142,44 +133,23 @@ namespace Moon.OData.Sql
 
             foreach (var item in select.SelectedItems)
             {
-                var path = item as PathSelectItem;
-                var wildcard = item as WildcardSelectItem;
-
-                if (isFirst && wildcard != null)
+                if (isFirst && item is WildcardSelectItem)
                 {
                     builder.Append("*");
                     break;
                 }
 
-                if (path == null)
+                var property = GetProperty(item);
+                var column = ResolveColumn(property.Property);
+
+                if (column == null)
                 {
-                    throw new ODataException($"The '{item.GetType().Name}' select item is not supported.");
-                }
-
-                var segment = path.SelectedPath.FirstSegment as PropertySegment;
-
-                if (segment == null)
-                {
-                    throw new ODataException($"The '{segment.GetType().Name}' path segment is not supported.");
-                }
-
-                var property = segment.Property as EdmClrProperty;
-
-                if (property == null)
-                {
-                    throw new ODataException($"The '{property.GetType().Name}' property is not supported.");
+                    throw new ODataException("The column name couldn't be resolved.");
                 }
 
                 if (!isFirst)
                 {
                     builder.Append(", ");
-                }
-
-                var column = ResolveColumn(property.Property);
-
-                if (column == null)
-                {
-                    throw new ODataException("The column name is invalid.");
                 }
 
                 builder.Append($"{column}");
