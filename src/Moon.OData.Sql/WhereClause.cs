@@ -151,6 +151,11 @@ namespace Moon.OData.Sql
 
                 AppendQueryNode(builder, node.Right);
             }
+            else
+            {
+                builder.Append($" {ToSqlOperator(node.OperatorKind)} ");
+                AppendQueryNode(builder, node.Right);
+            }
 
             builder.Append(")");
         }
