@@ -1,6 +1,7 @@
 <Project>
   <PropertyGroup>
     <Company>Dušan Janošík</Company>
+    <Authors>djanosik</Authors>
     <Copyright>Copyright © 2016 Dušan Janošík</Copyright>
     <Product>Moon.OData</Product>
     <PackageIconUrl>https://djanosik.github.io/moon.png</PackageIconUrl>
