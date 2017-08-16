@@ -23,7 +23,7 @@ namespace Moon.OData.Tests
         public void GivenDictionaryWithExpand_WhenCreating_ReturnsCountOption()
         {
             // Arrange
-            var dic = new Dictionary<string, string>() { ["$expand"] = "Model" };
+            var dic = new Dictionary<string, string>() { ["$expand"] = "Model,Parent" };
 
             // Act
             var options = new ODataOptions<ModelItem>(dic);
