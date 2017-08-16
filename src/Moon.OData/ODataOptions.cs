@@ -162,23 +162,37 @@ namespace Moon.OData
         {
             yield return new PrimitiveType<byte[]>(EdmPrimitiveTypeKind.Binary);
             yield return new PrimitiveType<bool>(EdmPrimitiveTypeKind.Boolean);
+            yield return new PrimitiveType<bool?>(EdmPrimitiveTypeKind.Boolean);
             yield return new PrimitiveType<byte>(EdmPrimitiveTypeKind.Byte);
+            yield return new PrimitiveType<byte?>(EdmPrimitiveTypeKind.Byte);
             yield return new PrimitiveType<DateTime>(EdmPrimitiveTypeKind.Date);
+            yield return new PrimitiveType<DateTime?>(EdmPrimitiveTypeKind.Date);
             yield return new PrimitiveType<DateTimeOffset>(EdmPrimitiveTypeKind.DateTimeOffset);
+            yield return new PrimitiveType<DateTimeOffset?>(EdmPrimitiveTypeKind.DateTimeOffset);
             yield return new PrimitiveType<decimal>(EdmPrimitiveTypeKind.Decimal);
+            yield return new PrimitiveType<decimal?>(EdmPrimitiveTypeKind.Decimal);
             yield return new PrimitiveType<double>(EdmPrimitiveTypeKind.Double);
+            yield return new PrimitiveType<double?>(EdmPrimitiveTypeKind.Double);
             yield return new PrimitiveType<Guid>(EdmPrimitiveTypeKind.Guid);
+            yield return new PrimitiveType<Guid?>(EdmPrimitiveTypeKind.Guid);
             yield return new PrimitiveType<short>(EdmPrimitiveTypeKind.Int16);
+            yield return new PrimitiveType<short?>(EdmPrimitiveTypeKind.Int16);
             yield return new PrimitiveType<int>(EdmPrimitiveTypeKind.Int32);
+            yield return new PrimitiveType<int?>(EdmPrimitiveTypeKind.Int32);
             yield return new PrimitiveType<long>(EdmPrimitiveTypeKind.Int64);
+            yield return new PrimitiveType<long?>(EdmPrimitiveTypeKind.Int64);
             yield return new PrimitiveType<sbyte>(EdmPrimitiveTypeKind.SByte);
+            yield return new PrimitiveType<sbyte?>(EdmPrimitiveTypeKind.SByte);
             yield return new PrimitiveType<float>(EdmPrimitiveTypeKind.Single);
+            yield return new PrimitiveType<float?>(EdmPrimitiveTypeKind.Single);
             yield return new PrimitiveType<string>(EdmPrimitiveTypeKind.String);
             yield return new PrimitiveType<char>(EdmPrimitiveTypeKind.String);
+            yield return new PrimitiveType<char?>(EdmPrimitiveTypeKind.String);
             yield return new PrimitiveType<char[]>(EdmPrimitiveTypeKind.String);
             yield return new PrimitiveType<Type>(EdmPrimitiveTypeKind.String);
             yield return new PrimitiveType<Uri>(EdmPrimitiveTypeKind.String);
             yield return new PrimitiveType<TimeSpan>(EdmPrimitiveTypeKind.Duration);
+            yield return new PrimitiveType<TimeSpan?>(EdmPrimitiveTypeKind.Duration);
 
             foreach (var primitive in primitives)
             {
