@@ -2,7 +2,7 @@
 using Moon.OData;
 using Moon.OData.Sql;
 
-namespace Moon.AspNetCore.OData.Sample.Server.Home
+namespace Moon.AspNetCore.OData.Sample.Views.Home
 {
     public class HomeController : Controller
     {
