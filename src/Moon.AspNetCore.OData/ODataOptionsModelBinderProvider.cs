@@ -18,6 +18,7 @@ namespace Moon.AspNetCore.OData
         /// Initializes a new instance of the <see cref="ODataOptionsModelBinderProvider" /> class.
         /// </summary>
         /// <param name="primitives">An enumeration of primitive types.</param>
+        /// <param name="isCaseSensitive">Properties are case sensitive</param>
         public ODataOptionsModelBinderProvider(IEnumerable<IPrimitiveType> primitives, bool isCaseSensitive = true)
         {
             this.primitives = primitives;
