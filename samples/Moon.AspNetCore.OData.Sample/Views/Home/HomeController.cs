@@ -9,7 +9,6 @@ namespace Moon.AspNetCore.OData.Sample.Views.Home
         [HttpGet("")]
         public IActionResult Index(ODataOptions<Entity> options)
         {
-
             return View(new ODataSqlQuery(
                 "SELECT FROM Entities WHERE OwnerId = @p0",
                 10456, options
