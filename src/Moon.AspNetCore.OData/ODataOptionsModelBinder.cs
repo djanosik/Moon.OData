@@ -8,9 +8,6 @@ using Moon.Reflection;
 
 namespace Moon.AspNetCore.OData
 {
-    using System;
-    using System.Reflection;
-
     /// <summary>
     /// <see cref="IModelBinder" /> implementation to bind models of type <see cref="ODataOptions{TEntity}" />.
     /// </summary>
