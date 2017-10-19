@@ -35,7 +35,7 @@ namespace Moon.OData
         /// </summary>
         /// <param name="options">The dictionary storing query option key-value pairs.</param>
         public ODataOptions(Dictionary<string, string> options)
-            : this(options, new IPrimitiveType[0])
+            : this(options, new IPrimitiveType[0],true)
         {
         }
 
@@ -44,7 +44,8 @@ namespace Moon.OData
         /// </summary>
         /// <param name="options">The dictionary storing query option key-value pairs.</param>
         /// <param name="primitives">An array of additional primitive types.</param>
-        public ODataOptions(Dictionary<string, string> options, IPrimitiveType[] primitives)
+        /// <param name="isCaseSensitive">Are properties case sensitive.</param>
+        public ODataOptions(Dictionary<string, string> options, IPrimitiveType[] primitives, bool isCaseSensitive)
         {
             Requires.NotNull(options, nameof(options));
             Requires.NotNull(primitives, nameof(primitives));
@@ -63,7 +64,7 @@ namespace Moon.OData
             top = Lazy.From(parser.ParseTop);
             apply = Lazy.From(parser.ParseApply);
 
-            IsCaseSensitive = true;
+            IsCaseSensitive = isCaseSensitive;
         }
 
         /// <summary>
