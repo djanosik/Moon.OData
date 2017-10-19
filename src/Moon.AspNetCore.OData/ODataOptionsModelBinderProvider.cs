@@ -12,13 +12,16 @@ namespace Moon.AspNetCore.OData
     {
         private readonly IEnumerable<IPrimitiveType> primitives;
 
+        private bool isCaseSensitive;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ODataOptionsModelBinderProvider" /> class.
         /// </summary>
         /// <param name="primitives">An enumeration of primitive types.</param>
-        public ODataOptionsModelBinderProvider(IEnumerable<IPrimitiveType> primitives)
+        public ODataOptionsModelBinderProvider(IEnumerable<IPrimitiveType> primitives, bool isCaseSensitive = true)
         {
             this.primitives = primitives;
+            this.isCaseSensitive = isCaseSensitive;
         }
 
         /// <summary>
@@ -32,7 +35,7 @@ namespace Moon.AspNetCore.OData
 
             if (typeInfo.IsGenericType && (typeInfo.GetGenericTypeDefinition() == typeof(ODataOptions<>)))
             {
-                return new ODataOptionsModelBinder(primitives);
+                return new ODataOptionsModelBinder(primitives, isCaseSensitive);
             }
 
             return null;
