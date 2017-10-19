@@ -35,7 +35,7 @@ namespace Moon.OData
         /// </summary>
         /// <param name="options">The dictionary storing query option key-value pairs.</param>
         public ODataOptions(Dictionary<string, string> options)
-            : this(options, new IPrimitiveType[0],true)
+            : this(options, new IPrimitiveType[0], true)
         {
         }
 
