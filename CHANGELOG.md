@@ -1,5 +1,9 @@
 # Moon.OData changelog
 
+3.1.5
+
+- Binary operators now work with method calls.
+
 3.1.3
 
 - Adds support for navigation properties in EDM model.
