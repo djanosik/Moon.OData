@@ -10,13 +10,6 @@ namespace Moon.OData.Sql
     {
         private readonly Lazy<string> result;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ODataSqlQuery" /> class.
-        /// </summary>
-        /// <param name="commandText">The SQL command text to use as a starting point.</param>
-        /// <param name="arguments">
-        /// The SQL query arguments. Include an <see cref="IODataOptions" /> as the last item.
-        /// </param>
         protected SqlQueryBase(string commandText, params object[] arguments)
         {
             Requires.NotNull(commandText, nameof(commandText));

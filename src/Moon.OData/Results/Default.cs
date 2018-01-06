@@ -14,10 +14,6 @@ namespace Moon.OData
     {
         private readonly IEnumerable<TResult> results;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Default{TResult}" /> class.
-        /// </summary>
-        /// <param name="results">The results of the query.</param>
         public Default(IEnumerable<TResult> results)
         {
             this.results = results;
@@ -27,9 +23,13 @@ namespace Moon.OData
         /// Enumerates results of the query.
         /// </summary>
         public IEnumerator<TResult> GetEnumerator()
-            => results.GetEnumerator();
+        {
+            return results.GetEnumerator();
+        }
 
         IEnumerator IEnumerable.GetEnumerator()
-            => GetEnumerator();
+        {
+            return GetEnumerator();
+        }
     }
 }

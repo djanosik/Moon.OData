@@ -13,39 +13,26 @@ namespace Moon.AspNetCore.OData
     /// </summary>
     public class ODataOptionsModelBinder : IModelBinder
     {
-        private readonly IEnumerable<IPrimitiveType> primitives;
-
         private readonly bool isCaseSensitive;
+        private readonly IEnumerable<IPrimitiveType> primitiveTypes;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ODataOptionsModelBinder" /> class.
-        /// </summary>
-        /// <param name="primitives">An enumeration of primitive types.</param>
-        public ODataOptionsModelBinder(IEnumerable<IPrimitiveType> primitives) :this(primitives,true)
+        public ODataOptionsModelBinder(IEnumerable<IPrimitiveType> primitiveTypes)
+            : this(primitiveTypes, true)
         {
-            this.primitives = primitives;
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ODataOptionsModelBinder" /> class.
-        /// </summary>
-        /// <param name="primitives">An enumeration of primitive types.</param>
-        /// <param name="isCaseSensitive">Properties are case sensitive</param>
-        public ODataOptionsModelBinder(IEnumerable<IPrimitiveType> primitives, bool isCaseSensitive)
+        public ODataOptionsModelBinder(IEnumerable<IPrimitiveType> primitiveTypes, bool isCaseSensitive)
         {
-            this.primitives = primitives;
+            this.primitiveTypes = primitiveTypes;
             this.isCaseSensitive = isCaseSensitive;
         }
 
-        /// <summary>
-        /// Binds an <see cref="ODataOptions{TEntity}" /> parameter if possible.
-        /// </summary>
-        /// <param name="bindingContext">The binding context.</param>
+        /// <inheritdoc />
         public Task BindModelAsync(ModelBindingContext bindingContext)
         {
             var modelType = bindingContext.ModelType;
             var request = bindingContext.HttpContext.Request;
-            var model = Class.Activate(modelType, GetOptions(request), primitives.ToArray(), isCaseSensitive);
+            var model = Class.Activate(modelType, GetOptions(request), primitiveTypes.ToArray(), isCaseSensitive);
             bindingContext.Result = ModelBindingResult.Success(model);
             return Task.CompletedTask;
         }

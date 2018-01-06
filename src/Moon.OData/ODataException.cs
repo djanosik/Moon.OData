@@ -7,10 +7,6 @@ namespace Moon.OData
     /// </summary>
     public class ODataException : Exception
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ODataException" /> class.
-        /// </summary>
-        /// <param name="message">The error message.</param>
         public ODataException(string message)
             : base(message)
         {

@@ -9,10 +9,6 @@ namespace Moon.OData
     /// <typeparam name="TPrimitive">The type of the primitive type.</typeparam>
     public sealed class PrimitiveType<TPrimitive> : IPrimitiveType
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PrimitiveType{TPrimitive}" /> class.
-        /// </summary>
-        /// <param name="kind">The kind of the EDM primitive type.</param>
         public PrimitiveType(EdmPrimitiveTypeKind kind)
         {
             Kind = kind;

@@ -9,12 +9,6 @@ namespace Moon.OData.Edm
     /// </summary>
     public class EdmClrProperty : EdmStructuralProperty
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EdmClrProperty" /> class.
-        /// </summary>
-        /// <param name="declaringType">The type the property belongs to.</param>
-        /// <param name="property">The underlying CLR property.</param>
-        /// <param name="type">The type of the property.</param>
         public EdmClrProperty(EdmClrType declaringType, PropertyInfo property, EdmClrType type)
             : base(declaringType, property.Name, new EdmEntityTypeReference(type, IsNullable(property.PropertyType)))
         {
@@ -25,12 +19,6 @@ namespace Moon.OData.Edm
             Property = property;
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EdmClrProperty" /> class.
-        /// </summary>
-        /// <param name="declaringType">The type the property belongs to.</param>
-        /// <param name="property">The underlying CLR property.</param>
-        /// <param name="type">The type of the property.</param>
         public EdmClrProperty(EdmClrType declaringType, PropertyInfo property, EdmPrimitiveTypeKind type)
             : base(declaringType, property.Name, EdmCoreModel.Instance.GetPrimitive(type, IsNullable(property.PropertyType)))
         {

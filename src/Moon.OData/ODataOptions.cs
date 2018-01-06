@@ -30,29 +30,19 @@ namespace Moon.OData
         private readonly Lazy<long?> top;
         private readonly ODataQueryValidator validator = new ODataQueryValidator();
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ODataOptions{TEntity}" /> class.
-        /// </summary>
-        /// <param name="options">The dictionary storing query option key-value pairs.</param>
-        public ODataOptions(Dictionary<string, string> options)
-            : this(options, new IPrimitiveType[0], true)
+        public ODataOptions(Dictionary<string, string> queryOptions)
+            : this(queryOptions, new IPrimitiveType[0], true)
         {
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ODataOptions{TEntity}" /> class.
-        /// </summary>
-        /// <param name="options">The dictionary storing query option key-value pairs.</param>
-        /// <param name="primitives">An array of additional primitive types.</param>
-        /// <param name="isCaseSensitive">Are properties case sensitive.</param>
-        public ODataOptions(Dictionary<string, string> options, IPrimitiveType[] primitives, bool isCaseSensitive)
+        public ODataOptions(Dictionary<string, string> queryOptions, IPrimitiveType[] primitiveTypes, bool isCaseSensitive)
         {
-            Requires.NotNull(options, nameof(options));
-            Requires.NotNull(primitives, nameof(primitives));
+            Requires.NotNull(queryOptions, nameof(queryOptions));
+            Requires.NotNull(primitiveTypes, nameof(primitiveTypes));
 
-            RawValues = new ODataRawValues(options);
+            RawValues = new ODataRawValues(queryOptions);
 
-            parser = CreateParser(primitives);
+            parser = CreateParser(primitiveTypes);
             count = Lazy.From(parser.ParseCount);
             deltaToken = Lazy.From(parser.ParseDeltaToken);
             filter = Lazy.From(parser.ParseFilter);
@@ -70,8 +60,7 @@ namespace Moon.OData
         /// <summary>
         /// Gets the type of the entity you are building the query for.
         /// </summary>
-        public Type EntityType
-            => typeof(TEntity);
+        public Type EntityType => typeof(TEntity);
 
         /// <summary>
         /// Gets or sets whether the parser is case sensitive when matching names of properties.
@@ -86,62 +75,52 @@ namespace Moon.OData
         /// <summary>
         /// Gets a parsed $count query option.
         /// </summary>
-        public bool? Count
-            => count.Value;
+        public bool? Count => count.Value;
 
         /// <summary>
         /// Gets a parsed $deltatoken query option.
         /// </summary>
-        public string DeltaToken
-            => deltaToken.Value;
+        public string DeltaToken => deltaToken.Value;
 
         /// <summary>
         /// Gets a $filter clause parsed into semantic nodes.
         /// </summary>
-        public FilterClause Filter
-            => filter.Value;
+        public FilterClause Filter => filter.Value;
 
         /// <summary>
         /// Gets a $oderby clause parsed into semantic nodes.
         /// </summary>
-        public OrderByClause OrderBy
-            => orderBy.Value;
+        public OrderByClause OrderBy => orderBy.Value;
 
         /// <summary>
         /// Gets a $search clause parsed into semantic nodes.
         /// </summary>
-        public SearchClause Search
-            => search.Value;
+        public SearchClause Search => search.Value;
 
         /// <summary>
         /// Gets a $select and $expand clauses parsed into semantic nodes.
         /// </summary>
-        public SelectExpandClause SelectAndExpand
-            => selectAndExpand.Value;
+        public SelectExpandClause SelectAndExpand => selectAndExpand.Value;
 
         /// <summary>
         /// Gets a parsed $skip query option.
         /// </summary>
-        public long? Skip
-            => skip.Value;
+        public long? Skip => skip.Value;
 
         /// <summary>
         /// Gets a parsed $skiptoken query option.
         /// </summary>
-        public string SkipToken
-            => skipToken.Value;
+        public string SkipToken => skipToken.Value;
 
         /// <summary>
         /// Gets a parsed $top query option.
         /// </summary>
-        public long? Top
-            => top.Value;
+        public long? Top => top.Value;
 
         /// <summary>
         /// Gets a parsed $apply query option.
         /// </summary>
-        public ApplyClause Apply
-            => apply.Value;
+        public ApplyClause Apply => apply.Value;
 
         /// <summary>
         /// Gets raw OData query option values.
@@ -159,7 +138,16 @@ namespace Moon.OData
             validator.Validate(this, settings);
         }
 
-        private static IEnumerable<IPrimitiveType> GetPrimitives(IEnumerable<IPrimitiveType> primitives)
+        private ODataQueryOptionParser CreateParser(IEnumerable<IPrimitiveType> primitiveTypes)
+        {
+            var model = GetEdmModel(GetPrimitiveTypes(primitiveTypes).ToDictionary(p => p.Type));
+            var entities = model.FindDeclaredNavigationSource("Entities");
+
+            return new ODataQueryOptionParser(model, entities.EntityType(),
+                entities, RawValues.Values);
+        }
+
+        private IEnumerable<IPrimitiveType> GetPrimitiveTypes(IEnumerable<IPrimitiveType> primitiveTypes)
         {
             yield return new PrimitiveType<byte[]>(EdmPrimitiveTypeKind.Binary);
             yield return new PrimitiveType<bool>(EdmPrimitiveTypeKind.Boolean);
@@ -181,55 +169,46 @@ namespace Moon.OData
             yield return new PrimitiveType<Uri>(EdmPrimitiveTypeKind.String);
             yield return new PrimitiveType<TimeSpan>(EdmPrimitiveTypeKind.Duration);
 
-            foreach (var primitive in primitives)
+            foreach (var primitive in primitiveTypes)
             {
                 yield return primitive;
             }
         }
 
-        private ODataQueryOptionParser CreateParser(IEnumerable<IPrimitiveType> primitives)
-        {
-            var model = GetEdmModel(GetPrimitives(primitives).ToDictionary(p => p.Type));
-            var entities = model.FindDeclaredNavigationSource("Entities");
-
-            return new ODataQueryOptionParser(model, entities.EntityType(),
-                entities, RawValues.Values);
-        }
-
-        private EdmModel GetEdmModel(IDictionary<Type, IPrimitiveType> primitives)
+        private EdmModel GetEdmModel(IDictionary<Type, IPrimitiveType> primitiveTypes)
         {
             var result = new EdmModel();
 
             var container = new EdmEntityContainer("Default", "Container");
-            container.AddEntitySet("Entities", GetEdmType(typeof(TEntity), primitives));
+            container.AddEntitySet("Entities", GetEdmType(typeof(TEntity), primitiveTypes));
             result.AddElement(container);
 
             return result;
         }
 
-        private EdmClrType GetEdmType(Type type, IDictionary<Type, IPrimitiveType> primitives)
+        private EdmClrType GetEdmType(Type type, IDictionary<Type, IPrimitiveType> primitiveTypes)
         {
             var result = new EdmClrType(type);
 
             foreach (var property in type.GetProperties(BindingFlags.Public | BindingFlags.Instance))
             {
-                if (primitives.ContainsKey(property.PropertyType))
+                if (primitiveTypes.ContainsKey(property.PropertyType))
                 {
-                    var primitive = primitives[property.PropertyType];
+                    var primitive = primitiveTypes[property.PropertyType];
                     result.AddProperty(new EdmClrProperty(result, property, primitive.Kind));
                 }
                 else
                 {
-                    result.AddProperty(CreateNavigationProperty(result, property, primitives));
+                    result.AddProperty(CreateNavigationProperty(result, property, primitiveTypes));
                 }
             }
 
             return result;
         }
 
-        private EdmNavigationProperty CreateNavigationProperty(EdmClrType declaringType, PropertyInfo property, IDictionary<Type, IPrimitiveType> primitives)
+        private EdmNavigationProperty CreateNavigationProperty(EdmClrType declaringType, PropertyInfo property, IDictionary<Type, IPrimitiveType> primitiveTypes)
         {
-            var propertyType = GetEdmType(property.PropertyType, primitives);
+            var propertyType = GetEdmType(property.PropertyType, primitiveTypes);
 
             return EdmNavigationProperty.CreateNavigationProperty(declaringType, new EdmNavigationPropertyInfo {
                 Name = property.Name,

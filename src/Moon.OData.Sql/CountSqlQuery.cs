@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 
 namespace Moon.OData.Sql
 {
@@ -11,14 +10,6 @@ namespace Moon.OData.Sql
     {
         private readonly ODataSqlQuery query;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ODataSqlQuery" /> class.
-        /// </summary>
-        /// <param name="query">The parent OData SQL query.</param>
-        /// <param name="commandText">The SQL command text to use as a starting point.</param>
-        /// <param name="arguments">
-        /// The SQL query arguments. Include an <see cref="IODataOptions" /> as the last item.
-        /// </param>
         public CountSqlQuery(ODataSqlQuery query, string commandText, params object[] arguments)
             : base(commandText, arguments)
         {

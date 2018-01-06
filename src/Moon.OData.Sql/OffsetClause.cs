@@ -7,10 +7,6 @@ namespace Moon.OData.Sql
     /// </summary>
     public class OffsetClause : SqlClauseBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OffsetClause" /> class.
-        /// </summary>
-        /// <param name="options">The OData query options.</param>
         public OffsetClause(IODataOptions options)
             : base(options)
         {
@@ -21,7 +17,9 @@ namespace Moon.OData.Sql
         /// </summary>
         /// <param name="options">The OData query options.</param>
         public static string Build(IODataOptions options)
-            => new OffsetClause(options).Build();
+        {
+            return new OffsetClause(options).Build();
+        }
 
         /// <summary>
         /// Builds an <c>OFFSET</c> SQL clause. The method returns an empty string when either the
@@ -31,7 +29,7 @@ namespace Moon.OData.Sql
         {
             var builder = new StringBuilder();
 
-            if ((Options.Skip != null) && (Options.OrderBy != null))
+            if (Options.Skip != null && Options.OrderBy != null)
             {
                 builder.Append($"OFFSET {Options.Skip} ROWS");
 

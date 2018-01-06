@@ -10,22 +10,11 @@ namespace Moon.OData.Sql
     {
         private readonly string commandText;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CountClause" /> class.
-        /// </summary>
-        /// <param name="options">The OData query options.</param>
         public CountClause(IODataOptions options)
             : this("SELECT FROM", options)
         {
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CountClause" /> class.
-        /// </summary>
-        /// <param name="commandText">
-        /// The SQL command text containing a <c>SELECT</c> clause to modify.
-        /// </param>
-        /// <param name="options">The OData query options.</param>
         public CountClause(string commandText, IODataOptions options)
             : base(options)
         {

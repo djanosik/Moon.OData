@@ -12,11 +12,6 @@ namespace Moon.OData
     /// <remarks>The result does not conform to the OData 4.0 JSON specification.</remarks>
     public class Paged<TResult> : IOData<TResult>
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Paged{TResult}" /> class.
-        /// </summary>
-        /// <param name="results">The results of the query.</param>
-        /// <param name="count">The number of items in the collection.</param>
         public Paged(IEnumerable<TResult> results, long count)
         {
             Results = results;

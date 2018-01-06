@@ -7,19 +7,15 @@ namespace Moon.OData
     /// </summary>
     public sealed class ODataRawValues
     {
-        private readonly HashSet<string> supportedOptions = GetSupportedOptions();
+        private static readonly HashSet<string> supportedOptions = GetSupportedOptions();
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ODataRawValues" /> class.
-        /// </summary>
-        /// <param name="options">The dictionary storing query option key-value pairs.</param>
-        public ODataRawValues(IDictionary<string, string> options)
+        public ODataRawValues(IDictionary<string, string> queryOptions)
         {
-            Requires.NotNull(options, nameof(options));
+            Requires.NotNull(queryOptions, nameof(queryOptions));
 
             Values = new Dictionary<string, string>();
 
-            foreach (var pair in options)
+            foreach (var pair in queryOptions)
             {
                 if (supportedOptions.Contains(pair.Key))
                 {
@@ -36,74 +32,62 @@ namespace Moon.OData
         /// <summary>
         /// Gets the raw $count option value.
         /// </summary>
-        public string Count
-            => TryGetValue("$count");
+        public string Count => TryGetValue("$count");
 
         /// <summary>
         /// Gets the raw $deltatoken option value.
         /// </summary>
-        public string DeltaToken
-            => TryGetValue("$deltatoken");
+        public string DeltaToken => TryGetValue("$deltatoken");
 
         /// <summary>
         /// Gets the raw $format option value.
         /// </summary>
-        public string Format
-            => TryGetValue("$format");
+        public string Format => TryGetValue("$format");
 
         /// <summary>
         /// Gets the raw $filter option value.
         /// </summary>
-        public string Filter
-            => TryGetValue("$filter");
+        public string Filter => TryGetValue("$filter");
 
         /// <summary>
         /// Gets the raw $orderby option value.
         /// </summary>
-        public string OrderBy
-            => TryGetValue("$orderby");
+        public string OrderBy => TryGetValue("$orderby");
 
         /// <summary>
         /// Gets the raw $search option value.
         /// </summary>
-        public string Search
-            => TryGetValue("$search");
+        public string Search => TryGetValue("$search");
 
         /// <summary>
         /// Gets the raw $select option value.
         /// </summary>
-        public string Select
-            => TryGetValue("$select");
+        public string Select => TryGetValue("$select");
 
         /// <summary>
         /// Gets the raw $expand option value.
         /// </summary>
-        public string Expand
-            => TryGetValue("$expand");
+        public string Expand => TryGetValue("$expand");
 
         /// <summary>
         /// Gets the raw $skip option value.
         /// </summary>
-        public string Skip
-            => TryGetValue("$skip");
+        public string Skip => TryGetValue("$skip");
 
         /// <summary>
         /// Gets the raw $skiptoken option value.
         /// </summary>
-        public string SkipToken
-            => TryGetValue("$skiptoken");
+        public string SkipToken => TryGetValue("$skiptoken");
 
         /// <summary>
         /// Gets the raw $top option value.
         /// </summary>
-        public string Top
-            => TryGetValue("$top");
+        public string Top => TryGetValue("$top");
 
         /// <summary>
         /// Gets the raw $apply option value.
         /// </summary>
-        public string Apply
-            => TryGetValue("$apply");
+        public string Apply => TryGetValue("$apply");
 
         private static HashSet<string> GetSupportedOptions()
         {
@@ -124,6 +108,8 @@ namespace Moon.OData
         }
 
         private string TryGetValue(string key)
-            => Values.ContainsKey(key) ? Values[key] : null;
+        {
+            return Values.ContainsKey(key) ? Values[key] : null;
+        }
     }
 }

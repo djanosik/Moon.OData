@@ -1,5 +1,9 @@
 # Moon.OData changelog
 
+3.2.0
+
+- Case sensitivity can be set when binding `ODataOptions` in ASP.NET MVC.
+
 3.1.5
 
 - Binary operators now work with method calls.

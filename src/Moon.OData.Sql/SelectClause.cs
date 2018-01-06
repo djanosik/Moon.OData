@@ -13,22 +13,11 @@ namespace Moon.OData.Sql
     {
         private readonly string commandText;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SelectClause" /> class.
-        /// </summary>
-        /// <param name="options">The OData query options.</param>
         public SelectClause(IODataOptions options)
             : this("SELECT FROM", options)
         {
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SelectClause" /> class.
-        /// </summary>
-        /// <param name="commandText">
-        /// The SQL command text containing a <c>SELECT</c> clause to modify.
-        /// </param>
-        /// <param name="options">The OData query options.</param>
         public SelectClause(string commandText, IODataOptions options)
             : base(options)
         {
@@ -52,7 +41,9 @@ namespace Moon.OData.Sql
         /// </summary>
         /// <param name="options">The OData query options.</param>
         public static string Build(IODataOptions options)
-            => Build(options, null);
+        {
+            return Build(options, null);
+        }
 
         /// <summary>
         /// Builds a <c>SELECT</c> SQL clause using the given OData query options.
@@ -62,7 +53,9 @@ namespace Moon.OData.Sql
         /// </param>
         /// <param name="options">The OData query options.</param>
         public static string Build(string commandText, IODataOptions options)
-            => Build(commandText, options, null);
+        {
+            return Build(commandText, options, null);
+        }
 
         /// <summary>
         /// Builds a <c>SELECT</c> SQL clause using the given OData query options.
@@ -117,7 +110,9 @@ namespace Moon.OData.Sql
         }
 
         private string Either(string value, Func<string> build)
-            => string.IsNullOrEmpty(value) ? build() : value;
+        {
+            return string.IsNullOrEmpty(value) ? build() : value;
+        }
 
         private string BuildColumns()
         {

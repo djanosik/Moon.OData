@@ -10,33 +10,24 @@ namespace Moon.AspNetCore.OData
     /// </summary>
     public class ODataOptionsModelBinderProvider : IModelBinderProvider
     {
-        private readonly IEnumerable<IPrimitiveType> primitives;
+        private readonly bool isCaseSensitive;
+        private readonly IEnumerable<IPrimitiveType> primitiveTypes;
 
-        private bool isCaseSensitive;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ODataOptionsModelBinderProvider" /> class.
-        /// </summary>
-        /// <param name="primitives">An enumeration of primitive types.</param>
-        /// <param name="isCaseSensitive">Properties are case sensitive</param>
-        public ODataOptionsModelBinderProvider(IEnumerable<IPrimitiveType> primitives, bool isCaseSensitive = true)
+        public ODataOptionsModelBinderProvider(IEnumerable<IPrimitiveType> primitiveTypes, bool isCaseSensitive)
         {
-            this.primitives = primitives;
+            this.primitiveTypes = primitiveTypes;
             this.isCaseSensitive = isCaseSensitive;
         }
 
-        /// <summary>
-        /// Returns an instance of the <see cref="ODataOptionsModelBinder" />.
-        /// </summary>
-        /// <param name="context">The instance context.</param>
+        /// <inheritdoc />
         public IModelBinder GetBinder(ModelBinderProviderContext context)
         {
             var modelType = context.Metadata.ModelType;
             var typeInfo = modelType.GetTypeInfo();
 
-            if (typeInfo.IsGenericType && (typeInfo.GetGenericTypeDefinition() == typeof(ODataOptions<>)))
+            if (typeInfo.IsGenericType && typeInfo.GetGenericTypeDefinition() == typeof(ODataOptions<>))
             {
-                return new ODataOptionsModelBinder(primitives, isCaseSensitive);
+                return new ODataOptionsModelBinder(primitiveTypes, isCaseSensitive);
             }
 
             return null;

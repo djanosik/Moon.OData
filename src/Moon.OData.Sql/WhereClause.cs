@@ -4,7 +4,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using Microsoft.OData.UriParser;
-using Moon.OData.Edm;
 
 namespace Moon.OData.Sql
 {
@@ -16,12 +15,6 @@ namespace Moon.OData.Sql
         private readonly IList<object> arguments;
         private readonly string oprator;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WhereClause" /> class.
-        /// </summary>
-        /// <param name="oprator">The operator to start with.</param>
-        /// <param name="arguments">The list where to store values of SQL arguments.</param>
-        /// <param name="options">The OData query options.</param>
         public WhereClause(string oprator, IList<object> arguments, IODataOptions options)
             : base(options)
         {
@@ -39,7 +32,9 @@ namespace Moon.OData.Sql
         /// <param name="arguments">The list where to store values of SQL arguments.</param>
         /// <param name="options">The OData query options.</param>
         public static string Build(string startWith, IList<object> arguments, IODataOptions options)
-            => Build(startWith, arguments, options, null);
+        {
+            return Build(startWith, arguments, options, null);
+        }
 
         /// <summary>
         /// Builds a <c>WHERE</c> SQL clause using the given OData query options.

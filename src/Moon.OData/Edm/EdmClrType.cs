@@ -8,10 +8,6 @@ namespace Moon.OData.Edm
     /// </summary>
     public class EdmClrType : EdmEntityType
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EdmClrType" /> class.
-        /// </summary>
-        /// <param name="type">The underlying CLR type.</param>
         public EdmClrType(Type type)
             : base(type.Namespace, type.Name)
         {

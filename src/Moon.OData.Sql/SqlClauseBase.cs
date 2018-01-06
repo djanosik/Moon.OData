@@ -10,10 +10,6 @@ namespace Moon.OData.Sql
     /// </summary>
     public abstract class SqlClauseBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SqlClauseBase" /> class.
-        /// </summary>
-        /// <param name="options">The OData options.</param>
         protected SqlClauseBase(IODataOptions options)
         {
             Requires.NotNull(options, nameof(options));

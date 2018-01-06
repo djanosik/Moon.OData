@@ -11,10 +11,6 @@ namespace Moon.OData.Sql
     /// </summary>
     public class OrderByClause : SqlClauseBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OrderByClause" /> class.
-        /// </summary>
-        /// <param name="options">The OData query options.</param>
         public OrderByClause(IODataOptions options)
             : base(options)
         {

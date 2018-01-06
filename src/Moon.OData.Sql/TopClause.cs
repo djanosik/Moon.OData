@@ -5,10 +5,6 @@
     /// </summary>
     public class TopClause : SqlClauseBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TopClause" /> class.
-        /// </summary>
-        /// <param name="options">The OData query options.</param>
         public TopClause(IODataOptions options)
             : base(options)
         {
@@ -19,7 +15,9 @@
         /// </summary>
         /// <param name="options">The OData query options.</param>
         public static string Build(IODataOptions options)
-            => new TopClause(options).Build();
+        {
+            return new TopClause(options).Build();
+        }
 
         /// <summary>
         /// Builds a <c>TOP(n)</c> SQL clause. The method returns an empty string when the $top
