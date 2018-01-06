@@ -3,6 +3,7 @@
 3.2.0
 
 - Case sensitivity can be set when binding `ODataOptions` in ASP.NET MVC.
+- Nullable primitive types are supported.
 
 3.1.5
 
